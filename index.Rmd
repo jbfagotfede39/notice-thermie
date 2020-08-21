@@ -8,6 +8,8 @@ documentclass: book
 bibliography: [book.bib, packages.bib]
 biblio-style: apalike
 link-citations: yes
+github-repo: 'https://github.com/jbfagotfede39/notice-thermie/'
+url: 'https://jbfagotfede39.github.io/notice-thermie/'
 description: "Ce document présente l'utilisation d'outils d'acquisition et de traitement de chroniques de température de milieux aquatiques développés dans le cadre du RSTMAJ."
 output: 
   html_document: 

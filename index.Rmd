@@ -1,0 +1,21 @@
+--- 
+title: "Chroniques de température de milieux aquatiques"
+author: 
+  - Jean-Baptiste Fagot^[Fédération du Jura pour la Pêche et la Protection du Milieu Aquatique, jean-baptiste.fagot@peche-jura.com]
+date: "`r Sys.Date()`"
+site: bookdown::bookdown_site
+documentclass: book
+bibliography: [book.bib, packages.bib]
+biblio-style: apalike
+link-citations: yes
+description: "Ce document présente l'utilisation d'outils d'acquisition et de traitement de chroniques de température de milieux aquatiques développés dans le cadre du RSTMAJ."
+output: 
+  html_document: 
+    keep_md: yes
+---
+
+```{r packages, echo=FALSE}
+library(dplyr)
+library(knitr)
+library(pander)
+```

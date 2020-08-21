@@ -1,0 +1,9 @@
+# Introduction {#intro}
+
+Ce document constitue un guide de bonnes pratiques et d'utilisation des outils développés dans le cadre du Réseau de Suivi de la Température des Milieux Aquatiques du Jura (RSTMAJ). Il a pour vocation d'apporter les informations nécessaires à l'utilisateur en vue d'un travail fiable et facilité pour celui-ci, ainsi que pour l'incorporation des données récoltées à la base de données départementale gérée par la Fédération du Jura pour la Pêche et la Protection des Milieux Aquatiques (FJPPMA) et leur valorisation.
+Il est accompagné de fichiers "modèles" afin de constituer une "boîte à outils".
+
+<!-- La version la plus à jour de cette boîte à outils est disponible à l'adresse suivante : \url{http://NASFEDE39.myqnapcloud.com:1971/share.cgi?ssid=0uv4lO4}. -->
+
+En cas de question(s) ou de remarque(s), merci d'écrire à
+[jean-baptiste.fagot@peche-jura.com](mailto:jean-baptiste.fagot@peche-jura.com?subject=[RSTMAJ]%20Boite%20à%20outils).

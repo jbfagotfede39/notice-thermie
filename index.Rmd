@@ -22,6 +22,6 @@ library(knitr)
 library(pander)
 ```
 
-# Preface {-}
+# Introduction {-}
 
-In this book, we will introduce an interesting
+Ce document est une proposition de synthèse d'outils relatifs à la gestion des données de température de milieux aquatiques.

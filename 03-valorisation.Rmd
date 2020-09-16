@@ -64,9 +64,10 @@ knitr::include_graphics('Figures/Vues/Vue_Preferendums_thermiques_tous_stades.pn
 
 ## Indicateurs statistiques
 ### Définition des acronymes
-Le tableau \@ref(fig:tableauacronymes) permet d'obtenir la signification des différents acronymes utilisés pour qualifier les indicateurs statistiques calculés.
+Le tableau \@ref(tab:tableauacronymes) permet d'obtenir la signification des différents acronymes utilisés pour qualifier les indicateurs statistiques calculés.
 
-```{r tableauacronymes, echo=FALSE, fig.cap="Définition des différents acronymes utilisés"}
+```{r tableauacronymes, echo=FALSE}
+# , fig.cap="Définition des différents acronymes utilisés"
 tableauacronymes <- 
   structure(list(Abréviation = c("Typemesure", "DateDPeriode", 
                                  "DateFPeriode", "IntervalleMax", "NbJpasOk", "NbJOK", "VMinI", 
@@ -117,8 +118,8 @@ tableauacronymes <-
                     "Température Maximale Moyenne des 30 jours les plus chauds")), row.names = c(NA, 
                                                                                                  -51L), class = c("tbl_df", "tbl", "data.frame"))
 
-# kable(tableauacronymes, caption = "Définition des différents acronymes utilisés") # Tout affiché d'un seul bloc
-DT::datatable(tableauacronymes) # Limitation en sous vues, mais on ne peut pas avoir le tag table # https://stackoverflow.com/questions/49819892/cross-referencing-dtdatatable-in-bookdown
+kable(tableauacronymes, caption = "Définition des différents acronymes utilisés") # Tout affiché d'un seul bloc
+# DT::datatable(tableauacronymes) # Limitation en sous vues, mais on ne peut pas avoir le tag table # https://stackoverflow.com/questions/49819892/cross-referencing-dtdatatable-in-bookdown
 ```
 
 ## Atlas QGIS

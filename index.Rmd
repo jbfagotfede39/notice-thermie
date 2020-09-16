@@ -18,6 +18,7 @@ output:
 
 ```{r packages, echo=FALSE}
 library(dplyr)
+library(DT)
 library(knitr)
 library(pander)
 ```

@@ -56,6 +56,7 @@ knitr::include_graphics('Figures/Vues/Vue_Preferendums_thermiques_adulte.png')
 
 La température observée sur une station de suivi doit pouvoir être rapportée aux enjeux biologiques présents sur ce site. La fonction `chronique.figure.preferendums` permet de générer des représentations des plages de température de confort et de stress, dont un exemple est visible sur la figure \@ref(fig:vueipreferendumsthermiquesadulte). On peut ici observer les températures de référence admises pour le stade adulte. D'autres valeurs sont accessibles pour les stades embryon, larve, et juvénile et pour la période de reproduction (jeu de données inclus dans `data(PoissonsPreferendumsThermiques)`). Il est également possible d'y afficher ou non une valeur de VMaxMoy30J. Un affichage simultané des différents stades de vie est possible, comme sur la figure \@ref(fig:vueipreferendumsthermiquestousstades).
 
+<!-- Ajouter références biblio -->
 
 ```{r vueipreferendumsthermiquestousstades, echo=FALSE, fig.cap="Exemple de représentation de préférendums thermiques d'espèces piscicoles pour tous les stades de vie avec une Tmm30j de 24°C", out.width="80%"}
 knitr::include_graphics('Figures/Vues/Vue_Preferendums_thermiques_tous_stades.png')

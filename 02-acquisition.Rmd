@@ -61,13 +61,13 @@ L'objectif de ce chapitre est de préciser les formats de saisie des information
 Une première partie traite des données relatives aux **stations**, puis celles relatives aux **suivis de terrain** et aux éventuels **commentaires** annuels des chroniques, puis enfin les **différents fichiers à transmettre** suite à une campagne de terrain.
 
 ### Saisie des caractéristiques des stations {#saisiestations}
-* Complément sur le terrain des informations de la station sur la fiche : ``` Station/Fiche_pose_sonde_thermique_simple.pdf ```
-* Saisie des informations de terrain concernant les stations dans le fichier : ``` Station/2018-10-30_Modele_saisie_stations_V3.xlsx ``` (ou ``` Stations_thermie_avec_champs_complémentaires.xlsx ``` pour les collectivités extérieures au département et souhaitant générer les fiches atlas de résultats, avec complément des champs adéquats : chsta_distancesource, chsta_typetheorique, chsta_altitude, chsta_codecontextepdpg)
+* Complément sur le terrain des informations de la station sur la fiche [recto](https://github.com/jbfagotfede39/notice-thermie/raw/master/data/Stations/Fiche_pose_sonde_thermique_simple.pdf) ou [recto-verso](https://github.com/jbfagotfede39/notice-thermie/raw/master/data/Stations/Fiche_pose_sonde_thermique_double.pdf)
+* Saisie des informations de terrain concernant les stations dans le [fichier excel](https://github.com/jbfagotfede39/notice-thermie/raw/master/data/Stations/Saisie_stations_chroniques.xlsx) (ou [cette version plus large](https://github.com/jbfagotfede39/notice-thermie/raw/master/data/Stations/Saisie_stations_chroniques_avec_champs_complementaires.xlsx) pour les collectivités extérieures au département et souhaitant générer les fiches atlas de résultats, avec complément des champs adéquats : chsta_distancesource, chsta_typetheorique, chsta_altitude, chsta_codecontextepdpg)
 * Complément des différents champs :
     * chsta_coderhj : code d'identification de la station propre au RSTMAJ. **Laisser vide**
     * chsta_codemo : code d'identification de la station propre à chaque maître d'ouvrage
     * chsta_codesie : si la station possède un code dans le SIE de l'AERMC
-    * chsta_mo : Nom du maître d'ouvrage : "OFB", "CCPM", "CCVA", "CD39_CR_Ain", "CD39_RDM", "DREAL", "FJPPMA", "PNRHJ", "SMISA"
+    * chsta_mo : Nom du maître d'ouvrage : "OFB", "CD39_CR_Ain", "CD39_RDM", "DREAL", "FJPPMA", "PNRHJ", "SMDL", "SR3A"
     * chsta_milieu : Nom de l'écosystème (cours d'eau ou plan d'eau)
     * chsta_coord_x et chsta_coord_y : Coordonnées précises de la sonde en **Lambert 93**
     * chsta_fonctionnement : "En cours" ou "Arrêté"
@@ -98,9 +98,8 @@ Une première partie traite des données relatives aux **stations**, puis celles
     * chsta_remarques : éventuelles remarques sur la station
     
 ### Saisie des suivis de relève {#saisiesuivi}
-* Afin de constituer un "cahier de terrain", impression et reliure de :  ``` Suivi/2017-11-20_Cahier_terrain_V7.pdf ```
-* Saisie des informations de suivi de terrain dans le fichier excel :
-``` Suivi/2018-10-30_Saisie_cahier_terrain_V8.xlsx ```
+* Afin de constituer un "cahier de terrain", impression et reliure de [ce document](https://github.com/jbfagotfede39/notice-thermie/raw/master/data/Suivi_terrain/Fiches_suivi_terrain_chronique.pdf)
+* Saisie des informations de suivi de terrain dans le [fichier excel](https://github.com/jbfagotfede39/notice-thermie/raw/master/data/Suivi_terrain/Saisie_suivi_terrain_chronique.xlsx)
 * **Créer deux lignes en cas de remplacement d'une sonde** : une ligne avec l'ancien numéro de sonde, une avec le nouveau, toutes les autres données étant identiques.
 * Dans le cas d'une sonde disparue, bien compléter le numéro de sonde en allant vérifier celui noté lors de la dernière relève
 * Complément des différents champs :
@@ -117,7 +116,7 @@ Une première partie traite des données relatives aux **stations**, puis celles
     * chsvi_actionafaire : opérations à effectuer lors du prochain passage.
 
 ### Saisie des commentaires des chroniques {#saisiecommentaire}
-* Saisie des commentaires des chroniques annuelles dans le fichier : ``` Commentaires/2020-02-06_Saisie_commentaires_chroniques_V1.xlsx ``` afin que celles-ci soient réutilisées pour générer les fiches atlas de résultats.
+* Saisie des commentaires des chroniques annuelles dans le [fichier ci-joint](https://github.com/jbfagotfede39/notice-thermie/raw/master/data/Commentaires/Saisie_commentaires_chroniques.xlsx) afin que celles-ci soient réutilisées pour générer les fiches atlas de résultats.
 
 ### Envoi des informations de pose et/ou de suivi {#envoisuivi}
 Les envois des données relatives aux différentes situations présentées ci-dessous sont à réaliser vers [jean-baptiste.fagot@peche-jura.com](mailto:jean-baptiste.fagot@peche-jura.com?subject=[RSTMAJ]%20Envoi%20données%20thermie), directement en pièce jointe au sein d'une archive (.zip, .rar ou autre) ou à travers une plateforme de transfert (Dropbox, WeTransfer, etc).

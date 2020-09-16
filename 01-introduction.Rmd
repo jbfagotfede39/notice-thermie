@@ -4,7 +4,7 @@ Ce document constitue un guide de bonnes pratiques et d'utilisation des outils d
 
 La version la plus à jour de ce document est visible à l'adresse https://jbfagotfede39.github.io/notice-thermie/.
 
-Il est accompagné de fichiers "modèles" afin de constituer une "boîte à outils", disponibles à l'adresse suivante : https://github.com/jbfagotfede39/notice-thermie/tree/master/data/. Les fonctions de traitement utilisées sous R sont disponibles et regroupés au sein du package aquatools : https://github.com/jbfagotfede39/aquatools.
+Il est accompagné de fichiers "modèles" afin de constituer une "boîte à outils", disponibles à l'adresse suivante : https://github.com/jbfagotfede39/notice-thermie/raw/master/data/. Les fonctions de traitement utilisées sous R sont disponibles et regroupés au sein du package aquatools : https://github.com/jbfagotfede39/aquatools.
 
 En cas de question(s) ou de remarque(s), merci d'écrire à
 [jean-baptiste.fagot@peche-jura.com](mailto:jean-baptiste.fagot@peche-jura.com?subject=[RSTMAJ]%20Boite%20à%20outils).

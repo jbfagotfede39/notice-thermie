@@ -124,9 +124,7 @@ DT::datatable(tableauacronymes) # Limitation en sous vues, mais on ne peut pas a
 <!-- Sens des slash/antislash dans les noms de fichiers entre windows et OSX/linux -->
 
 ### Atlas des stations 
-Cet atlas s'appuie sur le modèle QGIS 
-`/Atlas/modèle_atlas_stations_chronique.qp`
- et sur la table de stations contenue dans le fichier 
+Cet atlas s'appuie sur un [modèle QGIS](https://github.com/jbfagotfede39/notice-thermie/raw/master/data/Atlas/modele_atlas_stations_chronique.qpt) et sur la table de stations contenue dans le fichier 
 `/Sorties/Stations/xxxx-xx-xx_Stations.geojson`
  (projection EPSG:4326).
 
@@ -140,9 +138,7 @@ Il sera ensuite nécessaire de modifier quelques paramètres, après avoir défi
 
 
 ### Atlas des résultats
-Cet atlas s'appuie sur le modèle QGIS
-`/Atlas/modèle_atlas_résultats_chronique.qpt`
- et sur la table de résultats contenue dans le fichier 
+Cet atlas s'appuie sur un [autre modèle QGIS](https://github.com/jbfagotfede39/notice-thermie/raw/master/data/Atlas/modele_atlas_resultats_chronique.qpt) et sur la table de résultats contenue dans le fichier 
  `/Sorties/Résultats/Atlas_Résultats.geojson`
  (projection EPSG:4326).
 
@@ -152,4 +148,4 @@ Il sera ensuite nécessaire de modifier quelques paramètres, après avoir défi
 * titre de l'atlas, en bas des deux pages,
 * localisation des logos (sur les deux pages),
 * localisation des fichiers image via la formule (vue annuelle en page 1 et vue interannuelle en page 2),
-* Modification de la mise en page en fonction des goût de chacun.
+* et modification de la mise en page en fonction des goûts de chacun.

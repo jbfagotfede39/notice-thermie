@@ -8,7 +8,6 @@ colorize <- function(x, color) {
   } else x
 }
 ```
-
 # Valorisation
 Ce chapitre contient les informations utiles à l'utilisation des différentes valorisation générées par l'outil de traitement.
 

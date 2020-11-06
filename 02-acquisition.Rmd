@@ -150,15 +150,15 @@ Cette liste est une liste générale de matériel à emporter sur le terrain afi
 
 **Installation**
 
-* **Tube de protection** <!--- (aspect en section \@ref{descriptionmanchon}) -->
+* **[Tubes/manchons de protection](#descriptionmanchon)**
 * Colle pour assemblage des tubes
 * **Câble inox**
 * **Serre-câbles inox**
 * **Clé à pipe de 7**
-* **Piton inox**
+* **Boulon à œil à expansion inox**
 * **Clé pour piton**
 * **Marteau**
-* **Lests** <!--- (aspect en section \@ref{descriptionlest}) -->
+* **[Lests](#descriptionlest)**
 * **Pinces coupantes**
 * **Perforateur**
 * Télémètre ou décamètre
@@ -168,7 +168,7 @@ Cette liste est une liste générale de matériel à emporter sur le terrain afi
 
 * **Navette**
 * **Brosse à dents**
-* **Thermomètre de terrain**
+* **[Thermomètre de terrain](#thermometre)**
 * **Sondes de remplacement**
 * **Carnet de suivi de terrain des sondes thermiques} + crayon de papier**
 * Ordinateur + chargeur
@@ -181,10 +181,14 @@ Cette liste est une liste générale de matériel à emporter sur le terrain afi
 * Papier absorbant/torchon pour essuyer
 
 ### Exemples de références du matériel
+<p style="text-align: justify;">
 Cette section contient les références des principaux matériels utilisés par les opérateurs du département. Il constitue un aide-mémoire et reste néanmoins non-exhaustif.
+</p>
 
 #### Matériel Hobo {#hobo}
-La plupart des maîtres d'ouvrage du département utilisent du matériel de la marque Hobo. Ces produits sont commercialisés en France par le revendeur ProSensor (15 rue de Montvaux 57865 Amanvillers - [www.prosensor.com](www.prosensor.com)), représenté par Mme Anne Bilourou (03-87-53-37-55 - [abilourou@prosensor.com](mailto:abilourou@prosensor.com). Les références figurant dans le tableau ci-joint sont données à titre indicatif et doivent être confirmées auprès du fournisseur.
+<p style="text-align: justify;">
+La plupart des maîtres d'ouvrage du département utilisent du matériel de la marque Hobo. Ces produits sont commercialisés en France par le revendeur ProSensor (15 rue de Montvaux 57865 Amanvillers - [www.prosensor.com](www.prosensor.com)), représenté par M. Christophe Arnould (07-49-48-76-67 - [carnould@prosensor.com](mailto:carnould@prosensor.com)). Les références figurant dans le tableau ci-joint sont données à titre indicatif et doivent être confirmées auprès du fournisseur.
+</p>
 
 ```{r vuemateriel2, echo=FALSE}
 # https://stackoverflow.com/questions/50108763/how-to-insert-images-into-table-in-r-markdown
@@ -212,15 +216,51 @@ tibble::tribble(
 ```
 
 #### Thermomètre de terrain {#thermometre}
+<p style="text-align: justify;">
 Le thermomètre utilisé par la FJPPMA pour les mesures de terrain est un thermomètre Kern TTX 100 (voir figure \@ref(fig:vuethermometre)). Sa résolution est de 0,1°C, sa plage de mesure allant de -50°C à +350°C. La mesure est réalisée en 5 secondes, il présente 60 cm de fil. Sa valeur est d'environ 100 € TTC. Tout autre modèle peut être utilisé, celui-ci étant présenté à simple titre d'exemple.
+</p>
 
-```{r vuethermometre, echo=FALSE, out.width="20%", fig.cap="Thermomètre Kern TTX 100"}
+```{r vuethermometre, echo=FALSE, out.width="20%", fig.align="center", fig.cap="Thermomètre Kern TTX 100"}
 knitr::include_graphics('Figures/Materiel/KernTTX100.jpg')
 ```
 
 #### Quincaillerie {#quincaillerie}
+<p style="text-align: justify;">
+Différents éléments de quincaillerie peuvent être utilisés. De manière générale, seul de l'inox est conseillé, pas de l'acier galvanisé, qui a tendance à se recouvrir de dépôts calcaires et à devenir cassant :
+</p>
+
+* Câble inox, diamètre 3mm (1 à 1,5 mètre en moyenne par point de pose)
+* Serre-câble (2 par point de pose)
+* Boulon à œil à expansion (1 par point de pose)
+
+#### Tubes/manchons de protection {#descriptionmanchon}
+<p style="text-align: justify;">
+Les tubes/manchons de protection sont construits à partir d'un assemblage par collage entre un manchon PVC de diamètre 100mm et le tampon de visite qui va avec. La partie supérieure du tampon de visite ne doit pas être collée. Elle doit par contre être percée de deux ou quatre trous, afin d'y faire passer le câble. Le poids de cette protection permet dans la grande majorité des cas une résistance suffisante au courant pour rester au fond. Il est potentiellement utile de percer un trou dans le bas du manchon afin de pouvoir y attacher un lest le cas échéant.
+</p>
+
+```{r vuemanchon, echo=FALSE, out.width="20%", fig.align="center", fig.cap="Exemple de manchon de protection"}
+knitr::include_graphics('Figures/Materiel/ManchonPVC.jpg')
+```
+
+#### Lests {#descriptionlest}
+<p style="text-align: justify;">
+Il est parfois nécessaire d'ajouter à un ancrage classique en berge ou sur un piton un lest, qui va permettre d'empêcher la sonde de remonter vers la surface au gré de l'hydrodynamique. Des lests propres peuvent être fabriqués en remplissant de béton des morceaux de tube PVC de 150mm de long par 100mm de diamètre et en y plaçant avant la prise du béton, en partie haute et à l'envers, un anneau en U (fer à béton plié, étrier), qui servira ensuite de point d'accrochage.
+</p>
 
 ## Fonctionnement du matériel {#fonctionnementmateriel}
+### Montage d'ancrage {#montageancrage}
+<p style="text-align: justify;">
+La **sonde** est placée à l'**intérieur du [tube/manchon de protection](#descriptionmanchon)**, et attachée par au-dessus via un câble (brin libre sortant directement de la bobine) passant dans les trous réalisés et bloqué par un serre-câble. Il est ainsi possible d'accéder à la sonde soit en dévissant la partie supérieure du tampon de visite, soit en insérant le lecteur/la navette directement dans le manchon en PVC (la navette passe généralement avec la main). Il est ainsi possible, pour les opérations courantes de relève, de ne pas avoir à démonter l'ensemble, mais simplement à sortir le manchon de l'eau, utiliser directement la navette puis remettre la sonde à l'eau.
+</p>
+
+<p style="text-align: justify;">
+Ce montage est ensuite mis en place sur le site de pose en coupant à la longueur adéquate (+ 50 cm) le câble inox. Le **point d'attache en berge** peut être une solide racine de ripisylve autour de laquelle on vient placer une boucle de câble inox à partir du brin libre suite à la découpe. Si aucun point d'accrochage fiable n'est présent en berge, le plus simple est de percer un bloc, une pile de pont, etc. et d'y fixer un boulon à œil à expansion inox, sur lequel on viendra s'attacher. 
+</p>
+
+<p style="text-align: justify;">
+Le poids du manchon permet dans la grande majorité des cas une résistance suffisante au courant pour rester au fond, mais l'ajout d'un **lest** peut s'avérer nécessaire. Dans ce cas, soit repercer un trou dans le bas du manchon (cas idéal), soit attacher le lest directement à partir des trous supérieurs (position penchée de la sonde).
+</p>
+
 ### Paramétrage de Hoboware Pro {#parametrage}
 ### Mise en fonctionnement d'une sonde {#lancementsonde}
 ### Vidange d'une sonde {#vidangesonde}

@@ -244,8 +244,12 @@ knitr::include_graphics('Figures/Materiel/ManchonPVC.jpg')
 
 #### Lests {#descriptionlest}
 <p style="text-align: justify;">
-Il est parfois nécessaire d'ajouter à un ancrage classique en berge ou sur un piton un lest, qui va permettre d'empêcher la sonde de remonter vers la surface au gré de l'hydrodynamique. Des lests propres peuvent être fabriqués en remplissant de béton des morceaux de tube PVC de 150mm de long par 100mm de diamètre et en y plaçant avant la prise du béton, en partie haute et à l'envers, un anneau en U (fer à béton plié, étrier), qui servira ensuite de point d'accrochage.
+Il est parfois nécessaire d'ajouter à un ancrage classique en berge ou sur un piton un lest, qui va permettre d'empêcher la sonde de remonter vers la surface au gré de l'hydrodynamique. Des lests propres peuvent être fabriqués en remplissant de béton des morceaux de tube PVC de 150mm de long par 100mm de diamètre et en y plaçant avant la prise du béton, en partie haute et à l'envers, un anneau en U (fer à béton plié, étrier, câble inox), qui servira ensuite de point d'accrochage.
 </p>
+
+```{r vuelest, echo=FALSE, out.width="40%", fig.align="center", fig.cap="Exemple de lest"}
+knitr::include_graphics('Figures/Materiel/Lest.jpg')
+```
 
 ## Fonctionnement du matériel {#fonctionnementmateriel}
 ### Montage d'ancrage {#montageancrage}
@@ -258,7 +262,7 @@ Ce montage est ensuite mis en place sur le site de pose en coupant à la longueu
 </p>
 
 <p style="text-align: justify;">
-Le poids du manchon permet dans la grande majorité des cas une résistance suffisante au courant pour rester au fond, mais l'ajout d'un **lest** peut s'avérer nécessaire. Dans ce cas, soit repercer un trou dans le bas du manchon (cas idéal), soit attacher le lest directement à partir des trous supérieurs (position penchée de la sonde).
+Le poids du manchon permet dans la grande majorité des cas une résistance suffisante au courant pour rester au fond, mais l'ajout d'un **[lest](#descriptionlest)** peut s'avérer nécessaire. Dans ce cas, soit repercer un trou dans le bas du manchon (cas idéal), soit attacher le lest directement à partir des trous supérieurs (position penchée de la sonde).
 </p>
 
 ### Paramétrage de Hoboware Pro {#parametrage}

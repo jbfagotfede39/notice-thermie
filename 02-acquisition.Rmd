@@ -251,6 +251,35 @@ Il est parfois nécessaire d'ajouter à un ancrage classique en berge ou sur un 
 knitr::include_graphics('Figures/Materiel/Lest.jpg')
 ```
 
+#### Matériel de mesure avec télétransmission
+<p style="text-align: justify;">
+Tout un panel de matériel permettant la télétransmission des données mesurées existe. Hors de toute volonté d'exhaustivité, voici quelques notions de coûts :
+</p>
+* Modems :
+  - Modem pour un unique capteur :
+    + Modem GPRS TUBE 300R baro, batterie lithium au format propriétaire, pour In-Situ Rugged/Level TROLL, nécessitant abonnement 4G annexe : 1350 € TTC
+    + Modem GPRS TUBE 300S baro, solaire, pour In-Situ Rugged/Level TROLL, nécessitant abonnement 4G annexe : 1600 € TTC
+    + Modem nouvelle génération VuLink : 4G LTE (consommation énergétique nettement moindre), 3 piles D alcalines ou lithium, e-SIM intégré dans le modem offre une transmission de 24 points de données par jour : 1025 € TTC
+  - Modem pour deux capteurs simultanés :
+    + Modem GPRS CUBE 300R ventilé, batterie Lithium, Twist Lock : 2525 € TTC
+* Capteurs : 
+  - Sonde Niv/T° abs. Rugged TROLL 200, gamme 0-9m : 800 € TTC
+  - Sonde Niv/T°abs. Level TROLL 400, gamme 0-11m, non ventilé : 1000 € TTC
+* Câble de connexion : 
+  - Rugged Troll :
+    + Connecteurs (x2) pour câble Rugged Troll (inclus montage) : 150 € TTC
+    + Câble pour Rugged Troll, le mètre : 7,50 € TTC
+  - Level Troll : 
+    + Connecteurs Twist-Lock (x2) pour câble Level Troll (inclus montage) : 220 € TTC
+    + Câble non-ventilé pour Level Troll, le mètre : 12,50 € TTC
+* Services : 
+  - Forfait annuel SIM GPRS 2Mo/mois pr modem IN-SITU : 55 € TTC
+  - Forfait hébergement et visualisation données sur plateforme HydroVu, 1 modem, 1 an : 275 € TTC
+* Outils/interfaces de connexion :
+  - Câble adaptateur PC(USB) pour Rugged/Level TROLL : 340 € TTC
+  - Adaptateur PC (USB) pr configuration modems Tube/Cube : 170 € TTC
+  - TROLL Com Bluetooth (AquaTroll/LevelTroll) pr Android/PC : 670 € TTC
+
 ## Fonctionnement du matériel {#fonctionnementmateriel}
 ### Montage d'ancrage {#montageancrage}
 <p style="text-align: justify;">
@@ -265,6 +294,8 @@ Ce montage est ensuite mis en place sur le site de pose en coupant à la longueu
 Le poids du manchon permet dans la grande majorité des cas une résistance suffisante au courant pour rester au fond, mais l'ajout d'un **[lest](#descriptionlest)** peut s'avérer nécessaire. Dans ce cas, soit repercer un trou dans le bas du manchon (cas idéal), soit attacher le lest directement à partir des trous supérieurs (position penchée de la sonde).
 </p>
 
+<!--- Description ----
+### Notices fabricants {#parametrage}
 ### Paramétrage de Hoboware Pro {#parametrage}
 ### Mise en fonctionnement d'une sonde {#lancementsonde}
 ### Vidange d'une sonde {#vidangesonde}
@@ -275,3 +306,4 @@ Le poids du manchon permet dans la grande majorité des cas une résistance suff
 ### Transformation des fichiers hobo {#transformation}
 #### Exportation par lot {#exportationlot}
 #### Transformation d'un fichier seul {#exportationsimple}
+ -->

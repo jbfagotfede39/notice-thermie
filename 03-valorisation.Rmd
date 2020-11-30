@@ -9,7 +9,11 @@ colorize <- function(x, color) {
 }
 ```
 # Valorisation
-Ce chapitre contient les informations utiles à l'utilisation des différentes valorisation générées par l'outil de traitement.
+<p style="text-align: justify;">
+Ce chapitre contient les informations utiles à l'utilisation des différentes valorisation générées par l'outil de traitement. Un exemple de jeu de données généré par la fonction `chronique.traitement()` est téléchargeable à l'[adresse suivante](https://github.com/jbfagotfede39/notice-thermie/raw/master/data/Sortie/Exemple_sorties_outils_thermie.zip).
+</p>
+
+[//]: # ## Arborescence d'ensemble
 
 [//]: # ## Suivi de terrain
 [//]: # ## Capteurs
@@ -21,14 +25,31 @@ Ce chapitre contient les informations utiles à l'utilisation des différentes v
 ## Figures
 Différentes figures peuvent être générées à partir des chroniques disponibles. Ces multiples représentations permettent de s'intéresser à différentes thématiques.
 
-[//]: # ### Figures annuelles 
+### Figures annuelles {#vueannuelle}
 
-### Figures interannuelles
+```{r vueannuelle, echo=FALSE, fig.cap="Exemple de représentation annuelle de la Sirène à Uxelles (39) - Données FDPPMA39", out.width="80%"}
+knitr::include_graphics('Figures/Vues/absolu-fixe-vmm30j_thermie_SIR7-6_-_2018.png')
+```
+<p style="text-align: justify;">
+Une vue synthétique d'une chronique annuelle est produite grâce à la fonction `chronique.figure`, dont un exemple est visible sur la figure \@ref(fig:vueannuelle). Cet outil permet de configurer légèrement le modèle de représentation de base, qui s'appuie sur l'enveloppe journalière observée (minimas et maximas) :
+</p>
+
+- **axe temporel** libre (`duree = Relatif`) ou fixé (`duree = Complet`, comme dans cet exemple) : affichage uniquement de la chronique disponible (2 mois par exemple), ou affichage intégral sur une année complète, facilitant les comparaisons même avec des jeux de données lacunaires ;
+- **axe des températures** libre (`Ymin = NA` et `Ymax = NA`) ou fixé (`Ymin = -1` et `Ymax = 30`, comme dans cet exemple) : affichage uniquement de la chronique disponible sur son enveloppe réelle de valeurs, ou affichage intégral sur une enveloppe de 0 à 30°C, facilitant les comparaisons même avec des jeux de données lacunaires ;
+- **VMaxMoy30J** (`Vmm30j = TRUE`) : affichage ou non de cette valeur, avec sa répartition temporelle.
+
+<p style="text-align: justify;">
+L'intégralité de ces différentes modalités sont automatiquement générées par la fonction `chronique.traitement()`, seul le cas ici présenté en figure \@ref(fig:vueannuelle) est utilisé dans les fiches atlas de résultats (section \@ref(fichesresultats)).
+</p>
+
+### Figures interannuelles {#vueinterannuelleboxplot}
 
 ```{r vueinterannuelleboxplot, echo=FALSE, fig.cap="Exemple de représentation interannuelle de l'Ain à Bourg-de-Sirod (39) - Données DREAL BFC", out.width="80%"}
 knitr::include_graphics('Figures/Vues/Interannuelle_thermie_AIN9-1.png')
 ```
-Une vue synthétique de la tendance des températures des dix dernières années sur une même station semble pertinente. La fonction `chronique.figure.interannuelle` permet de générer ce type de figure, dont un exemple est visible sur la figure \@ref(fig:vueinterannuelleboxplot). Différents niveaux d'informations sont contenus dans celle-ci :
+<p style="text-align: justify;">
+Une vue synthétique de la **tendance des températures des dix dernières années** sur une même station semble pertinente. La fonction `chronique.figure.interannuelle` permet de générer ce type de figure, dont un exemple est visible sur la figure \@ref(fig:vueinterannuelleboxplot). Différents niveaux d'informations sont contenus dans celle-ci :
+</p>
 
 - pour chaque année :
     - la distribution des mesures individuelles, sous forme de boxplot (`style = boxplot` - distribution des quartiles et des extremums) ou sous forme d'enveloppe (`style = violon` - distribution continue),
@@ -52,8 +73,9 @@ Une vue synthétique de la tendance des températures des dix dernières années
 ```{r vueipreferendumsthermiquesadulte, echo=FALSE, fig.cap="Exemple de représentation de préférendums thermiques d'espèces piscicoles pour le stade de vie adulte avec une Tmm30j de 24°C", out.width="80%"}
 knitr::include_graphics('Figures/Vues/Vue_Preferendums_thermiques_adulte.png')
 ```
-
+<p style="text-align: justify;">
 La température observée sur une station de suivi doit pouvoir être rapportée aux enjeux biologiques présents sur ce site. La fonction `chronique.figure.preferendums` permet de générer des représentations des plages de température de confort et de stress, dont un exemple est visible sur la figure \@ref(fig:vueipreferendumsthermiquesadulte). On peut ici observer les températures de référence admises pour le stade adulte. D'autres valeurs sont accessibles pour les stades embryon, larve, et juvénile et pour la période de reproduction (jeu de données inclus dans `data(PoissonsPreferendumsThermiques)`). Il est également possible d'y afficher ou non une valeur de VMaxMoy30J. Un affichage simultané des différents stades de vie est possible, comme sur la figure \@ref(fig:vueipreferendumsthermiquestousstades).
+</p>
 
 <!-- Ajouter références biblio -->
 
@@ -124,7 +146,7 @@ kable(tableauacronymes, caption = "Définition des différents acronymes utilis�
 ## Atlas QGIS
 <!-- Sens des slash/antislash dans les noms de fichiers entre windows et OSX/linux -->
 
-### Atlas des stations 
+### Atlas des stations {#fichesstations}
 Cet atlas s'appuie sur un [modèle QGIS](https://github.com/jbfagotfede39/notice-thermie/raw/master/data/Atlas/modele_atlas_stations_chronique.qpt) et sur la table de stations contenue dans le fichier 
 `/Sorties/Stations/xxxx-xx-xx_Stations.geojson`
  (projection EPSG:4326).
@@ -138,7 +160,7 @@ Il sera ensuite nécessaire de modifier quelques paramètres, après avoir défi
 * Modification de la mise en page en fonction des goût de chacun.
 
 
-### Atlas des résultats
+### Atlas des résultats {#fichesresultats}
 Cet atlas s'appuie sur un [autre modèle QGIS](https://github.com/jbfagotfede39/notice-thermie/raw/master/data/Atlas/modele_atlas_resultats_chronique.qpt) et sur la table de résultats contenue dans le fichier 
  `/Sorties/Résultats/Atlas_Résultats.geojson`
  (projection EPSG:4326).
@@ -150,3 +172,5 @@ Il sera ensuite nécessaire de modifier quelques paramètres, après avoir défi
 * localisation des logos (sur les deux pages),
 * localisation des fichiers image via la formule (vue annuelle en page 1 et vue interannuelle en page 2),
 * et modification de la mise en page en fonction des goûts de chacun.
+
+Par défaut, les représentations graphiques (vues annuelles et interannuelles) doivent être placées dans le répertoire `/Atlas/Sorties/Vues/`.

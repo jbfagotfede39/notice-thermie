@@ -295,8 +295,8 @@ Le poids du manchon permet dans la grande majorité des cas une résistance suff
 </p>
 
 <!--- Description ----
-### Notices fabricants {#parametrage}
-### Paramétrage de Hoboware Pro {#parametrage}
+### Notices fabricants {#notices}
+### Paramétrage de Hoboware Pro {#parametragehobowarepro}
 ### Mise en fonctionnement d'une sonde {#lancementsonde}
 ### Vidange d'une sonde {#vidangesonde}
 ### Arrêt d'une sonde sans vidange {#arretsonde}

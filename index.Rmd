@@ -5,7 +5,8 @@ author:
 date: "`r Sys.Date()`"
 site: bookdown::bookdown_site
 documentclass: book
-bibliography: [book.bib, packages.bib]
+bibliography: [bibliographie.bib]
+#bibliography: [book.bib, packages.bib, bibliographie.bib]
 biblio-style: apalike
 link-citations: yes
 github-repo: 'https://github.com/jbfagotfede39/notice-thermie/'

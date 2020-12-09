@@ -24,7 +24,7 @@
 <meta name="author" content="Jean-Baptiste Fagot" />
 
 
-<meta name="date" content="2020-12-07" />
+<meta name="date" content="2020-12-09" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -116,6 +116,9 @@
 <li class="chapter" data-level="3.5.2" data-path="valorisation.html"><a href="valorisation.html#vueinterannuelleboxplot"><i class="fa fa-check"></i><b>3.5.2</b> Figures interannuelles</a></li>
 <li class="chapter" data-level="3.5.3" data-path="valorisation.html"><a href="valorisation.html#vueintersitescumul"><i class="fa fa-check"></i><b>3.5.3</b> Figures intersites</a></li>
 <li class="chapter" data-level="3.5.4" data-path="valorisation.html"><a href="valorisation.html#figures-de-préférendums-thermiques"><i class="fa fa-check"></i><b>3.5.4</b> Figures de préférendums thermiques</a></li>
+</ul></li>
+<li class="chapter" data-level="3.6" data-path="valorisation.html"><a href="valorisation.html#résultats"><i class="fa fa-check"></i><b>3.6</b> Résultats</a><ul>
+<li class="chapter" data-level="3.6.1" data-path="valorisation.html"><a href="valorisation.html#fichesresultats"><i class="fa fa-check"></i><b>3.6.1</b> Fiches résultats</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="conclusion.html"><a href="conclusion.html"><i class="fa fa-check"></i><b>4</b> Conclusion</a></li>
@@ -445,21 +448,6 @@ Ce chapitre contient les informations utiles à l’utilisation des différentes
 <li>Modification de la mise en page en fonction des goûts de chacun.</li>
 </ul>
 </div>
-<div id="fichesresultats" class="section level4">
-<h4><span class="header-section-number">3.4.1.2</span> Atlas des résultats</h4>
-<p>Cet atlas s’appuie sur un <a href="https://github.com/jbfagotfede39/notice-thermie/raw/master/data/Atlas/modele_atlas_resultats_chronique.qpt">autre modèle QGIS</a> et sur la table de résultats contenue dans le fichier
-<code>/Sorties/Résultats/Atlas_Resultats.geojson</code>
-(projection EPSG:4326).</p>
-<p>Il sera ensuite nécessaire de modifier quelques paramètres, après avoir défini directement dans QGIS l’aspect cartographique que l’on souhaite (fond, format des points, étiquettes, etc.) :</p>
-<ul>
-<li>couche de référence pour l’atlas,</li>
-<li>titre de l’atlas, en bas des deux pages,</li>
-<li>localisation des logos (sur les deux pages),</li>
-<li>localisation des fichiers image via la formule (vue annuelle en page 1 et vue interannuelle en page 2),</li>
-<li>et modification de la mise en page en fonction des goûts de chacun.</li>
-</ul>
-<p>Par défaut, les représentations graphiques (<a href="valorisation.html#vues">vues annuelles et interannuelles</a>) doivent être placées dans le répertoire <code>/Atlas/Sorties/Vues/</code>.</p>
-</div>
 </div>
 </div>
 <div id="vues" class="section level2">
@@ -482,7 +470,7 @@ Une vue synthétique d’une chronique annuelle est produite grâce à la foncti
 <li><strong>VMaxMoy30J</strong> (<code>Vmm30j = TRUE</code>) : affichage ou non de cette valeur, avec sa répartition temporelle.</li>
 </ul>
 <p style="text-align: justify;">
-L’intégralité de ces différentes modalités sont automatiquement générées par la fonction <code>chronique.traitement</code>, seul le cas ici présenté en figure <a href="valorisation.html#fig:vueannuelle">3.1</a> est utilisé dans les fiches atlas de résultats (section <a href="valorisation.html#fichesresultats">3.4.1.2</a>).
+L’intégralité de ces différentes modalités sont automatiquement générées par la fonction <code>chronique.traitement</code>, seul le cas ici présenté en figure <a href="valorisation.html#fig:vueannuelle">3.1</a> est utilisé dans les fiches atlas de résultats (section <a href="valorisation.html#fichesresultats">3.6.1</a>).
 </p>
 </div>
 <div id="vueinterannuelleboxplot" class="section level3">
@@ -542,7 +530,7 @@ La figure <a href="valorisation.html#fig:vueinterannuellecumul">3.3</a> permet d
 Une représentation des <strong>VMaxMoy30J</strong> en fonction de la <strong>distance à la source</strong> et des <strong>années de suivi</strong> est proposée sur la figure <a href="valorisation.html#fig:vueintersitesd0">3.4</a>. Les courbes ici proposées sont automatiquement générées pour chaque cours d’eau présent dans le jeu de données initial, et pour un minimum de 3 stations. Il est également possible, de manière manuelle, d’utiliser la fonction <code>chronique.figure.longitudinale</code> pour exploiter les résultats générés par <code>chronique.traitement</code> afin d’associer par exemple différents cours d’eau selon ses propres choix.
 </p>
 <div class="figure"><span id="fig:vueintersitesd0"></span>
-<img src="Figures/Vues/Intersites_thermie_He%CC%81risson.png" alt="Exemple de représentation des VMaxMoy30J le long du Hérisson (39) - Données FDPPMA39" width="80%" />
+<img src="Figures/Vues/Intersites_thermie_Herisson.png" alt="Exemple de représentation des VMaxMoy30J le long du Hérisson (39) - Données FDPPMA39" width="80%" />
 <p class="caption">
 Figure 3.4: Exemple de représentation des VMaxMoy30J le long du Hérisson (39) - Données FDPPMA39
 </p>
@@ -559,11 +547,35 @@ Figure 3.5: Exemple de représentation de préférendums thermiques d’espèces
 <p style="text-align: justify;">
 La température observée sur une station de suivi doit pouvoir être rapportée aux enjeux biologiques présents sur ce site. La fonction <code>chronique.figure.preferendums</code> permet de générer des représentations des plages de température de confort et de stress, dont un exemple est visible sur la figure <a href="valorisation.html#fig:vueipreferendumsthermiquesadulte">3.5</a>. On peut ici observer les températures de référence admises pour le stade adulte. D’autres valeurs sont accessibles pour les stades embryon, larve, et juvénile et pour la période de reproduction (jeu de données inclus dans <code>data(PoissonsPreferendumsThermiques)</code> - <span class="citation">Tissot and Souchon (<a href="#ref-Tissot_Synthesetolerancesthermiques_2010" role="doc-biblioref">2010</a>)</span>). Il est également possible d’y afficher ou non une valeur de VMaxMoy30J. Un affichage simultané des différents stades de vie est possible, comme sur la figure <a href="valorisation.html#fig:vueipreferendumsthermiquestousstades">3.6</a>.
 </p>
-<!-- Ajouter références biblio -->
 <div class="figure"><span id="fig:vueipreferendumsthermiquestousstades"></span>
 <img src="Figures/Vues/Vue_Preferendums_thermiques_tous_stades.png" alt="Exemple de représentation de préférendums thermiques d'espèces piscicoles pour tous les stades de vie avec une Tmm30j de 24°C" width="80%" />
 <p class="caption">
 Figure 3.6: Exemple de représentation de préférendums thermiques d’espèces piscicoles pour tous les stades de vie avec une Tmm30j de 24°C
+</p>
+</div>
+</div>
+</div>
+<div id="résultats" class="section level2">
+<h2><span class="header-section-number">3.6</span> Résultats</h2>
+<div id="fichesresultats" class="section level3">
+<h3><span class="header-section-number">3.6.1</span> Fiches résultats</h3>
+<p>La production semi-automatisée de fiches mises en forme des principaux résultats annuels par station est possible à partir des différentes sorties précédemment présentées (figures, indicateurs statistiques, etc.). Un exemple de fiche (recto-verso) est visible sur la figure <a href="valorisation.html#fig:vueficheatlasresultats">3.7</a>.</p>
+<p>Cet atlas s’appuie sur un <a href="https://github.com/jbfagotfede39/notice-thermie/raw/master/data/Atlas/modele_atlas_resultats_chronique.qpt">modèle QGIS</a> et sur la table de résultats contenue dans le fichier
+<code>/Sorties/Résultats/Atlas_Resultats.geojson</code>
+(projection EPSG:4326).</p>
+<p>Il sera ensuite nécessaire de modifier quelques paramètres, après avoir défini directement dans QGIS l’aspect cartographique que l’on souhaite (fond, format des points, étiquettes, etc.) :</p>
+<ul>
+<li>couche de référence pour l’atlas,</li>
+<li>titre de l’atlas, en bas des deux pages,</li>
+<li>localisation des logos (sur les deux pages),</li>
+<li>localisation des fichiers image via la formule (vue annuelle en page 1 et vue interannuelle en page 2),</li>
+<li>et modification de la mise en page en fonction des goûts de chacun.</li>
+</ul>
+<p>Par défaut, les représentations graphiques (<a href="valorisation.html#vues">vues annuelles et interannuelles</a>) doivent être placées dans le répertoire <code>/Atlas/Sorties/Vues/</code>.</p>
+<div class="figure"><span id="fig:vueficheatlasresultats"></span>
+<img src="Figures/Atlas/Exemple_fiche_atlas_resultats_recto.png" alt="Exemple de fiche synthétique de résultats annuels" width="50%" /><img src="Figures/Atlas/Exemple_fiche_atlas_resultats_verso.png" alt="Exemple de fiche synthétique de résultats annuels" width="50%" />
+<p class="caption">
+Figure 3.7: Exemple de fiche synthétique de résultats annuels
 </p>
 </div>
 

@@ -135,22 +135,6 @@ Il sera ensuite nécessaire de modifier quelques paramètres, après avoir défi
 * localisation des fichiers image via la formule (photo de la station),
 * Modification de la mise en page en fonction des goûts de chacun.
 
-#### Atlas des résultats {#fichesresultats}
-Cet atlas s'appuie sur un [autre modèle QGIS](https://github.com/jbfagotfede39/notice-thermie/raw/master/data/Atlas/modele_atlas_resultats_chronique.qpt) et sur la table de résultats contenue dans le fichier 
- `/Sorties/Résultats/Atlas_Resultats.geojson`
- (projection EPSG:4326).
-
-Il sera ensuite nécessaire de modifier quelques paramètres, après avoir défini directement dans QGIS l'aspect cartographique que l'on souhaite (fond, format des points, étiquettes, etc.) :
-
-* couche de référence pour l'atlas,
-* titre de l'atlas, en bas des deux pages,
-* localisation des logos (sur les deux pages),
-* localisation des fichiers image via la formule (vue annuelle en page 1 et vue interannuelle en page 2),
-* et modification de la mise en page en fonction des goûts de chacun.
-
-Par défaut, les représentations graphiques ([vues annuelles et interannuelles](#vues)) doivent être placées dans le répertoire `/Atlas/Sorties/Vues/`.
-
-
 ## Figures {#vues}
 Différentes figures peuvent être générées à partir des chroniques disponibles. Ces multiples représentations permettent de s'intéresser à différentes thématiques.
 
@@ -211,7 +195,7 @@ Une représentation des **VMaxMoy30J** en fonction de la **distance à la source
 </p>
 
 ```{r vueintersitesd0, echo=FALSE, fig.cap="Exemple de représentation des VMaxMoy30J le long du Hérisson (39) - Données FDPPMA39", out.width="80%"}
-knitr::include_graphics('Figures/Vues/Intersites_thermie_Hérisson.png')
+knitr::include_graphics('Figures/Vues/Intersites_thermie_Herisson.png')
 ```
 
 ### Figures de préférendums thermiques
@@ -223,8 +207,31 @@ knitr::include_graphics('Figures/Vues/Vue_Preferendums_thermiques_adulte.png')
 La température observée sur une station de suivi doit pouvoir être rapportée aux enjeux biologiques présents sur ce site. La fonction `chronique.figure.preferendums` permet de générer des représentations des plages de température de confort et de stress, dont un exemple est visible sur la figure \@ref(fig:vueipreferendumsthermiquesadulte). On peut ici observer les températures de référence admises pour le stade adulte. D'autres valeurs sont accessibles pour les stades embryon, larve, et juvénile et pour la période de reproduction (jeu de données inclus dans `data(PoissonsPreferendumsThermiques)` - @Tissot_Synthesetolerancesthermiques_2010). Il est également possible d'y afficher ou non une valeur de VMaxMoy30J. Un affichage simultané des différents stades de vie est possible, comme sur la figure \@ref(fig:vueipreferendumsthermiquestousstades).
 </p>
 
-<!-- Ajouter références biblio -->
-
 ```{r vueipreferendumsthermiquestousstades, echo=FALSE, fig.cap="Exemple de représentation de préférendums thermiques d'espèces piscicoles pour tous les stades de vie avec une Tmm30j de 24°C", out.width="80%"}
 knitr::include_graphics('Figures/Vues/Vue_Preferendums_thermiques_tous_stades.png')
+```
+
+## Résultats
+
+### Fiches résultats {#fichesresultats}
+La production semi-automatisée de fiches mises en forme des principaux résultats annuels par station est possible à partir des différentes sorties précédemment présentées (figures, indicateurs statistiques, etc.). Un exemple de fiche (recto-verso) est visible sur la figure \@ref(fig:vueficheatlasresultats).
+
+Cet atlas s'appuie sur un [modèle QGIS](https://github.com/jbfagotfede39/notice-thermie/raw/master/data/Atlas/modele_atlas_resultats_chronique.qpt) et sur la table de résultats contenue dans le fichier 
+ `/Sorties/Résultats/Atlas_Resultats.geojson`
+ (projection EPSG:4326).
+
+Il sera ensuite nécessaire de modifier quelques paramètres, après avoir défini directement dans QGIS l'aspect cartographique que l'on souhaite (fond, format des points, étiquettes, etc.) :
+
+* couche de référence pour l'atlas,
+* titre de l'atlas, en bas des deux pages,
+* localisation des logos (sur les deux pages),
+* localisation des fichiers image via la formule (vue annuelle en page 1 et vue interannuelle en page 2),
+* et modification de la mise en page en fonction des goûts de chacun.
+
+Par défaut, les représentations graphiques ([vues annuelles et interannuelles](#vues)) doivent être placées dans le répertoire `/Atlas/Sorties/Vues/`.
+
+
+```{r vueficheatlasresultats, echo=FALSE, fig.show="hold", fig.cap="Exemple de fiche synthétique de résultats annuels", out.width="50%"}
+knitr::include_graphics('Figures/Atlas/Exemple_fiche_atlas_resultats_recto.png')
+knitr::include_graphics('Figures/Atlas/Exemple_fiche_atlas_resultats_verso.png')
 ```

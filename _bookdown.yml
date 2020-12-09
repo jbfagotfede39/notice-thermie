@@ -2,6 +2,9 @@
 book_filename: "Notice_outils_thermie"
 delete_merged_file: true
 language:
+  label:
+    tab: 'Tableau '
   ui:
     chapter_name: "Chapitre "
+    appendix_name: "Annexe "
 output_dir: "docs"

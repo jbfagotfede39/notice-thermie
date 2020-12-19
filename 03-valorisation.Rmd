@@ -1,3 +1,8 @@
+---
+output:
+  html_document: default
+  pdf_document: default
+---
 ```{r couleurtexte, echo=FALSE}
 colorize <- function(x, color) {
   if (knitr::is_latex_output()) {
@@ -8,6 +13,13 @@ colorize <- function(x, color) {
   } else x
 }
 ```
+
+```{r packages, echo=FALSE}
+library(knitr)
+library(pander)
+library(tidyverse)
+```
+
 # Valorisation
 <p style="text-align: justify;">
 Ce chapitre contient les informations utiles à l'utilisation des différentes valorisations générées par l'outil de traitement. Un exemple de jeu de données généré par la fonction `chronique.traitement()` est téléchargeable à l'[adresse suivante](https://github.com/jbfagotfede39/notice-thermie/raw/master/data/Sortie/Exemple_sorties_outils_thermie.zip).

@@ -1,3 +1,15 @@
+---
+output:
+  html_document: default
+  pdf_document: default
+---
+
+```{r packages, echo=FALSE}
+library(knitr)
+library(pander)
+library(tidyverse)
+```
+
 # Acquisition des données
 
 ## Recommandations générales
@@ -90,6 +102,8 @@ Une première partie traite des données relatives aux **stations**, puis celles
     * chsta_profsonde	: profondeur d'eau sous la sonde à l'étiage, en mètres
     * chsta_substrats : substrat en présence sous la sonde (FIN, GAL, GRA, etc.)
     * chsta_distberge : distance à la berge, en mètres
+    * chsta_ombrage : importance relative de l'ombrage à l'endroit où la sonde a été placée : TF = Très Faible ; F = Faible ; M = Moyen ; I = Important ; TI = Très Important
+    * chsta_facies : faciès d''écoulement dans lequel la sonde a été placée : RAD = radier/rapide ; PLC= plat courant ; PLT = plat lent ; CHELOT = chenal lotique ; CHELENT = chenal lentique ; MOU = mouille/fosse
     * chsta_numphoto : Nom du fichier de la photographie de l'emplacement de la sonde, annoté si besoin
     * chsta_zcapteur : **Laisser vide**
     * chsta_zbouchon : **Laisser vide**
@@ -106,17 +120,14 @@ Une première partie traite des données relatives aux **stations**, puis celles
     * chsvi_mo : Nom du maître d'ouvrage
     * chsvi_operateurs : nom des opérateurs le jour de l'intervention
     * chsvi_coderhj : code de la station fourni par le RSTMAJ. Pas d'espace : tous les caractères doivent être accolés.
-    * chsvi_date : date de l'intervention, format 2015-10-07 pour le 7 octobre 2015
-    * chsvi_heure : heure d'intervention, format 09:35:00
+    * chsvi_date : date de l'intervention, format `2015-10-07` pour le 7 octobre 2015
+    * chsvi_heure : heure d'intervention, format `09:35:00`
     * chsvi_capteur : numéro du capteur
     * chsvi_valeur : température relevée avec un thermomètre manuel
     * chsvi_action : Relève, Pose, Dépose, Disparue **(si on effectue un remplacement, saisir deux lignes pour la même station** : une en dépose avec le numéro du capteur enlevé, une en pose avec le numéro du capteur remis en place, avec les mêmes dates, heures et autres paramètres). Dans le cas d'une **sonde disparue**, bien compléter le numéro de sonde en allant **vérifier celui noté lors de la dernière relève**.
     * chsvi_fonctionnement : si l'opération s'est bien déroulée ou non
     * chsvi_remarques : si des points complémentaires sont à noter
     * chsvi_actionafaire : opérations à effectuer lors du prochain passage.
-
-### Saisie des commentaires des chroniques {#saisiecommentaire}
-* Saisie des commentaires des chroniques annuelles dans le [fichier ci-joint](https://github.com/jbfagotfede39/notice-thermie/raw/master/data/Commentaires/Saisie_commentaires_chroniques.xlsx) afin que celles-ci soient réutilisées pour générer les fiches atlas de résultats.
 
 ### Envoi des informations de pose et/ou de suivi {#envoisuivi}
 Les envois des données relatives aux différentes situations présentées ci-dessous sont à réaliser vers [jean-baptiste.fagot@peche-jura.com](mailto:jean-baptiste.fagot@peche-jura.com?subject=[RSTMAJ]%20Envoi%20données%20thermie), directement en pièce jointe au sein d'une archive (.zip, .rar ou autre) ou à travers une plateforme de transfert (Dropbox, WeTransfer, etc).
@@ -136,6 +147,25 @@ Les envois des données relatives aux différentes situations présentées ci-de
 * Dans le cas de l'**arrêt d'une station** :
 	* Liste des stations arrêtées.
 	* Fichiers cités ci-dessus dans le cas d'un suivi courant.
+
+### Saisie des données relatives aux capteurs {#saisiecapteur}
+* Saisie des données relatives aux capteurs dans le [fichier ci-joint](https://github.com/jbfagotfede39/notice-thermie/raw/master/data/Capteurs/Saisie_capteurs_chroniques.xlsx) afin que celles-ci soient réutilisées pour générer les exportations des données au format d'échange AE-OFB. Ce fichier peut également servir à chaque maître d'ouvrage pour la **gestion** de son **parc de capteurs**.
+
+* Les différents champs correspondent aux informations suivantes, avec une ligne par capteur :
+    * chcap_proprietaire : Nom du propriétaire du capteur : "OFB", "CD39_CR_Ain", "CD39_RDM", "DREAL", "FDPPMA39", "PNRHJ", "SMDL", "SR3A", etc.
+    * chcap_typecapteur : Type de capteur : "Thermie", "Piézométrie", "Oxygène", etc.
+    * chcap_modelecapteur : Modèle de capteur : "Hobo UA-001-64", "Hobo U20-001-04", etc.
+    * chcap_numerocapteur : Identifiant unique du capteur : "20357972", "N2296", etc.
+    * chcap_etat : État actuel du capteur : "OK", "HS", etc.
+    * chcap_projet : Éventuel projet de rattachement du capteur : "PDPG", "Étude Bienne", etc.
+    * chcap_originecapteur : "Achat", "Remplacement garantie", etc.
+    * chcap_datedebut : Date d'acquisition du capteur : format `2013-07-23`
+    * chcap_datefin : Éventuelle date de fin de fonctionnement du capteur/mise au rebut : format `2013-07-23`
+    * chcap_remarques : Remarques éventuelles à apporter
+
+### Saisie des commentaires des chroniques {#saisiecommentaire}
+* Saisie des commentaires des chroniques annuelles dans le [fichier ci-joint](https://github.com/jbfagotfede39/notice-thermie/raw/master/data/Commentaires/Saisie_commentaires_chroniques.xlsx) afin que celles-ci soient réutilisées pour générer les fiches atlas de résultats.
+
 
 ## Matériel
 ### Liste générale de matériel {#materiel}
@@ -192,7 +222,7 @@ La plupart des maîtres d'ouvrage du département utilisent du matériel de la m
 
 ```{r vuemateriel2, echo=FALSE}
 # https://stackoverflow.com/questions/50108763/how-to-insert-images-into-table-in-r-markdown
-panderOptions('table.split.table', 300) # Pour que tout tienne sur la largeur de la page
+pander::panderOptions('table.split.table', 300) # Pour que tout tienne sur la largeur de la page
 
 tibble::tribble(
         ~Référence, ~Type, ~Vue, ~Détails, ~`Prix approximatif`,

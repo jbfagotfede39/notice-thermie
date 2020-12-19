@@ -1,7 +1,18 @@
 --- 
 title: "Chroniques de température de milieux aquatiques"
 author: 
-  - Jean-Baptiste Fagot^[Fédération du Jura pour la Pêche et la Protection du Milieu Aquatique, jean-baptiste.fagot@peche-jura.com]
+  - name: Jean-Baptiste Fagot
+    email: jean-baptiste.fagot@peche-jura.com
+    affiliation: Fédération du Jura pour la Pêche et la Protection du Milieu Aquatique
+header-includes:
+- |
+  ```{=latex}
+  \usepackage{authblk}
+  \author{Jean-Baptiste Fagot\\ jean-baptiste.fagot@peche-jura.com}
+  \affil{Fédération du Jura pour la Pêche et la Protection du Milieu Aquatique \\
+         \href{https://www.peche-jura.com/}{\texttt{https://www.peche-jura.com/}} 
+        }
+  ```
 date: "`r Sys.Date()`"
 site: bookdown::bookdown_site
 documentclass: book

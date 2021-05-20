@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapitre 2 Acquisition des données | Chroniques de température de milieux aquatiques</title>
   <meta name="description" content="Ce document présente l’utilisation d’outils d’acquisition et de traitement de chroniques de température de milieux aquatiques développés dans le cadre du RSTMAJ." />
-  <meta name="generator" content="bookdown 0.20 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapitre 2 Acquisition des données | Chroniques de température de milieux aquatiques" />
   <meta property="og:type" content="book" />
@@ -23,7 +23,7 @@
 
 
 
-<meta name="date" content="2020-12-18" />
+<meta name="date" content="2021-05-20" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -32,6 +32,7 @@
   
 <link rel="prev" href="intro.html"/>
 <link rel="next" href="valorisation.html"/>
+<script src="libs/header-attrs-2.8/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -49,7 +50,9 @@
 
 
 
-<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+
 
 
 
@@ -71,44 +74,54 @@
 <li class="divider"></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Introduction</a></li>
 <li class="chapter" data-level="1" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>1</b> Cadre général</a></li>
-<li class="chapter" data-level="2" data-path="acquisition-des-données.html"><a href="acquisition-des-données.html"><i class="fa fa-check"></i><b>2</b> Acquisition des données</a><ul>
+<li class="chapter" data-level="2" data-path="acquisition-des-données.html"><a href="acquisition-des-données.html"><i class="fa fa-check"></i><b>2</b> Acquisition des données</a>
+<ul>
 <li class="chapter" data-level="2.1" data-path="acquisition-des-données.html"><a href="acquisition-des-données.html#recommandations-générales"><i class="fa fa-check"></i><b>2.1</b> Recommandations générales</a></li>
-<li class="chapter" data-level="2.2" data-path="acquisition-des-données.html"><a href="acquisition-des-données.html#chronologie"><i class="fa fa-check"></i><b>2.2</b> Aide-mémoire chronologique</a><ul>
+<li class="chapter" data-level="2.2" data-path="acquisition-des-données.html"><a href="acquisition-des-données.html#chronologie"><i class="fa fa-check"></i><b>2.2</b> Aide-mémoire chronologique</a>
+<ul>
 <li class="chapter" data-level="2.2.1" data-path="acquisition-des-données.html"><a href="acquisition-des-données.html#avant"><i class="fa fa-check"></i><b>2.2.1</b> Avant</a></li>
 <li class="chapter" data-level="2.2.2" data-path="acquisition-des-données.html"><a href="acquisition-des-données.html#pendant"><i class="fa fa-check"></i><b>2.2.2</b> Pendant</a></li>
 <li class="chapter" data-level="2.2.3" data-path="acquisition-des-données.html"><a href="acquisition-des-données.html#apres"><i class="fa fa-check"></i><b>2.2.3</b> Après</a></li>
 </ul></li>
-<li class="chapter" data-level="2.3" data-path="acquisition-des-données.html"><a href="acquisition-des-données.html#saisie"><i class="fa fa-check"></i><b>2.3</b> Saisie</a><ul>
+<li class="chapter" data-level="2.3" data-path="acquisition-des-données.html"><a href="acquisition-des-données.html#saisie"><i class="fa fa-check"></i><b>2.3</b> Saisie</a>
+<ul>
 <li class="chapter" data-level="2.3.1" data-path="acquisition-des-données.html"><a href="acquisition-des-données.html#saisiestations"><i class="fa fa-check"></i><b>2.3.1</b> Saisie des caractéristiques des stations</a></li>
 <li class="chapter" data-level="2.3.2" data-path="acquisition-des-données.html"><a href="acquisition-des-données.html#saisiesuivi"><i class="fa fa-check"></i><b>2.3.2</b> Saisie des suivis de relève</a></li>
 <li class="chapter" data-level="2.3.3" data-path="acquisition-des-données.html"><a href="acquisition-des-données.html#envoisuivi"><i class="fa fa-check"></i><b>2.3.3</b> Envoi des informations de pose et/ou de suivi</a></li>
 <li class="chapter" data-level="2.3.4" data-path="acquisition-des-données.html"><a href="acquisition-des-données.html#saisiecapteur"><i class="fa fa-check"></i><b>2.3.4</b> Saisie des données relatives aux capteurs</a></li>
 <li class="chapter" data-level="2.3.5" data-path="acquisition-des-données.html"><a href="acquisition-des-données.html#saisiecommentaire"><i class="fa fa-check"></i><b>2.3.5</b> Saisie des commentaires des chroniques</a></li>
 </ul></li>
-<li class="chapter" data-level="2.4" data-path="acquisition-des-données.html"><a href="acquisition-des-données.html#matériel"><i class="fa fa-check"></i><b>2.4</b> Matériel</a><ul>
+<li class="chapter" data-level="2.4" data-path="acquisition-des-données.html"><a href="acquisition-des-données.html#matériel"><i class="fa fa-check"></i><b>2.4</b> Matériel</a>
+<ul>
 <li class="chapter" data-level="2.4.1" data-path="acquisition-des-données.html"><a href="acquisition-des-données.html#materiel"><i class="fa fa-check"></i><b>2.4.1</b> Liste générale de matériel</a></li>
 <li class="chapter" data-level="2.4.2" data-path="acquisition-des-données.html"><a href="acquisition-des-données.html#exemples-de-références-du-matériel"><i class="fa fa-check"></i><b>2.4.2</b> Exemples de références du matériel</a></li>
 </ul></li>
-<li class="chapter" data-level="2.5" data-path="acquisition-des-données.html"><a href="acquisition-des-données.html#fonctionnementmateriel"><i class="fa fa-check"></i><b>2.5</b> Fonctionnement du matériel</a><ul>
+<li class="chapter" data-level="2.5" data-path="acquisition-des-données.html"><a href="acquisition-des-données.html#fonctionnementmateriel"><i class="fa fa-check"></i><b>2.5</b> Fonctionnement du matériel</a>
+<ul>
 <li class="chapter" data-level="2.5.1" data-path="acquisition-des-données.html"><a href="acquisition-des-données.html#montageancrage"><i class="fa fa-check"></i><b>2.5.1</b> Montage d’ancrage</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="3" data-path="valorisation.html"><a href="valorisation.html"><i class="fa fa-check"></i><b>3</b> Valorisation</a><ul>
+<li class="chapter" data-level="3" data-path="valorisation.html"><a href="valorisation.html"><i class="fa fa-check"></i><b>3</b> Valorisation</a>
+<ul>
 <li class="chapter" data-level="3.1" data-path="valorisation.html"><a href="valorisation.html#arborescence"><i class="fa fa-check"></i><b>3.1</b> Arborescence</a></li>
 <li class="chapter" data-level="3.2" data-path="valorisation.html"><a href="valorisation.html#agregation"><i class="fa fa-check"></i><b>3.2</b> Données</a></li>
-<li class="chapter" data-level="3.3" data-path="valorisation.html"><a href="valorisation.html#resultats"><i class="fa fa-check"></i><b>3.3</b> Résultats - Indicateurs statistiques</a><ul>
+<li class="chapter" data-level="3.3" data-path="valorisation.html"><a href="valorisation.html#resultats"><i class="fa fa-check"></i><b>3.3</b> Résultats - Indicateurs statistiques</a>
+<ul>
 <li class="chapter" data-level="3.3.1" data-path="valorisation.html"><a href="valorisation.html#définition-des-acronymes"><i class="fa fa-check"></i><b>3.3.1</b> Définition des acronymes</a></li>
 </ul></li>
-<li class="chapter" data-level="3.4" data-path="valorisation.html"><a href="valorisation.html#stations"><i class="fa fa-check"></i><b>3.4</b> Stations</a><ul>
+<li class="chapter" data-level="3.4" data-path="valorisation.html"><a href="valorisation.html#stations"><i class="fa fa-check"></i><b>3.4</b> Stations</a>
+<ul>
 <li class="chapter" data-level="3.4.1" data-path="valorisation.html"><a href="valorisation.html#atlas-qgis"><i class="fa fa-check"></i><b>3.4.1</b> Atlas QGIS</a></li>
 </ul></li>
-<li class="chapter" data-level="3.5" data-path="valorisation.html"><a href="valorisation.html#vues"><i class="fa fa-check"></i><b>3.5</b> Figures</a><ul>
+<li class="chapter" data-level="3.5" data-path="valorisation.html"><a href="valorisation.html#vues"><i class="fa fa-check"></i><b>3.5</b> Figures</a>
+<ul>
 <li class="chapter" data-level="3.5.1" data-path="valorisation.html"><a href="valorisation.html#vueannuelle"><i class="fa fa-check"></i><b>3.5.1</b> Figures annuelles</a></li>
-<li class="chapter" data-level="3.5.2" data-path="valorisation.html"><a href="valorisation.html#vueinterannuelleboxplot"><i class="fa fa-check"></i><b>3.5.2</b> Figures interannuelles</a></li>
+<li class="chapter" data-level="3.5.2" data-path="valorisation.html"><a href="valorisation.html#vueinterannuelle"><i class="fa fa-check"></i><b>3.5.2</b> Figures interannuelles</a></li>
 <li class="chapter" data-level="3.5.3" data-path="valorisation.html"><a href="valorisation.html#vueintersitescumul"><i class="fa fa-check"></i><b>3.5.3</b> Figures intersites</a></li>
 <li class="chapter" data-level="3.5.4" data-path="valorisation.html"><a href="valorisation.html#figures-de-préférendums-thermiques"><i class="fa fa-check"></i><b>3.5.4</b> Figures de préférendums thermiques</a></li>
 </ul></li>
-<li class="chapter" data-level="3.6" data-path="valorisation.html"><a href="valorisation.html#résultats"><i class="fa fa-check"></i><b>3.6</b> Résultats</a><ul>
+<li class="chapter" data-level="3.6" data-path="valorisation.html"><a href="valorisation.html#résultats"><i class="fa fa-check"></i><b>3.6</b> Résultats</a>
+<ul>
 <li class="chapter" data-level="3.6.1" data-path="valorisation.html"><a href="valorisation.html#fichesresultats"><i class="fa fa-check"></i><b>3.6.1</b> Fiches résultats</a></li>
 </ul></li>
 </ul></li>
@@ -133,9 +146,9 @@
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="acquisition-des-données" class="section level1">
+<div id="acquisition-des-données" class="section level1" number="2">
 <h1><span class="header-section-number">Chapitre 2</span> Acquisition des données</h1>
-<div id="recommandations-générales" class="section level2">
+<div id="recommandations-générales" class="section level2" number="2.1">
 <h2><span class="header-section-number">2.1</span> Recommandations générales</h2>
 <p>Cette première partie du guide doit être lue comme une proposition d’organisation chronologie de chaque étape à accomplir pour l’acquisition de données de terrain : avant (section <a href="acquisition-des-données.html#avant">2.2.1</a>), pendant (section <a href="acquisition-des-données.html#pendant">2.2.2</a>) et après (section <a href="acquisition-des-données.html#apres">2.2.3</a>) les relèves. Dans chacune de ces parties se trouvent des renvois vers les détails de chaque procédure. Il faut ensuite revenir au point qui était en cours de traitement pour ne pas oublier d’étape.</p>
 <hr />
@@ -147,34 +160,34 @@
 </ul>
 <hr />
 </div>
-<div id="chronologie" class="section level2">
+<div id="chronologie" class="section level2" number="2.2">
 <h2><span class="header-section-number">2.2</span> Aide-mémoire chronologique</h2>
-<div id="avant" class="section level3">
+<div id="avant" class="section level3" number="2.2.1">
 <h3><span class="header-section-number">2.2.1</span> Avant</h3>
 <ul>
-<li>Vérifier que le matériel nécessaire est prêt et disponible (voir liste globale en <a href="acquisition-des-données.html#materiel">2.4.1</a>) :
+<li><p>Vérifier que le matériel nécessaire est prêt et disponible (voir liste globale en <a href="acquisition-des-données.html#materiel">2.4.1</a>) :</p>
 <ul>
 <li>Charger l’ordinateur et le GPS</li>
 <li>Vérifier s’il reste des tubes de protection et des lests d’avance</li>
 </ul></li>
-<li>Lancer des sondes à l’avance (voir section <a href="#lancementsonde"><strong>??</strong></a>)</li>
-<li>Vérifier si l’horloge de la navette est bien synchronisée et les piles ok (voir section <a href="#lancementnavette"><strong>??</strong></a>)</li>
-<li>Imprimer la dernière version de l’atlas</li>
-<li>Imprimer le dernier état des stations, avec notamment les tâches à réaliser</li>
-<li>Faire le point sur les opérations notées à réaliser sur chaque station à partir de la tournée précédente et préparer le matériel nécessaire en fonction</li>
-<li>Vérifier les débits (<a href="http://www.rdbrmc.com/hydroreel2/listestation.php?dep=39">http://www.rdbrmc.com/hydroreel2/listestation.php?dep=39</a>)</li>
+<li><p>Lancer des sondes à l’avance (voir section <a href="#lancementsonde"><strong>??</strong></a>)</p></li>
+<li><p>Vérifier si l’horloge de la navette est bien synchronisée et les piles ok (voir section <a href="#lancementnavette"><strong>??</strong></a>)</p></li>
+<li><p>Imprimer la dernière version de l’atlas</p></li>
+<li><p>Imprimer le dernier état des stations, avec notamment les tâches à réaliser</p></li>
+<li><p>Faire le point sur les opérations notées à réaliser sur chaque station à partir de la tournée précédente et préparer le matériel nécessaire en fonction</p></li>
+<li><p>Vérifier les débits (<a href="http://www.rdbrmc.com/hydroreel2/listestation.php?dep=39" class="uri">http://www.rdbrmc.com/hydroreel2/listestation.php?dep=39</a>)</p></li>
 </ul>
 </div>
-<div id="pendant" class="section level3">
+<div id="pendant" class="section level3" number="2.2.2">
 <h3><span class="header-section-number">2.2.2</span> Pendant</h3>
 <ul>
-<li>Calendrier :
+<li><p>Calendrier :</p>
 <ul>
 <li>Si deux tournées annuelles : au cours des mois d’avril et d’octobre</li>
 <li>Si trois tournées annuelles : au cours des mois de février-mars, de mai-juin et d’octobre</li>
 </ul></li>
-<li>Tournée à organiser géographiquement en fonction de l’atlas</li>
-<li>Au niveau de chaque station :
+<li><p>Tournée à organiser géographiquement en fonction de l’atlas</p></li>
+<li><p>Au niveau de chaque station :</p>
 <ul>
 <li>Localiser la sonde</li>
 <li>Placer le thermomètre manuel</li>
@@ -185,10 +198,10 @@
 </ul></li>
 </ul>
 </div>
-<div id="apres" class="section level3">
+<div id="apres" class="section level3" number="2.2.3">
 <h3><span class="header-section-number">2.2.3</span> Après</h3>
 <ul>
-<li>Traitement des données :
+<li><p>Traitement des données :</p>
 <ul>
 <li>Saisies des données de description des stations (si installation de nouvelles stations) (voir section <a href="acquisition-des-données.html#saisiestations">2.3.1</a>)</li>
 <li>Scan/photocopie du cahier de suivi pour les dernières opérations et transmission</li>
@@ -196,27 +209,27 @@
 <li>Vidange des données de la navette (voir section <a href="#vidangenavette"><strong>??</strong></a>) et/ou des sondes défectueuses</li>
 <li>Transmission des fichiers (voir section <a href="acquisition-des-données.html#envoisuivi">2.3.3</a>)</li>
 </ul></li>
-<li>Arrêter les sondes non utilisées (voir section <a href="#arretsonde"><strong>??</strong></a>)</li>
-<li>Remettre le matériel en état (changement des piles, des boîtiers, etc.)</li>
-<li>Commander le matériel manquant pour la prochaine tournée.</li>
+<li><p>Arrêter les sondes non utilisées (voir section <a href="#arretsonde"><strong>??</strong></a>)</p></li>
+<li><p>Remettre le matériel en état (changement des piles, des boîtiers, etc.)</p></li>
+<li><p>Commander le matériel manquant pour la prochaine tournée.</p></li>
 </ul>
 </div>
 </div>
-<div id="saisie" class="section level2">
+<div id="saisie" class="section level2" number="2.3">
 <h2><span class="header-section-number">2.3</span> Saisie</h2>
 <p>L’objectif de ce chapitre est de préciser les formats de saisie des informations au sein des champs contenus dans les fichiers “modèles” de rendu des données. L’objectif est que tous les acteurs travaillent avec ces mêmes formats, facilitant alors le stockage, la transmission et le traitement de ces résultats.</p>
 <p>Une première partie traite des données relatives aux <strong>stations</strong>, puis celles relatives aux <strong>suivis de terrain</strong> et aux éventuels <strong>commentaires</strong> annuels des chroniques, puis enfin les <strong>différents fichiers à transmettre</strong> suite à une campagne de terrain.</p>
-<div id="saisiestations" class="section level3">
+<div id="saisiestations" class="section level3" number="2.3.1">
 <h3><span class="header-section-number">2.3.1</span> Saisie des caractéristiques des stations</h3>
 <ul>
-<li>Complément sur le terrain des informations de la station sur la fiche <a href="https://github.com/jbfagotfede39/notice-thermie/raw/master/data/Stations/Fiche_pose_sonde_thermique_simple.pdf">recto</a> ou <a href="https://github.com/jbfagotfede39/notice-thermie/raw/master/data/Stations/Fiche_pose_sonde_thermique_double.pdf">recto-verso</a></li>
-<li>Saisie des informations de terrain concernant les stations dans le <a href="https://github.com/jbfagotfede39/notice-thermie/raw/master/data/Stations/Saisie_stations_chroniques.xlsx">fichier excel</a> (ou <a href="https://github.com/jbfagotfede39/notice-thermie/raw/master/data/Stations/Saisie_stations_chroniques_avec_champs_complementaires.xlsx">cette version plus large</a> pour les collectivités extérieures au département et souhaitant générer les fiches atlas de résultats, avec complément des champs adéquats : chsta_distancesource, chsta_typetheorique, chsta_altitude, chsta_codecontextepdpg)</li>
-<li>Complément des différents champs :
+<li><p>Complément sur le terrain des informations de la station sur la fiche <a href="https://github.com/jbfagotfede39/notice-thermie/raw/master/data/Stations/Fiche_pose_sonde_thermique_simple.pdf">recto</a> ou <a href="https://github.com/jbfagotfede39/notice-thermie/raw/master/data/Stations/Fiche_pose_sonde_thermique_double.pdf">recto-verso</a></p></li>
+<li><p>Saisie des informations de terrain concernant les stations dans le <a href="https://github.com/jbfagotfede39/notice-thermie/raw/master/data/Stations/Saisie_stations_chroniques.xlsx">fichier excel</a> (ou <a href="https://github.com/jbfagotfede39/notice-thermie/raw/master/data/Stations/Saisie_stations_chroniques_avec_champs_complementaires.xlsx">cette version plus large</a> pour les collectivités extérieures au département et souhaitant générer les fiches atlas de résultats, avec complément des champs adéquats : chsta_distancesource, chsta_typetheorique, chsta_altitude, chsta_codecontextepdpg et chsta_sprep - séparer les codes espèces par des virgules)</p></li>
+<li><p>Complément des différents champs :</p>
 <ul>
 <li>chsta_coderhj : code d’identification de la station propre au RSTMAJ. <strong>Laisser vide</strong></li>
 <li>chsta_codemo : code d’identification de la station propre à chaque maître d’ouvrage</li>
 <li>chsta_codesie : si la station possède un code dans le SIE de l’AERMC</li>
-<li>chsta_mo : Nom du maître d’ouvrage : “OFB”, “CD39_CR_Ain”, “CD39_RDM”, “DREAL”, “FJPPMA”, “PNRHJ”, “SMDL”, “SR3A”</li>
+<li>chsta_mo : Nom du maître d’ouvrage : “OFB,” “CD39_CR_Ain,” “CD39_RDM,” “DREAL,” “FJPPMA,” “PNRHJ,” “SMDL,” “SR3A”</li>
 <li>chsta_milieu : Nom de l’écosystème (cours d’eau ou plan d’eau)</li>
 <li>chsta_coord_x et chsta_coord_y : Coordonnées précises de la sonde en <strong>Lambert 93</strong></li>
 <li>chsta_fonctionnement : “En cours” ou “Arrêté”</li>
@@ -250,14 +263,14 @@
 </ul></li>
 </ul>
 </div>
-<div id="saisiesuivi" class="section level3">
+<div id="saisiesuivi" class="section level3" number="2.3.2">
 <h3><span class="header-section-number">2.3.2</span> Saisie des suivis de relève</h3>
 <ul>
-<li>Afin de constituer un “cahier de terrain”, impression et reliure de <a href="https://github.com/jbfagotfede39/notice-thermie/raw/master/data/Suivi_terrain/Fiches_suivi_terrain_chronique.pdf">ce document</a></li>
-<li>Saisie des informations de suivi de terrain dans le <a href="https://github.com/jbfagotfede39/notice-thermie/raw/master/data/Suivi_terrain/Saisie_suivi_terrain_chronique.xlsx">fichier excel</a></li>
-<li><strong>Créer deux lignes en cas de remplacement d’une sonde</strong> : une ligne avec l’ancien numéro de sonde, une avec le nouveau, toutes les autres données étant identiques.</li>
-<li>Dans le cas d’une sonde disparue, bien compléter le numéro de sonde en allant vérifier celui noté lors de la dernière relève</li>
-<li>Complément des différents champs :
+<li><p>Afin de constituer un “cahier de terrain,” impression et reliure de <a href="https://github.com/jbfagotfede39/notice-thermie/raw/master/data/Suivi_terrain/Fiches_suivi_terrain_chronique.pdf">ce document</a></p></li>
+<li><p>Saisie des informations de suivi de terrain dans le <a href="https://github.com/jbfagotfede39/notice-thermie/raw/master/data/Suivi_terrain/Saisie_suivi_terrain_chronique.xlsx">fichier excel</a></p></li>
+<li><p><strong>Créer deux lignes en cas de remplacement d’une sonde</strong> : une ligne avec l’ancien numéro de sonde, une avec le nouveau, toutes les autres données étant identiques.</p></li>
+<li><p>Dans le cas d’une sonde disparue, bien compléter le numéro de sonde en allant vérifier celui noté lors de la dernière relève</p></li>
+<li><p>Complément des différents champs :</p>
 <ul>
 <li>chsvi_mo : Nom du maître d’ouvrage</li>
 <li>chsvi_operateurs : nom des opérateurs le jour de l’intervention</li>
@@ -266,6 +279,7 @@
 <li>chsvi_heure : heure d’intervention, format <code>09:35:00</code></li>
 <li>chsvi_capteur : numéro du capteur</li>
 <li>chsvi_valeur : température relevée avec un thermomètre manuel</li>
+<li>chsvi_profondeur : hauteur d’eau entre la surface et la sonde au moment de la relève, en mètres</li>
 <li>chsvi_action : Relève, Pose, Dépose, Disparue <strong>(si on effectue un remplacement, saisir deux lignes pour la même station</strong> : une en dépose avec le numéro du capteur enlevé, une en pose avec le numéro du capteur remis en place, avec les mêmes dates, heures et autres paramètres). Dans le cas d’une <strong>sonde disparue</strong>, bien compléter le numéro de sonde en allant <strong>vérifier celui noté lors de la dernière relève</strong>.</li>
 <li>chsvi_fonctionnement : si l’opération s’est bien déroulée ou non</li>
 <li>chsvi_remarques : si des points complémentaires sont à noter</li>
@@ -273,62 +287,61 @@
 </ul></li>
 </ul>
 </div>
-<div id="envoisuivi" class="section level3">
+<div id="envoisuivi" class="section level3" number="2.3.3">
 <h3><span class="header-section-number">2.3.3</span> Envoi des informations de pose et/ou de suivi</h3>
 <p>Les envois des données relatives aux différentes situations présentées ci-dessous sont à réaliser vers <a href="mailto:jean-baptiste.fagot@peche-jura.com?subject=%5BRSTMAJ%5D%20Envoi%20données%20thermie">jean-baptiste.fagot@peche-jura.com</a>, directement en pièce jointe au sein d’une archive (.zip, .rar ou autre) ou à travers une plateforme de transfert (Dropbox, WeTransfer, etc).</p>
 <ul>
-<li>Dans le cas de la <strong>création de nouvelles stations</strong> :
+<li><p>Dans le cas de la <strong>création de nouvelles stations</strong> :</p>
 <ul>
 <li>Scan des fiches de description de terrain (.pdf)</li>
 <li>Fichier de saisie de la description des stations (.xlsx)</li>
 <li>Photographies des stations, avec comme noms de fichiers ceux indiqués dans la colonne “chsta_numphoto” (.png ou .jpg)</li>
 <li>Fichier de saisie des informations de suivi, avec “Pose” dans la colonne “Action” (.xlsx)</li>
 </ul></li>
-<li>Dans le cas d’un <strong>suivi courant</strong> :
+<li><p>Dans le cas d’un <strong>suivi courant</strong> :</p>
 <ul>
 <li>Scan des fiches de suivi de terrain (.pdf)</li>
 <li>Fichier de saisie du suivi de terrain (.xlsx)</li>
 <li>Correction à apporter sur l’atlas : scan des pages annotées à la main (.pdf)</li>
-<li><strong>UNIQUEMENT POUR LES COLLECTIVITÉS DANS LE DÉPARTEMENT DU JURA</strong> : Fichiers natifs issus des sondes et/ou de la navette (.hobo), nommés selon la formule suivante :
-“CodeRHJ_Datederelève_NuméroCapteur”, soit par exemple “BIE0-1_2017-10-10_9764347.hobo” si la sonde 9764347 a été relevée le 10 octobre 2017 sur la station BIE0-1.</li>
+<li><strong>UNIQUEMENT POUR LES COLLECTIVITÉS DANS LE DÉPARTEMENT DU JURA</strong> : Fichiers natifs issus des sondes et/ou de la navette (.hobo), nommés selon la formule suivante : “CodeRHJ_Datederelève_NuméroCapteur,” soit par exemple “BIE0-1_2017-10-10_9764347.hobo” si la sonde 9764347 a été relevée le 10 octobre 2017 sur la station BIE0-1.</li>
 <li><strong>UNIQUEMENT POUR LES COLLECTIVITÉS HORS DÉPARTEMENT DU JURA</strong> : Fichiers .txt issus des fichiers .hobo cités précédemment (générés à partir de l’exportation décrite en section <a href="#transformation"><strong>??</strong></a> et selon les paramétrages décrits en section <a href="#parametrage"><strong>??</strong></a>, et nommés selon la même convention : BIE0-1_2017-10-10_9764347.txt (ou station_année.txt, exemple Combe-lavaux_2016.txt). <strong>Il est essentiel que tous les fichiers soient homogènes dans leur nommage et dans leur format de données</strong>.</li>
 </ul></li>
-<li>Dans le cas de l’<strong>arrêt d’une station</strong> :
+<li><p>Dans le cas de l’<strong>arrêt d’une station</strong> :</p>
 <ul>
 <li>Liste des stations arrêtées.</li>
 <li>Fichiers cités ci-dessus dans le cas d’un suivi courant.</li>
 </ul></li>
 </ul>
 </div>
-<div id="saisiecapteur" class="section level3">
+<div id="saisiecapteur" class="section level3" number="2.3.4">
 <h3><span class="header-section-number">2.3.4</span> Saisie des données relatives aux capteurs</h3>
 <ul>
 <li><p>Saisie des données relatives aux capteurs dans le <a href="https://github.com/jbfagotfede39/notice-thermie/raw/master/data/Capteurs/Saisie_capteurs_chroniques.xlsx">fichier ci-joint</a> afin que celles-ci soient réutilisées pour générer les exportations des données au format d’échange AE-OFB. Ce fichier peut également servir à chaque maître d’ouvrage pour la <strong>gestion</strong> de son <strong>parc de capteurs</strong>.</p></li>
 <li><p>Les différents champs correspondent aux informations suivantes, avec une ligne par capteur :</p>
 <ul>
-<li>chcap_proprietaire : Nom du propriétaire du capteur : “OFB”, “CD39_CR_Ain”, “CD39_RDM”, “DREAL”, “FDPPMA39”, “PNRHJ”, “SMDL”, “SR3A”, etc.</li>
-<li>chcap_typecapteur : Type de capteur : “Thermie”, “Piézométrie”, “Oxygène”, etc.</li>
-<li>chcap_modelecapteur : Modèle de capteur : “Hobo UA-001-64”, “Hobo U20-001-04”, etc.</li>
-<li>chcap_numerocapteur : Identifiant unique du capteur : “20357972”, “N2296”, etc.</li>
-<li>chcap_etat : État actuel du capteur : “OK”, “HS”, etc.</li>
-<li>chcap_projet : Éventuel projet de rattachement du capteur : “PDPG”, “Étude Bienne”, etc.</li>
-<li>chcap_originecapteur : “Achat”, “Remplacement garantie”, etc.</li>
+<li>chcap_proprietaire : Nom du propriétaire du capteur : “OFB,” “CD39_CR_Ain,” “CD39_RDM,” “DREAL,” “FDPPMA39,” “PNRHJ,” “SMDL,” “SR3A,” etc.</li>
+<li>chcap_typecapteur : Type de capteur : “Thermie,” “Piézométrie,” “Oxygène,” etc.</li>
+<li>chcap_modelecapteur : Modèle de capteur : “Hobo UA-001-64,” “Hobo U20-001-04,” etc.</li>
+<li>chcap_numerocapteur : Identifiant unique du capteur : “20357972,” “N2296,” etc.</li>
+<li>chcap_etat : État actuel du capteur : “OK,” “HS,” etc.</li>
+<li>chcap_projet : Éventuel projet de rattachement du capteur : “PDPG,” “Étude Bienne,” etc.</li>
+<li>chcap_originecapteur : “Achat,” “Remplacement garantie,” etc.</li>
 <li>chcap_datedebut : Date d’acquisition du capteur : format <code>2013-07-23</code></li>
 <li>chcap_datefin : Éventuelle date de fin de fonctionnement du capteur/mise au rebut : format <code>2013-07-23</code></li>
 <li>chcap_remarques : Remarques éventuelles à apporter</li>
 </ul></li>
 </ul>
 </div>
-<div id="saisiecommentaire" class="section level3">
+<div id="saisiecommentaire" class="section level3" number="2.3.5">
 <h3><span class="header-section-number">2.3.5</span> Saisie des commentaires des chroniques</h3>
 <ul>
 <li>Saisie des commentaires des chroniques annuelles dans le <a href="https://github.com/jbfagotfede39/notice-thermie/raw/master/data/Commentaires/Saisie_commentaires_chroniques.xlsx">fichier ci-joint</a> afin que celles-ci soient réutilisées pour générer les fiches atlas de résultats.</li>
 </ul>
 </div>
 </div>
-<div id="matériel" class="section level2">
+<div id="matériel" class="section level2" number="2.4">
 <h2><span class="header-section-number">2.4</span> Matériel</h2>
-<div id="materiel" class="section level3">
+<div id="materiel" class="section level3" number="2.4.1">
 <h3><span class="header-section-number">2.4.1</span> Liste générale de matériel</h3>
 <p>Cette liste est une liste générale de matériel à emporter sur le terrain afin de réaliser des poses/relèves de sondes.</p>
 <p><strong>Localisation</strong></p>
@@ -340,7 +353,7 @@
 </ul>
 <p><strong>Installation</strong></p>
 <ul>
-<li><strong><a href="acquisition-des-données.html#descriptionmanchon">Tubes/manchons de protection</a></strong></li>
+<li><a href="acquisition-des-données.html#descriptionmanchon"><strong>Tubes/manchons de protection</strong></a></li>
 <li>Colle pour assemblage des tubes</li>
 <li><strong>Câble inox</strong></li>
 <li><strong>Serre-câbles inox</strong></li>
@@ -348,7 +361,7 @@
 <li><strong>Boulon à œil à expansion inox</strong></li>
 <li><strong>Clé pour piton</strong></li>
 <li><strong>Marteau</strong></li>
-<li><strong><a href="acquisition-des-données.html#descriptionlest">Lests</a></strong></li>
+<li><a href="acquisition-des-données.html#descriptionlest"><strong>Lests</strong></a></li>
 <li><strong>Pinces coupantes</strong></li>
 <li><strong>Perforateur</strong></li>
 <li>Télémètre ou décamètre</li>
@@ -358,7 +371,7 @@
 <ul>
 <li><strong>Navette</strong></li>
 <li><strong>Brosse à dents</strong></li>
-<li><strong><a href="acquisition-des-données.html#thermometre">Thermomètre de terrain</a></strong></li>
+<li><a href="acquisition-des-données.html#thermometre"><strong>Thermomètre de terrain</strong></a></li>
 <li><strong>Sondes de remplacement</strong></li>
 <li><strong>Carnet de suivi de terrain des sondes thermiques} + crayon de papier</strong></li>
 <li>Ordinateur + chargeur</li>
@@ -371,15 +384,15 @@
 <li>Papier absorbant/torchon pour essuyer</li>
 </ul>
 </div>
-<div id="exemples-de-références-du-matériel" class="section level3">
+<div id="exemples-de-références-du-matériel" class="section level3" number="2.4.2">
 <h3><span class="header-section-number">2.4.2</span> Exemples de références du matériel</h3>
 <p style="text-align: justify;">
-Cette section contient les références des principaux matériels utilisés par les opérateurs du département. Il constitue un aide-mémoire et reste néanmoins non-exhaustif.
+<p>Cette section contient les références des principaux matériels utilisés par les opérateurs du département. Il constitue un aide-mémoire et reste néanmoins non-exhaustif.</p>
 </p>
-<div id="hobo" class="section level4">
+<div id="hobo" class="section level4" number="2.4.2.1">
 <h4><span class="header-section-number">2.4.2.1</span> Matériel Hobo</h4>
 <p style="text-align: justify;">
-La plupart des maîtres d’ouvrage du département utilisent du matériel de la marque Hobo. Ces produits sont commercialisés en France par le revendeur ProSensor (15 rue de Montvaux 57865 Amanvillers - <a href="www.prosensor.com">www.prosensor.com</a>), représenté par M. Christophe Arnould (07-49-48-76-67 - <a href="mailto:carnould@prosensor.com">carnould@prosensor.com</a>). Les références figurant dans le tableau ci-joint sont données à titre indicatif et doivent être confirmées auprès du fournisseur.
+<p>La plupart des maîtres d’ouvrage du département utilisent du matériel de la marque Hobo. Ces produits sont commercialisés en France par le revendeur ProSensor (15 rue de Montvaux 57865 Amanvillers - <a href="www.prosensor.com">www.prosensor.com</a>), représenté par M. Christophe Arnould (07-49-48-76-67 - <a href="mailto:carnould@prosensor.com">carnould@prosensor.com</a>). Les références figurant dans le tableau ci-joint sont données à titre indicatif et doivent être confirmées auprès du fournisseur.</p>
 </p>
 <table>
 <colgroup>
@@ -509,10 +522,10 @@ pour UA-001-64 et MX2201</td>
 </tbody>
 </table>
 </div>
-<div id="thermometre" class="section level4">
+<div id="thermometre" class="section level4" number="2.4.2.2">
 <h4><span class="header-section-number">2.4.2.2</span> Thermomètre de terrain</h4>
 <p style="text-align: justify;">
-Le thermomètre utilisé par la FJPPMA pour les mesures de terrain est un thermomètre Kern TTX 100 (voir figure <a href="acquisition-des-données.html#fig:vuethermometre">2.1</a>). Sa résolution est de 0,1°C, sa plage de mesure allant de -50°C à +350°C. La mesure est réalisée en 5 secondes, il présente 60 cm de fil. Sa valeur est d’environ 100 € TTC. Tout autre modèle peut être utilisé, celui-ci étant présenté à simple titre d’exemple.
+<p>Le thermomètre utilisé par la FJPPMA pour les mesures de terrain est un thermomètre Kern TTX 100 (voir figure <a href="acquisition-des-données.html#fig:vuethermometre">2.1</a>). Sa résolution est de 0,1°C, sa plage de mesure allant de -50°C à +350°C. La mesure est réalisée en 5 secondes, il présente 60 cm de fil. Sa valeur est d’environ 100 € TTC. Tout autre modèle peut être utilisé, celui-ci étant présenté à simple titre d’exemple.</p>
 </p>
 <div class="figure" style="text-align: center"><span id="fig:vuethermometre"></span>
 <img src="Figures/Materiel/KernTTX100.jpg" alt="Thermomètre Kern TTX 100" width="20%" />
@@ -521,10 +534,10 @@ Figure 2.1: Thermomètre Kern TTX 100
 </p>
 </div>
 </div>
-<div id="quincaillerie" class="section level4">
+<div id="quincaillerie" class="section level4" number="2.4.2.3">
 <h4><span class="header-section-number">2.4.2.3</span> Quincaillerie</h4>
 <p style="text-align: justify;">
-Différents éléments de quincaillerie peuvent être utilisés. De manière générale, seul de l’inox est conseillé, pas de l’acier galvanisé, qui a tendance à se recouvrir de dépôts calcaires et à devenir cassant :
+<p>Différents éléments de quincaillerie peuvent être utilisés. De manière générale, seul de l’inox est conseillé, pas de l’acier galvanisé, qui a tendance à se recouvrir de dépôts calcaires et à devenir cassant :</p>
 </p>
 <ul>
 <li>Câble inox, diamètre 3mm (1 à 1,5 mètre en moyenne par point de pose)</li>
@@ -532,10 +545,10 @@ Différents éléments de quincaillerie peuvent être utilisés. De manière gé
 <li>Boulon à œil à expansion (1 par point de pose)</li>
 </ul>
 </div>
-<div id="descriptionmanchon" class="section level4">
+<div id="descriptionmanchon" class="section level4" number="2.4.2.4">
 <h4><span class="header-section-number">2.4.2.4</span> Tubes/manchons de protection</h4>
 <p style="text-align: justify;">
-Les tubes/manchons de protection sont construits à partir d’un assemblage par collage entre un manchon PVC de diamètre 100mm et le tampon de visite qui va avec. La partie supérieure du tampon de visite ne doit pas être collée. Elle doit par contre être percée de deux ou quatre trous, afin d’y faire passer le câble. Le poids de cette protection permet dans la grande majorité des cas une résistance suffisante au courant pour rester au fond. Il est potentiellement utile de percer un trou dans le bas du manchon afin de pouvoir y attacher un lest le cas échéant.
+<p>Les tubes/manchons de protection sont construits à partir d’un assemblage par collage entre un manchon PVC de diamètre 100mm et le tampon de visite qui va avec. La partie supérieure du tampon de visite ne doit pas être collée. Elle doit par contre être percée de deux ou quatre trous, afin d’y faire passer le câble. Le poids de cette protection permet dans la grande majorité des cas une résistance suffisante au courant pour rester au fond. Il est potentiellement utile de percer un trou dans le bas du manchon afin de pouvoir y attacher un lest le cas échéant.</p>
 </p>
 <div class="figure" style="text-align: center"><span id="fig:vuemanchon"></span>
 <img src="Figures/Materiel/ManchonPVC.jpg" alt="Exemple de manchon de protection" width="20%" />
@@ -544,10 +557,10 @@ Figure 2.2: Exemple de manchon de protection
 </p>
 </div>
 </div>
-<div id="descriptionlest" class="section level4">
+<div id="descriptionlest" class="section level4" number="2.4.2.5">
 <h4><span class="header-section-number">2.4.2.5</span> Lests</h4>
 <p style="text-align: justify;">
-Il est parfois nécessaire d’ajouter à un ancrage classique en berge ou sur un piton un lest, qui va permettre d’empêcher la sonde de remonter vers la surface au gré de l’hydrodynamique. Des lests propres peuvent être fabriqués en remplissant de béton des morceaux de tube PVC de 150mm de long par 100mm de diamètre et en y plaçant avant la prise du béton, en partie haute et à l’envers, un anneau en U (fer à béton plié, étrier, câble inox), qui servira ensuite de point d’accrochage.
+<p>Il est parfois nécessaire d’ajouter à un ancrage classique en berge ou sur un piton un lest, qui va permettre d’empêcher la sonde de remonter vers la surface au gré de l’hydrodynamique. Des lests propres peuvent être fabriqués en remplissant de béton des morceaux de tube PVC de 150mm de long par 100mm de diamètre et en y plaçant avant la prise du béton, en partie haute et à l’envers, un anneau en U (fer à béton plié, étrier, câble inox), qui servira ensuite de point d’accrochage.</p>
 </p>
 <div class="figure" style="text-align: center"><span id="fig:vuelest"></span>
 <img src="Figures/Materiel/Lest.jpg" alt="Exemple de lest" width="40%" />
@@ -556,49 +569,49 @@ Figure 2.3: Exemple de lest
 </p>
 </div>
 </div>
-<div id="matériel-de-mesure-avec-télétransmission" class="section level4">
+<div id="matériel-de-mesure-avec-télétransmission" class="section level4" number="2.4.2.6">
 <h4><span class="header-section-number">2.4.2.6</span> Matériel de mesure avec télétransmission</h4>
 <p style="text-align: justify;">
-Tout un panel de matériel permettant la télétransmission des données mesurées existe. Hors de toute volonté d’exhaustivité, voici quelques notions de coûts :
+<p>Tout un panel de matériel permettant la télétransmission des données mesurées existe. Hors de toute volonté d’exhaustivité, voici quelques notions de coûts :</p>
 </p>
 <ul>
-<li>Modems :
+<li><p>Modems :</p>
 <ul>
-<li>Modem pour un unique capteur :
+<li><p>Modem pour un unique capteur :</p>
 <ul>
 <li>Modem GPRS TUBE 300R baro, batterie lithium au format propriétaire, pour In-Situ Rugged/Level TROLL, nécessitant abonnement 4G annexe : 1350 € TTC</li>
 <li>Modem GPRS TUBE 300S baro, solaire, pour In-Situ Rugged/Level TROLL, nécessitant abonnement 4G annexe : 1600 € TTC</li>
 <li>Modem nouvelle génération VuLink : 4G LTE (consommation énergétique nettement moindre), 3 piles D alcalines ou lithium, e-SIM intégré dans le modem offre une transmission de 24 points de données par jour : 1025 € TTC</li>
 </ul></li>
-<li>Modem pour deux capteurs simultanés :
+<li><p>Modem pour deux capteurs simultanés :</p>
 <ul>
 <li>Modem GPRS CUBE 300R ventilé, batterie Lithium, Twist Lock : 2525 € TTC</li>
 </ul></li>
 </ul></li>
-<li>Capteurs :
+<li><p>Capteurs :</p>
 <ul>
 <li>Sonde Niv/T° abs. Rugged TROLL 200, gamme 0-9m : 800 € TTC</li>
 <li>Sonde Niv/T°abs. Level TROLL 400, gamme 0-11m, non ventilé : 1000 € TTC</li>
 </ul></li>
-<li>Câble de connexion :
+<li><p>Câble de connexion :</p>
 <ul>
-<li>Rugged Troll :
+<li><p>Rugged Troll :</p>
 <ul>
 <li>Connecteurs (x2) pour câble Rugged Troll (inclus montage) : 150 € TTC</li>
 <li>Câble pour Rugged Troll, le mètre : 7,50 € TTC</li>
 </ul></li>
-<li>Level Troll :
+<li><p>Level Troll :</p>
 <ul>
 <li>Connecteurs Twist-Lock (x2) pour câble Level Troll (inclus montage) : 220 € TTC</li>
 <li>Câble non-ventilé pour Level Troll, le mètre : 12,50 € TTC</li>
 </ul></li>
 </ul></li>
-<li>Services :
+<li><p>Services :</p>
 <ul>
 <li>Forfait annuel SIM GPRS 2Mo/mois pr modem IN-SITU : 55 € TTC</li>
 <li>Forfait hébergement et visualisation données sur plateforme HydroVu, 1 modem, 1 an : 275 € TTC</li>
 </ul></li>
-<li>Outils/interfaces de connexion :
+<li><p>Outils/interfaces de connexion :</p>
 <ul>
 <li>Câble adaptateur PC(USB) pour Rugged/Level TROLL : 340 € TTC</li>
 <li>Adaptateur PC (USB) pr configuration modems Tube/Cube : 170 € TTC</li>
@@ -608,18 +621,18 @@ Tout un panel de matériel permettant la télétransmission des données mesuré
 </div>
 </div>
 </div>
-<div id="fonctionnementmateriel" class="section level2">
+<div id="fonctionnementmateriel" class="section level2" number="2.5">
 <h2><span class="header-section-number">2.5</span> Fonctionnement du matériel</h2>
-<div id="montageancrage" class="section level3">
+<div id="montageancrage" class="section level3" number="2.5.1">
 <h3><span class="header-section-number">2.5.1</span> Montage d’ancrage</h3>
 <p style="text-align: justify;">
-La <strong>sonde</strong> est placée à l’<strong>intérieur du <a href="acquisition-des-données.html#descriptionmanchon">tube/manchon de protection</a></strong>, et attachée par au-dessus via un câble (brin libre sortant directement de la bobine) passant dans les trous réalisés et bloqué par un serre-câble. Il est ainsi possible d’accéder à la sonde soit en dévissant la partie supérieure du tampon de visite, soit en insérant le lecteur/la navette directement dans le manchon en PVC (la navette passe généralement avec la main). Il est ainsi possible, pour les opérations courantes de relève, de ne pas avoir à démonter l’ensemble, mais simplement à sortir le manchon de l’eau, utiliser directement la navette puis remettre la sonde à l’eau.
+<p>La <strong>sonde</strong> est placée à l’<strong>intérieur du <a href="acquisition-des-données.html#descriptionmanchon">tube/manchon de protection</a></strong>, et attachée par au-dessus via un câble (brin libre sortant directement de la bobine) passant dans les trous réalisés et bloqué par un serre-câble. Il est ainsi possible d’accéder à la sonde soit en dévissant la partie supérieure du tampon de visite, soit en insérant le lecteur/la navette directement dans le manchon en PVC (la navette passe généralement avec la main). Il est ainsi possible, pour les opérations courantes de relève, de ne pas avoir à démonter l’ensemble, mais simplement à sortir le manchon de l’eau, utiliser directement la navette puis remettre la sonde à l’eau.</p>
 </p>
 <p style="text-align: justify;">
-Ce montage est ensuite mis en place sur le site de pose en coupant à la longueur adéquate (+ 50 cm) le câble inox. Le <strong>point d’attache en berge</strong> peut être une solide racine de ripisylve autour de laquelle on vient placer une boucle de câble inox à partir du brin libre suite à la découpe. Si aucun point d’accrochage fiable n’est présent en berge, le plus simple est de percer un bloc, une pile de pont, etc. et d’y fixer un boulon à œil à expansion inox, sur lequel on viendra s’attacher.
+<p>Ce montage est ensuite mis en place sur le site de pose en coupant à la longueur adéquate (+ 50 cm) le câble inox. Le <strong>point d’attache en berge</strong> peut être une solide racine de ripisylve autour de laquelle on vient placer une boucle de câble inox à partir du brin libre suite à la découpe. Si aucun point d’accrochage fiable n’est présent en berge, le plus simple est de percer un bloc, une pile de pont, etc. et d’y fixer un boulon à œil à expansion inox, sur lequel on viendra s’attacher.</p>
 </p>
 <p style="text-align: justify;">
-Le poids du manchon permet dans la grande majorité des cas une résistance suffisante au courant pour rester au fond, mais l’ajout d’un <strong><a href="acquisition-des-données.html#descriptionlest">lest</a></strong> peut s’avérer nécessaire. Dans ce cas, soit repercer un trou dans le bas du manchon (cas idéal), soit attacher le lest directement à partir des trous supérieurs (position penchée de la sonde).
+<p>Le poids du manchon permet dans la grande majorité des cas une résistance suffisante au courant pour rester au fond, mais l’ajout d’un <a href="acquisition-des-données.html#descriptionlest"><strong>lest</strong></a> peut s’avérer nécessaire. Dans ce cas, soit repercer un trou dans le bas du manchon (cas idéal), soit attacher le lest directement à partir des trous supérieurs (position penchée de la sonde).</p>
 </p>
 <!--- Description ----
 ### Notices fabricants {#notices}
@@ -667,6 +680,7 @@ gitbook.start({
 "weibo": false,
 "instapaper": false,
 "vk": false,
+"whatsapp": false,
 "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
 },
 "fontsettings": {

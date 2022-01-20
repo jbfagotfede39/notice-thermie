@@ -25,33 +25,37 @@ library(tidyverse)
 Ce chapitre contient les informations utiles à l'utilisation des différentes valorisations générées par l'outil de traitement. Un exemple de jeu de données généré par la fonction `chronique.traitement()` est téléchargeable à l'[adresse suivante](https://github.com/jbfagotfede39/notice-thermie/raw/master/data/Sortie/Exemple_sorties_outils_thermie.zip).
 </p>
 
+<p style="text-align: justify;">
+Par ailleurs, afin de faciliter l'appropriation des outils, un jeu de données de test a été inclus dans `data(chronique_exemple)`. La structure des tables utilisées à proprement parler est également disponible dans `data(chronique_structure_hors_bdd)`.
+</p>
+
 ## Arborescence
 Un dossier `Sorties` est généré à partir du traitement des données par la fonction `chronique.traitement()`, contenant :
 
-* le récapitulatif de l'état des **capteurs** associés au données fournies, issu d'un fichier lié directement exploité ou bien après importation dans la base de données ;
-* le **suivi de terrain** relatif au données fournies, issu du [fichier de suivi de terrain](#saisiesuivi) directement ou bien à travers la base de données ;
-* les **données** primaires :
+- le récapitulatif de l'état des **capteurs** associés au données fournies, issu d'un fichier lié directement exploité ou bien après importation dans la base de données ;
+- le **suivi de terrain** relatif au données fournies, issu du [fichier de suivi de terrain](#saisiesuivi) directement ou bien à travers la base de données ;
+- les **données** primaires :
   - sous la forme d'[**agrégations diverses**](#agregation),
   - sous la forme d'un **rendu** dit **DCE**, sous la forme demandée localement par l'Agence de l'eau RMC et l'Office Français de la Biodiversité (agrégation des suivis en tant que tels avec des données stationnelles et de suivi de terrain) ;
-* les [**résultats**](#resultats), ou métriques statistiques calculés par les outils de traitement ;
-* les [**stations**](#stations) concernées par les données thermiques traitées, issues [fichier de saisie](#saisiestations) ou issues de la base de données locale ;
-* de multiples [**vues**](#vues), annuelles, interanuelles et comparatives entre sites et/ou années.
+- les [**résultats**](#resultats), ou métriques statistiques calculés par les outils de traitement ;
+- les [**stations**](#stations) concernées par les données thermiques traitées, issues [fichier de saisie](#saisiestations) ou issues de la base de données locale ;
+- de multiples [**vues**](#vues), annuelles, interanuelles et comparatives entre sites et/ou années.
 
 ## Données {#agregation}
 L'ensemble des données initialement apportées à l'outil de traitement sont regroupées au sein d'un **unique fichier** `.xlsx` **par station**.
 
-* Les **données initiales** et brutes sont disponibles dans l'onglet `ValInstantanees`, avec éventuellement leur statut de validation et leur mode d'acquisition (mesure ou estimation).
-* Une **agrégation quotidienne** est proposée dans l'onglet `ValJours`, avec :
+- Les **données initiales** et brutes sont disponibles dans l'onglet `ValInstantanees`, avec éventuellement leur statut de validation et leur mode d'acquisition (mesure ou estimation).
+- Une **agrégation quotidienne** est proposée dans l'onglet `ValJours`, avec :
   - les valeurs minimales, médianes, moyennes et maximales, ainsi que l'amplitude en résultant,
   - la variance journalière, 
   - le nombre de mesures disponibles pour cette date,
   - la moyenne journalière cumulée à partir de la première date de la chronique. La somme des températures moyennes journalières au dessus de 0 °C, ou **somme de degrés-jours** (défini comme tel par @Allan_Streamecologystructure_1995, cité par @Tissot_Synthesetolerancesthermiques_2010), permet de comprendre la physiologie des organises aquatiques. Par conséquence, la valeur moyenne journalière disponible plus haut correspond donc aux degrés-jours de cette même journée.
-* Une **agrégation mensuelle** est proposée dans l'onglet `ValMois`, avec :
+- Une **agrégation mensuelle** est proposée dans l'onglet `ValMois`, avec :
   - les valeurs minimales, médianes, moyennes et maximales, ainsi que l'amplitude en résultant,
   - la variance mensuelle, 
   - le nombre de mesures disponibles pour ce mois,
   - la somme des degrés jours pour la période concernée.
-* Une **agrégation** propre à l'**année biologique** (définie par défault au sein de la fonction 
+- Une **agrégation** propre à l'**année biologique** (définie par défault au sein de la fonction 
 `formatage.annee.biologique` comme l'année N allant du 1er octobre de l'année N-1 au 30 septembre de l'année N) est proposée dans l'onglet `ValAnneeBiol`, avec :
   - les valeurs minimales, médianes, moyennes et maximales, ainsi que l'amplitude en résultant,
   - la variance mensuelle, 
@@ -59,7 +63,7 @@ L'ensemble des données initialement apportées à l'outil de traitement sont re
   - les dates et heures des valeurs instantannées minimales et maximales
   - la somme des degrés jours pour la période concernée,
   - les percentiles 10, 25, 50, 75, 90 et 90 diurnes (considéré de 8h00 à 18h00).
-* Une **agrégation** sur l'**ensemble de la période concernée** pour la station est proposée dans l'onglet `ValComplet`, avec :
+- Une **agrégation** sur l'**ensemble de la période concernée** pour la station est proposée dans l'onglet `ValComplet`, avec :
   - les valeurs minimales, médianes, moyennes et maximales, ainsi que l'amplitude en résultant,
   - la variance mensuelle, 
   - le nombre de mesures disponibles pour la période concernée.
@@ -141,11 +145,11 @@ Cet atlas s'appuie sur un [modèle QGIS](https://github.com/jbfagotfede39/notice
 
 Il sera ensuite nécessaire de modifier quelques paramètres, après avoir défini directement dans QGIS l'aspect cartographique que l'on souhaite (fond, format des points, étiquettes, etc.) :
 
-* couche de référence pour l'atlas,
-* titre de l'atlas, en bas de page,
-* localisation des logos,
-* localisation des fichiers image via la formule (photo de la station),
-* Modification de la mise en page en fonction des goûts de chacun.
+- couche de référence pour l'atlas,
+- titre de l'atlas, en bas de page,
+- localisation des logos,
+- localisation des fichiers image via la formule (photo de la station),
+- Modification de la mise en page en fonction des goûts de chacun.
 
 ## Figures {#vues}
 Différentes figures peuvent être générées à partir des chroniques disponibles. Ces multiples représentations permettent de s'intéresser à différentes thématiques.
@@ -167,8 +171,17 @@ Une vue synthétique d'une chronique annuelle est produite grâce à la fonction
 L'intégralité de ces différentes modalités sont automatiquement générées par la fonction `chronique.traitement`, seul le cas ici présenté en figure \@ref(fig:vueannuelle) est utilisé dans les fiches atlas de résultats (section \@ref(fichesresultats)).
 </p>
 
-### Figures interannuelles {#vueinterannuelleboxplot}
-#### Boxplots
+### Figures interannuelles {#vueinterannuelle}
+#### Courbes {#vueinterannuellecourbes}
+```{r vueinterannuellecourbe, echo=FALSE, fig.cap="Exemple de représentation interannuelle du niveau piézométrique de BRT4 - Données Natura 2000 CCPM", out.width="80%"}
+knitr::include_graphics('Figures/Vues/Interannuelle_courbes_piezometrie_BRT4.png')
+```
+<p style="text-align: justify;">
+La fonction `chronique.figure.interannuelle` permet de générer, avec l'option `style = "courbes"` une vue comparative interannuelle des courbes des valeurs moyennes journalières. Un exemple est présenté sur la figure \@ref(fig:vueinterannuellecourbe).
+</p>
+
+
+#### Boxplots  {#vueinterannuelleboxplot}
 ```{r vueinterannuelleboxplot, echo=FALSE, fig.cap="Exemple de représentation interannuelle de l'Ain à Bourg-de-Sirod (39) - Données DREAL BFC", out.width="80%"}
 knitr::include_graphics('Figures/Vues/Interannuelle_thermie_AIN9-1.png')
 ```
@@ -216,7 +229,7 @@ knitr::include_graphics('Figures/Vues/Intersites_thermie_Herisson.png')
 knitr::include_graphics('Figures/Vues/Vue_Preferendums_thermiques_adulte.png')
 ```
 <p style="text-align: justify;">
-La température observée sur une station de suivi doit pouvoir être rapportée aux enjeux biologiques présents sur ce site. La fonction `chronique.figure.preferendums` permet de générer des représentations des plages de température de confort et de stress, dont un exemple est visible sur la figure \@ref(fig:vueipreferendumsthermiquesadulte). On peut ici observer les températures de référence admises pour le stade adulte. D'autres valeurs sont accessibles pour les stades embryon, larve, et juvénile et pour la période de reproduction (jeu de données inclus dans `data(PoissonsPreferendumsThermiques)` - @Tissot_Synthesetolerancesthermiques_2010). Il est également possible d'y afficher ou non une valeur de VMaxMoy30J. Un affichage simultané des différents stades de vie est possible, comme sur la figure \@ref(fig:vueipreferendumsthermiquestousstades).
+La température observée sur une station de suivi doit pouvoir être rapportée aux enjeux biologiques présents sur ce site. La fonction `chronique.figure.preferendums` permet de générer des représentations des plages de température de confort et de stress, dont un exemple est visible sur la figure \@ref(fig:vueipreferendumsthermiquesadulte). On peut ici observer les températures de référence admises pour le stade adulte. D'autres valeurs sont accessibles pour les stades embryon, larve, et juvénile et pour la période de reproduction (jeu de données inclus dans `data(poissons_thermie_preferendums)` - @Tissot_Synthesetolerancesthermiques_2010, @Elliott_aspectsthermalstress_1981, @Elliott_criticalthermallimits_1994, @Elliott_criticalthermallimits_1995 & @Andreasson_Feedinghabitssculpin_1971 IN @Dorts_Evidencethatelevated_2012). Il est également possible d'y afficher ou non une valeur de VMaxMoy30J. Un affichage simultané des différents stades de vie est possible, comme sur la figure \@ref(fig:vueipreferendumsthermiquestousstades).
 </p>
 
 ```{r vueipreferendumsthermiquestousstades, echo=FALSE, fig.cap="Exemple de représentation de préférendums thermiques d'espèces piscicoles pour tous les stades de vie avec une Tmm30j de 24°C", out.width="80%"}
@@ -234,11 +247,11 @@ Cet atlas s'appuie sur un [modèle QGIS](https://github.com/jbfagotfede39/notice
 
 Il sera ensuite nécessaire de modifier quelques paramètres, après avoir défini directement dans QGIS l'aspect cartographique que l'on souhaite (fond, format des points, étiquettes, etc.) :
 
-* couche de référence pour l'atlas,
-* titre de l'atlas, en bas des deux pages,
-* localisation des logos (sur les deux pages),
-* localisation des fichiers image via la formule (vue annuelle en page 1 et vue interannuelle en page 2),
-* et modification de la mise en page en fonction des goûts de chacun.
+- couche de référence pour l'atlas,
+- titre de l'atlas, en bas des deux pages,
+- localisation des logos (sur les deux pages),
+- localisation des fichiers image via la formule (vue annuelle en page 1 et vue interannuelle en page 2),
+- et modification de la mise en page en fonction des goûts de chacun.
 
 Par défaut, les représentations graphiques ([vues annuelles et interannuelles](#vues)) doivent être placées dans le répertoire `/Atlas/Sorties/Vues/`.
 

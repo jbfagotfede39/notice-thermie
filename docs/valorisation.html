@@ -23,7 +23,7 @@
 
 
 
-<meta name="date" content="2021-05-20" />
+<meta name="date" content="2022-01-20" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -32,7 +32,7 @@
   
 <link rel="prev" href="acquisition-des-données.html"/>
 <link rel="next" href="conclusion.html"/>
-<script src="libs/header-attrs-2.8/header-attrs.js"></script>
+<script src="libs/header-attrs-2.11/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -172,6 +172,9 @@ div.csl-indent {
 <h1><span class="header-section-number">Chapitre 3</span> Valorisation</h1>
 <p style="text-align: justify;">
 Ce chapitre contient les informations utiles à l’utilisation des différentes valorisations générées par l’outil de traitement. Un exemple de jeu de données généré par la fonction <code>chronique.traitement()</code> est téléchargeable à l’<a href="https://github.com/jbfagotfede39/notice-thermie/raw/master/data/Sortie/Exemple_sorties_outils_thermie.zip">adresse suivante</a>.
+</p>
+<p style="text-align: justify;">
+Par ailleurs, afin de faciliter l’appropriation des outils, un jeu de données de test a été inclus dans <code>data(chronique_exemple)</code>. La structure des tables utilisées à proprement parler est également disponible dans <code>data(chronique_structure_hors_bdd)</code>.
 </p>
 <div id="arborescence" class="section level2" number="3.1">
 <h2><span class="header-section-number">3.1</span> Arborescence</h2>
@@ -583,7 +586,7 @@ Figure 3.6: Exemple de représentation de préférendums thermiques d’espèces
 </p>
 </div>
 <p style="text-align: justify;">
-La température observée sur une station de suivi doit pouvoir être rapportée aux enjeux biologiques présents sur ce site. La fonction <code>chronique.figure.preferendums</code> permet de générer des représentations des plages de température de confort et de stress, dont un exemple est visible sur la figure <a href="valorisation.html#fig:vueipreferendumsthermiquesadulte">3.6</a>. On peut ici observer les températures de référence admises pour le stade adulte. D’autres valeurs sont accessibles pour les stades embryon, larve, et juvénile et pour la période de reproduction (jeu de données inclus dans <code>data(PoissonsPreferendumsThermiques)</code> - <span class="citation"><a href="#ref-Tissot_Synthesetolerancesthermiques_2010" role="doc-biblioref">Tissot and Souchon</a> (<a href="#ref-Tissot_Synthesetolerancesthermiques_2010" role="doc-biblioref">2010</a>)</span>). Il est également possible d’y afficher ou non une valeur de VMaxMoy30J. Un affichage simultané des différents stades de vie est possible, comme sur la figure <a href="valorisation.html#fig:vueipreferendumsthermiquestousstades">3.7</a>.
+La température observée sur une station de suivi doit pouvoir être rapportée aux enjeux biologiques présents sur ce site. La fonction <code>chronique.figure.preferendums</code> permet de générer des représentations des plages de température de confort et de stress, dont un exemple est visible sur la figure <a href="valorisation.html#fig:vueipreferendumsthermiquesadulte">3.6</a>. On peut ici observer les températures de référence admises pour le stade adulte. D’autres valeurs sont accessibles pour les stades embryon, larve, et juvénile et pour la période de reproduction (jeu de données inclus dans <code>data(poissons_thermie_preferendums)</code> - <span class="citation"><a href="#ref-Tissot_Synthesetolerancesthermiques_2010" role="doc-biblioref">Tissot and Souchon</a> (<a href="#ref-Tissot_Synthesetolerancesthermiques_2010" role="doc-biblioref">2010</a>)</span>, <span class="citation"><a href="#ref-Elliott_aspectsthermalstress_1981" role="doc-biblioref">J. M. Elliott</a> (<a href="#ref-Elliott_aspectsthermalstress_1981" role="doc-biblioref">1981</a>)</span>, <span class="citation"><a href="#ref-Elliott_criticalthermallimits_1994" role="doc-biblioref">J. m. Elliott, Elliott, and Allonby</a> (<a href="#ref-Elliott_criticalthermallimits_1994" role="doc-biblioref">1994</a>)</span>, <span class="citation"><a href="#ref-Elliott_criticalthermallimits_1995" role="doc-biblioref">J. m. Elliott and Elliott</a> (<a href="#ref-Elliott_criticalthermallimits_1995" role="doc-biblioref">1995</a>)</span> &amp; <span class="citation"><a href="#ref-Andreasson_Feedinghabitssculpin_1971" role="doc-biblioref">Andreasson</a> (<a href="#ref-Andreasson_Feedinghabitssculpin_1971" role="doc-biblioref">1971</a>)</span> IN <span class="citation"><a href="#ref-Dorts_Evidencethatelevated_2012" role="doc-biblioref">Dorts et al.</a> (<a href="#ref-Dorts_Evidencethatelevated_2012" role="doc-biblioref">2012</a>)</span>). Il est également possible d’y afficher ou non une valeur de VMaxMoy30J. Un affichage simultané des différents stades de vie est possible, comme sur la figure <a href="valorisation.html#fig:vueipreferendumsthermiquestousstades">3.7</a>.
 </p>
 <div class="figure"><span id="fig:vueipreferendumsthermiquestousstades"></span>
 <img src="Figures/Vues/Vue_Preferendums_thermiques_tous_stades.png" alt="Exemple de représentation de préférendums thermiques d'espèces piscicoles pour tous les stades de vie avec une Tmm30j de 24°C" width="80%" />
@@ -624,6 +627,21 @@ Figure 3.8: Exemple de fiche synthétique de résultats annuels
 <div id="refs" class="references csl-bib-body hanging-indent">
 <div id="ref-Allan_Streamecologystructure_1995" class="csl-entry">
 Allan, J. David. 1995. <em>Stream Ecology: Structure and Function of Running Waters</em>. <span>London</span>: <span>Chapman &amp; Hall</span>.
+</div>
+<div id="ref-Andreasson_Feedinghabitssculpin_1971" class="csl-entry">
+Andreasson, S. 1971. <span>“Feeding Habits of a Sculpin (<span>Cottus</span> Gobio <span>L</span>. <span>Pisces</span>) Population.”</span> <em>Rep. Inst. Freshwat. Res. Drottningholm</em> 51: 5–30.
+</div>
+<div id="ref-Dorts_Evidencethatelevated_2012" class="csl-entry">
+Dorts, Jennifer, Gaël Grenouillet, Jessica Douxfils, Syaghalirwa N. M. Mandiki, Sylvain Milla, Frédéric Silvestre, and Patrick Kestemont. 2012. <span>“Evidence That Elevated Water Temperature Affects the Reproductive Physiology of the <span>European</span> Bullhead <span>Cottus</span> Gobio.”</span> <em>Fish Physiology and Biochemistry</em> 38 (2): 389–99. <a href="https://doi.org/10.1007/s10695-011-9515-y">https://doi.org/10.1007/s10695-011-9515-y</a>.
+</div>
+<div id="ref-Elliott_aspectsthermalstress_1981" class="csl-entry">
+Elliott, J. M., ed. 1981. <span>“<span>Some aspects of thermal stress on freshwater Teleosts</span>.”</span> In <em><span>Stress and fish</span></em>, 209–45. <span>London, Royaume-Uni</span>.
+</div>
+<div id="ref-Elliott_criticalthermallimits_1995" class="csl-entry">
+Elliott, J.m., and J.a. Elliott. 1995. <span>“The Critical Thermal Limits for the Bullhead, <span>Cottus</span> Gobio, from Three Populations in North-West <span>England</span>.”</span> <em>Freshwater Biology</em> 33 (3): 411–18. <a href="https://doi.org/10.1111/j.1365-2427.1995.tb00403.x">https://doi.org/10.1111/j.1365-2427.1995.tb00403.x</a>.
+</div>
+<div id="ref-Elliott_criticalthermallimits_1994" class="csl-entry">
+Elliott, J.m., J.a. Elliott, and J.d. Allonby. 1994. <span>“The Critical Thermal Limits for the Stone Loach, <span>Noemacheilus</span> Barbatulus, from Three Populations in North-West <span>England</span>.”</span> <em>Freshwater Biology</em> 32 (3): 593–601. <a href="https://doi.org/10.1111/j.1365-2427.1994.tb01150.x">https://doi.org/10.1111/j.1365-2427.1994.tb01150.x</a>.
 </div>
 <div id="ref-Tissot_Synthesetolerancesthermiques_2010" class="csl-entry">
 Tissot, L., and Y. Souchon. 2010. <span>“Synthèse Des Tolérances Thermiques Des Principales Espèces de Poissons Des Rivières Et Fleuves de Plaine de l’ouest Européen.”</span> <em>Hydroécologie Appliquée</em> 17: 60. <a href="https://doi.org/10.1051/hydro/2010004">https://doi.org/10.1051/hydro/2010004</a>.

@@ -91,7 +91,7 @@ Une première partie traite des données relatives aux **stations**, puis celles
 
 - Complément sur le terrain des informations de la station sur la fiche [recto](https://github.com/jbfagotfede39/notice-thermie/raw/master/data/Stations/Fiche_pose_sonde_thermique_simple.pdf) ou [recto-verso](https://github.com/jbfagotfede39/notice-thermie/raw/master/data/Stations/Fiche_pose_sonde_thermique_double.pdf)
 
-- Saisie des informations de terrain concernant les stations dans le [fichier excel](https://github.com/jbfagotfede39/notice-thermie/raw/master/data/Stations/Saisie_stations_chroniques.xlsx) (ou [cette version plus large](https://github.com/jbfagotfede39/notice-thermie/raw/master/data/Stations/Saisie_stations_chroniques_avec_champs_complementaires.xlsx) pour les collectivités extérieures au département et souhaitant générer les fiches atlas de résultats, avec complément des champs adéquats : chsta_distancesource, chsta_typetheorique, chsta_altitude, chsta_codecontextepdpg et chsta_sprep - séparer les codes espèces par des virgules)
+- Saisie des informations de terrain concernant les stations dans le [fichier excel](https://github.com/jbfagotfede39/notice-thermie/raw/master/data/Stations/Saisie_stations_chroniques.xlsx) (ou [cette version plus large](https://github.com/jbfagotfede39/notice-thermie/raw/master/data/Stations/Saisie_stations_chroniques_avec_champs_complementaires.xlsx) pour les collectivités extérieures au département et souhaitant générer les fiches atlas de résultats, avec complément des champs adéquats : chsta_distancesource, chsta_typetheorique, chsta_altitude, chsta_codecontextepdpg et chsta_sprep - séparer les codes espèces par des virgules : TRF,CHA,OBR).
 
 - Complément des différents champs :
 

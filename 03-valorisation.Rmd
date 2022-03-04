@@ -253,7 +253,7 @@ Il sera ensuite nécessaire de modifier quelques paramètres, après avoir défi
 - localisation des fichiers image via la formule (vue annuelle en page 1 et vue interannuelle en page 2),
 - et modification de la mise en page en fonction des goûts de chacun.
 
-Par défaut, les représentations graphiques ([vues annuelles et interannuelles](#vues)) doivent être placées dans le répertoire `/Atlas/Sorties/Vues/`.
+Par défaut, les représentations graphiques ([vues annuelles et interannuelles](#vues)) doivent être placées dans le répertoire `/Desktop/Calculs_R/Atlas/Sorties/Vues/`. Il faudra modifier le modèle d'atlas QGIS si une localisation différente est utilisée.
 
 
 ```{r vueficheatlasresultats, echo=FALSE, fig.show="hold", fig.cap="Exemple de fiche synthétique de résultats annuels", out.width="50%"}

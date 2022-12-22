@@ -200,6 +200,8 @@ Les envois des données relatives aux différentes situations présentées ci-de
 
 - Saisie des commentaires des chroniques annuelles dans le [fichier ci-joint](https://github.com/jbfagotfede39/notice-thermie/raw/master/data/Commentaires/Saisie_commentaires_chroniques.xlsx) afin que celles-ci soient réutilisées pour générer les fiches atlas de résultats.
 
+- Les commentaires ne doivent pas dépasser les 600 caractères afin d'être bien affichés au niveau des fiches atlas des résultats.
+
 ## Matériel
 
 ### Liste générale de matériel {#materiel}

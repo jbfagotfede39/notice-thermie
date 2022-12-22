@@ -118,8 +118,8 @@ tableauacronymes <-
                     "Percentile 50 de l'Année Biologique traitée", "Percentile 75 de l'Année Biologique traitée", 
                     "Percentile 90 de l'Année Biologique traitée", "Percentile 90 des valeurs diurnes (08:00 à 18:00 inclus) de l'Année Biologique traitée", 
                     "Durée Maximale des Épisodes de valeurs consécutives Supérieures à N", 
-                    "Date de Début de l'Épisode le plus long de valeurs consécutives Supérieures à N", 
-                    "Date de Fin de l'Épisode le plus long de valeurs consécutives Supérieures à N", 
+                    "Date de Début de l'Épisode le plus long et le plus tardif de valeurs consécutives Supérieures à N", 
+                    "Date de Fin de l'Épisode le plus long et le plus tardif de valeurs consécutives Supérieures à N", 
                     "Nombre de Jours présentant au moins un Épisode de valeurs consécutives Supérieures à N", 
                     "Nombre d'Épisodes de valeurs consécutives Supérieures à N", 
                     "Année de la VMaxMoy30J", "Valeur Moyenne Moyenne des 30 jours les plus hauts", 
@@ -255,6 +255,7 @@ Il sera ensuite nécessaire de modifier quelques paramètres, après avoir défi
 
 Par défaut, les représentations graphiques ([vues annuelles et interannuelles](#vues)) doivent être placées dans le répertoire `/Desktop/Calculs_R/Atlas/Sorties/Vues/`. Il faudra modifier le modèle d'atlas QGIS si une localisation différente est utilisée.
 
+Les commentaires affichés ne doivent pas dépasser les 600 caractères.
 
 ```{r vueficheatlasresultats, echo=FALSE, fig.show="hold", fig.cap="Exemple de fiche synthétique de résultats annuels", out.width="50%"}
 knitr::include_graphics('Figures/Atlas/Exemple_fiche_atlas_resultats_recto.png')

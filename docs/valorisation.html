@@ -6,11 +6,10 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapitre 3 Valorisation | Chroniques de température de milieux aquatiques</title>
   <meta name="description" content="Ce document présente l’utilisation d’outils d’acquisition et de traitement de chroniques de température de milieux aquatiques développés dans le cadre du RSTMAJ." />
-  <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.31 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapitre 3 Valorisation | Chroniques de température de milieux aquatiques" />
   <meta property="og:type" content="book" />
-  <meta property="og:url" content="https://jbfagotfede39.github.io/notice-thermie/" />
   
   <meta property="og:description" content="Ce document présente l’utilisation d’outils d’acquisition et de traitement de chroniques de température de milieux aquatiques développés dans le cadre du RSTMAJ." />
   <meta name="github-repo" content="https://github.com/jbfagotfede39/notice-thermie/" />
@@ -23,7 +22,7 @@
 
 
 
-<meta name="date" content="2022-03-04" />
+<meta name="date" content="2022-12-22" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -32,8 +31,8 @@
   
 <link rel="prev" href="acquisition-des-données.html"/>
 <link rel="next" href="conclusion.html"/>
-<script src="libs/header-attrs-2.11/header-attrs.js"></script>
-<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -49,9 +48,9 @@
 
 
 
-
-<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
-<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
 
 
 
@@ -168,16 +167,16 @@ div.csl-indent {
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="valorisation" class="section level1" number="3">
-<h1><span class="header-section-number">Chapitre 3</span> Valorisation</h1>
+<div id="valorisation" class="section level1 hasAnchor" number="3">
+<h1><span class="header-section-number">Chapitre 3</span> Valorisation<a href="valorisation.html#valorisation" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <p style="text-align: justify;">
 Ce chapitre contient les informations utiles à l’utilisation des différentes valorisations générées par l’outil de traitement. Un exemple de jeu de données généré par la fonction <code>chronique.traitement()</code> est téléchargeable à l’<a href="https://github.com/jbfagotfede39/notice-thermie/raw/master/data/Sortie/Exemple_sorties_outils_thermie.zip">adresse suivante</a>.
 </p>
 <p style="text-align: justify;">
 Par ailleurs, afin de faciliter l’appropriation des outils, un jeu de données de test a été inclus dans <code>data(chronique_exemple)</code>. La structure des tables utilisées à proprement parler est également disponible dans <code>data(chronique_structure_hors_bdd)</code>.
 </p>
-<div id="arborescence" class="section level2" number="3.1">
-<h2><span class="header-section-number">3.1</span> Arborescence</h2>
+<div id="arborescence" class="section level2 hasAnchor" number="3.1">
+<h2><span class="header-section-number">3.1</span> Arborescence<a href="valorisation.html#arborescence" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Un dossier <code>Sorties</code> est généré à partir du traitement des données par la fonction <code>chronique.traitement()</code>, contenant :</p>
 <ul>
 <li>le récapitulatif de l’état des <strong>capteurs</strong> associés au données fournies, issu d’un fichier lié directement exploité ou bien après importation dans la base de données ;</li>
@@ -192,8 +191,8 @@ Par ailleurs, afin de faciliter l’appropriation des outils, un jeu de données
 <li>de multiples <a href="valorisation.html#vues"><strong>vues</strong></a>, annuelles, interanuelles et comparatives entre sites et/ou années.</li>
 </ul>
 </div>
-<div id="agregation" class="section level2" number="3.2">
-<h2><span class="header-section-number">3.2</span> Données</h2>
+<div id="agregation" class="section level2 hasAnchor" number="3.2">
+<h2><span class="header-section-number">3.2</span> Données<a href="valorisation.html#agregation" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>L’ensemble des données initialement apportées à l’outil de traitement sont regroupées au sein d’un <strong>unique fichier</strong> <code>.xlsx</code> <strong>par station</strong>.</p>
 <ul>
 <li>Les <strong>données initiales</strong> et brutes sont disponibles dans l’onglet <code>ValInstantanees</code>, avec éventuellement leur statut de validation et leur mode d’acquisition (mesure ou estimation).</li>
@@ -202,7 +201,7 @@ Par ailleurs, afin de faciliter l’appropriation des outils, un jeu de données
 <li>les valeurs minimales, médianes, moyennes et maximales, ainsi que l’amplitude en résultant,</li>
 <li>la variance journalière,</li>
 <li>le nombre de mesures disponibles pour cette date,</li>
-<li>la moyenne journalière cumulée à partir de la première date de la chronique. La somme des températures moyennes journalières au dessus de 0 °C, ou <strong>somme de degrés-jours</strong> (défini comme tel par <span class="citation"><a href="#ref-Allan_Streamecologystructure_1995" role="doc-biblioref">Allan</a> (<a href="#ref-Allan_Streamecologystructure_1995" role="doc-biblioref">1995</a>)</span>, cité par <span class="citation"><a href="#ref-Tissot_Synthesetolerancesthermiques_2010" role="doc-biblioref">Tissot and Souchon</a> (<a href="#ref-Tissot_Synthesetolerancesthermiques_2010" role="doc-biblioref">2010</a>)</span>), permet de comprendre la physiologie des organises aquatiques. Par conséquence, la valeur moyenne journalière disponible plus haut correspond donc aux degrés-jours de cette même journée.</li>
+<li>la moyenne journalière cumulée à partir de la première date de la chronique. La somme des températures moyennes journalières au dessus de 0 °C, ou <strong>somme de degrés-jours</strong> (défini comme tel par <span class="citation">Allan (<a href="#ref-Allan_Streamecologystructure_1995" role="doc-biblioref">1995</a>)</span>, cité par <span class="citation">Tissot and Souchon (<a href="#ref-Tissot_Synthesetolerancesthermiques_2010" role="doc-biblioref">2010</a>)</span>), permet de comprendre la physiologie des organises aquatiques. Par conséquence, la valeur moyenne journalière disponible plus haut correspond donc aux degrés-jours de cette même journée.</li>
 </ul></li>
 <li>Une <strong>agrégation mensuelle</strong> est proposée dans l’onglet <code>ValMois</code>, avec :
 <ul>
@@ -230,17 +229,17 @@ Par ailleurs, afin de faciliter l’appropriation des outils, un jeu de données
 </ul>
 <!-- Dossier `Entrées` dans le cas d'un traitement hors BDD -->
 </div>
-<div id="resultats" class="section level2" number="3.3">
-<h2><span class="header-section-number">3.3</span> Résultats - Indicateurs statistiques</h2>
+<div id="resultats" class="section level2 hasAnchor" number="3.3">
+<h2><span class="header-section-number">3.3</span> Résultats - Indicateurs statistiques<a href="valorisation.html#resultats" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Les différents indicateurs statistiques calculés sont exportés au sein du répertoire <code>/Sorties/Résultats/</code> sous différents formats : <code>.geojson</code>, <code>.kml</code> et <code>.xlsx</code>. Un fichier <code>Atlas_Resultats.geojson</code> y est également disponible, ensuite utilisé pour générer les <a href="valorisation.html#fichesresultats">fiches atlas des résultats</a>.</p>
-<div id="définition-des-acronymes" class="section level3" number="3.3.1">
-<h3><span class="header-section-number">3.3.1</span> Définition des acronymes</h3>
+<div id="définition-des-acronymes" class="section level3 hasAnchor" number="3.3.1">
+<h3><span class="header-section-number">3.3.1</span> Définition des acronymes<a href="valorisation.html#définition-des-acronymes" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Le tableau <a href="valorisation.html#tab:tableauacronymes">3.1</a> permet d’obtenir la signification des différents acronymes utilisés pour qualifier les indicateurs statistiques calculés.</p>
 <table>
 <caption><span id="tab:tableauacronymes">Tableau 3.1: </span>Définition des différents acronymes utilisés</caption>
 <colgroup>
-<col width="18%" />
-<col width="81%" />
+<col width="17%" />
+<col width="82%" />
 </colgroup>
 <thead>
 <tr class="header">
@@ -419,11 +418,11 @@ Par ailleurs, afin de faciliter l’appropriation des outils, un jeu de données
 </tr>
 <tr class="odd">
 <td align="left">DateDEpisodesSupN</td>
-<td align="left">Date de Début de l’Épisode le plus long de valeurs consécutives Supérieures à N</td>
+<td align="left">Date de Début de l’Épisode le plus long et le plus tardif de valeurs consécutives Supérieures à N</td>
 </tr>
 <tr class="even">
 <td align="left">DateFEpisodesSupN</td>
-<td align="left">Date de Fin de l’Épisode le plus long de valeurs consécutives Supérieures à N</td>
+<td align="left">Date de Fin de l’Épisode le plus long et le plus tardif de valeurs consécutives Supérieures à N</td>
 </tr>
 <tr class="odd">
 <td align="left">NbJEpisodesSup</td>
@@ -457,14 +456,14 @@ Par ailleurs, afin de faciliter l’appropriation des outils, un jeu de données
 </table>
 </div>
 </div>
-<div id="stations" class="section level2" number="3.4">
-<h2><span class="header-section-number">3.4</span> Stations</h2>
+<div id="stations" class="section level2 hasAnchor" number="3.4">
+<h2><span class="header-section-number">3.4</span> Stations<a href="valorisation.html#stations" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Les différentes stations concernées par les données traitées sont exportés au sein du répertoire <code>/Sorties/Stations/</code> sous différents formats : <code>.geojson</code>, <code>.kml</code>, <code>.shp</code> et <code>.xlsx</code>.</p>
-<div id="atlas-qgis" class="section level3" number="3.4.1">
-<h3><span class="header-section-number">3.4.1</span> Atlas QGIS</h3>
+<div id="atlas-qgis" class="section level3 hasAnchor" number="3.4.1">
+<h3><span class="header-section-number">3.4.1</span> Atlas QGIS<a href="valorisation.html#atlas-qgis" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <!-- Sens des slash/antislash dans les noms de fichiers entre windows et OSX/linux -->
-<div id="fichesstations" class="section level4" number="3.4.1.1">
-<h4><span class="header-section-number">3.4.1.1</span> Atlas des stations</h4>
+<div id="fichesstations" class="section level4 hasAnchor" number="3.4.1.1">
+<h4><span class="header-section-number">3.4.1.1</span> Atlas des stations<a href="valorisation.html#fichesstations" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>Cet atlas s’appuie sur un <a href="https://github.com/jbfagotfede39/notice-thermie/raw/master/data/Atlas/modele_atlas_stations_chronique.qpt">modèle QGIS</a> et sur la table de stations contenue dans le fichier
 <code>/Sorties/Stations/xxxx-xx-xx_Stations.geojson</code>
 (projection EPSG:4326).</p>
@@ -479,12 +478,12 @@ Par ailleurs, afin de faciliter l’appropriation des outils, un jeu de données
 </div>
 </div>
 </div>
-<div id="vues" class="section level2" number="3.5">
-<h2><span class="header-section-number">3.5</span> Figures</h2>
+<div id="vues" class="section level2 hasAnchor" number="3.5">
+<h2><span class="header-section-number">3.5</span> Figures<a href="valorisation.html#vues" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Différentes figures peuvent être générées à partir des chroniques disponibles. Ces multiples représentations permettent de s’intéresser à différentes thématiques.</p>
-<div id="vueannuelle" class="section level3" number="3.5.1">
-<h3><span class="header-section-number">3.5.1</span> Figures annuelles</h3>
-<div class="figure"><span id="fig:vueannuelle"></span>
+<div id="vueannuelle" class="section level3 hasAnchor" number="3.5.1">
+<h3><span class="header-section-number">3.5.1</span> Figures annuelles<a href="valorisation.html#vueannuelle" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="figure"><span style="display:block;" id="fig:vueannuelle"></span>
 <img src="Figures/Vues/absolu-fixe-vmm30j_thermie_SIR7-6_-_2018.png" alt="Exemple de représentation annuelle de la Sirène à Uxelles (39) - Données FDPPMA39" width="80%" />
 <p class="caption">
 Figure 3.1: Exemple de représentation annuelle de la Sirène à Uxelles (39) - Données FDPPMA39
@@ -502,11 +501,11 @@ Une vue synthétique d’une chronique annuelle est produite grâce à la foncti
 L’intégralité de ces différentes modalités sont automatiquement générées par la fonction <code>chronique.traitement</code>, seul le cas ici présenté en figure <a href="valorisation.html#fig:vueannuelle">3.1</a> est utilisé dans les fiches atlas de résultats (section <a href="valorisation.html#fichesresultats">3.6.1</a>).
 </p>
 </div>
-<div id="vueinterannuelle" class="section level3" number="3.5.2">
-<h3><span class="header-section-number">3.5.2</span> Figures interannuelles</h3>
-<div id="vueinterannuellecourbes" class="section level4" number="3.5.2.1">
-<h4><span class="header-section-number">3.5.2.1</span> Courbes</h4>
-<div class="figure"><span id="fig:vueinterannuellecourbe"></span>
+<div id="vueinterannuelle" class="section level3 hasAnchor" number="3.5.2">
+<h3><span class="header-section-number">3.5.2</span> Figures interannuelles<a href="valorisation.html#vueinterannuelle" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="vueinterannuellecourbes" class="section level4 hasAnchor" number="3.5.2.1">
+<h4><span class="header-section-number">3.5.2.1</span> Courbes<a href="valorisation.html#vueinterannuellecourbes" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<div class="figure"><span style="display:block;" id="fig:vueinterannuellecourbe"></span>
 <img src="Figures/Vues/Interannuelle_courbes_piezometrie_BRT4.png" alt="Exemple de représentation interannuelle du niveau piézométrique de BRT4 - Données Natura 2000 CCPM" width="80%" />
 <p class="caption">
 Figure 3.2: Exemple de représentation interannuelle du niveau piézométrique de BRT4 - Données Natura 2000 CCPM
@@ -516,9 +515,9 @@ Figure 3.2: Exemple de représentation interannuelle du niveau piézométrique d
 La fonction <code>chronique.figure.interannuelle</code> permet de générer, avec l’option <code>style = "courbes"</code> une vue comparative interannuelle des courbes des valeurs moyennes journalières. Un exemple est présenté sur la figure <a href="valorisation.html#fig:vueinterannuellecourbe">3.2</a>.
 </p>
 </div>
-<div id="vueinterannuelleboxplot" class="section level4" number="3.5.2.2">
-<h4><span class="header-section-number">3.5.2.2</span> Boxplots</h4>
-<div class="figure"><span id="fig:vueinterannuelleboxplot"></span>
+<div id="vueinterannuelleboxplot" class="section level4 hasAnchor" number="3.5.2.2">
+<h4><span class="header-section-number">3.5.2.2</span> Boxplots<a href="valorisation.html#vueinterannuelleboxplot" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<div class="figure"><span style="display:block;" id="fig:vueinterannuelleboxplot"></span>
 <img src="Figures/Vues/Interannuelle_thermie_AIN9-1.png" alt="Exemple de représentation interannuelle de l'Ain à Bourg-de-Sirod (39) - Données DREAL BFC" width="80%" />
 <p class="caption">
 Figure 3.3: Exemple de représentation interannuelle de l’Ain à Bourg-de-Sirod (39) - Données DREAL BFC
@@ -552,9 +551,9 @@ Une vue synthétique de la <strong>tendance des températures des dix dernières
 </ul></li>
 </ul>
 </div>
-<div id="vueinterannuellecumul" class="section level4" number="3.5.2.3">
-<h4><span class="header-section-number">3.5.2.3</span> Cumul</h4>
-<div class="figure"><span id="fig:vueinterannuellecumul"></span>
+<div id="vueinterannuellecumul" class="section level4 hasAnchor" number="3.5.2.3">
+<h4><span class="header-section-number">3.5.2.3</span> Cumul<a href="valorisation.html#vueinterannuellecumul" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<div class="figure"><span style="display:block;" id="fig:vueinterannuellecumul"></span>
 <img src="Figures/Vues/Interannuelle_cumul_thermie_HER6-1.png" alt="Exemple de représentation annuelle cumulée du Hérisson à Menétrux-en-Joux (39) - Données FDPPMA39" width="80%" />
 <p class="caption">
 Figure 3.4: Exemple de représentation annuelle cumulée du Hérisson à Menétrux-en-Joux (39) - Données FDPPMA39
@@ -565,30 +564,30 @@ La figure <a href="valorisation.html#fig:vueinterannuellecumul">3.4</a> permet d
 </p>
 </div>
 </div>
-<div id="vueintersitescumul" class="section level3" number="3.5.3">
-<h3><span class="header-section-number">3.5.3</span> Figures intersites</h3>
+<div id="vueintersitescumul" class="section level3 hasAnchor" number="3.5.3">
+<h3><span class="header-section-number">3.5.3</span> Figures intersites<a href="valorisation.html#vueintersitescumul" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p style="text-align: justify;">
 Une représentation des <strong>VMaxMoy30J</strong> en fonction de la <strong>distance à la source</strong> et des <strong>années de suivi</strong> est proposée sur la figure <a href="valorisation.html#fig:vueintersitesd0">3.5</a>. Les courbes ici proposées sont automatiquement générées pour chaque cours d’eau présent dans le jeu de données initial, et pour un minimum de 3 stations. Il est également possible, de manière manuelle, d’utiliser la fonction <code>chronique.figure.longitudinale</code> pour exploiter les résultats générés par <code>chronique.traitement</code> afin d’associer par exemple différents cours d’eau selon ses propres choix.
 </p>
-<div class="figure"><span id="fig:vueintersitesd0"></span>
+<div class="figure"><span style="display:block;" id="fig:vueintersitesd0"></span>
 <img src="Figures/Vues/Intersites_thermie_Herisson.png" alt="Exemple de représentation des VMaxMoy30J le long du Hérisson (39) - Données FDPPMA39" width="80%" />
 <p class="caption">
 Figure 3.5: Exemple de représentation des VMaxMoy30J le long du Hérisson (39) - Données FDPPMA39
 </p>
 </div>
 </div>
-<div id="figures-de-préférendums-thermiques" class="section level3" number="3.5.4">
-<h3><span class="header-section-number">3.5.4</span> Figures de préférendums thermiques</h3>
-<div class="figure"><span id="fig:vueipreferendumsthermiquesadulte"></span>
+<div id="figures-de-préférendums-thermiques" class="section level3 hasAnchor" number="3.5.4">
+<h3><span class="header-section-number">3.5.4</span> Figures de préférendums thermiques<a href="valorisation.html#figures-de-préférendums-thermiques" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="figure"><span style="display:block;" id="fig:vueipreferendumsthermiquesadulte"></span>
 <img src="Figures/Vues/Vue_Preferendums_thermiques_adulte.png" alt="Exemple de représentation de préférendums thermiques d'espèces piscicoles pour le stade de vie adulte avec une Tmm30j de 24°C" width="80%" />
 <p class="caption">
 Figure 3.6: Exemple de représentation de préférendums thermiques d’espèces piscicoles pour le stade de vie adulte avec une Tmm30j de 24°C
 </p>
 </div>
 <p style="text-align: justify;">
-La température observée sur une station de suivi doit pouvoir être rapportée aux enjeux biologiques présents sur ce site. La fonction <code>chronique.figure.preferendums</code> permet de générer des représentations des plages de température de confort et de stress, dont un exemple est visible sur la figure <a href="valorisation.html#fig:vueipreferendumsthermiquesadulte">3.6</a>. On peut ici observer les températures de référence admises pour le stade adulte. D’autres valeurs sont accessibles pour les stades embryon, larve, et juvénile et pour la période de reproduction (jeu de données inclus dans <code>data(poissons_thermie_preferendums)</code> - <span class="citation"><a href="#ref-Tissot_Synthesetolerancesthermiques_2010" role="doc-biblioref">Tissot and Souchon</a> (<a href="#ref-Tissot_Synthesetolerancesthermiques_2010" role="doc-biblioref">2010</a>)</span>, <span class="citation"><a href="#ref-Elliott_aspectsthermalstress_1981" role="doc-biblioref">J. M. Elliott</a> (<a href="#ref-Elliott_aspectsthermalstress_1981" role="doc-biblioref">1981</a>)</span>, <span class="citation"><a href="#ref-Elliott_criticalthermallimits_1994" role="doc-biblioref">J. m. Elliott, Elliott, and Allonby</a> (<a href="#ref-Elliott_criticalthermallimits_1994" role="doc-biblioref">1994</a>)</span>, <span class="citation"><a href="#ref-Elliott_criticalthermallimits_1995" role="doc-biblioref">J. m. Elliott and Elliott</a> (<a href="#ref-Elliott_criticalthermallimits_1995" role="doc-biblioref">1995</a>)</span> &amp; <span class="citation"><a href="#ref-Andreasson_Feedinghabitssculpin_1971" role="doc-biblioref">Andreasson</a> (<a href="#ref-Andreasson_Feedinghabitssculpin_1971" role="doc-biblioref">1971</a>)</span> IN <span class="citation"><a href="#ref-Dorts_Evidencethatelevated_2012" role="doc-biblioref">Dorts et al.</a> (<a href="#ref-Dorts_Evidencethatelevated_2012" role="doc-biblioref">2012</a>)</span>). Il est également possible d’y afficher ou non une valeur de VMaxMoy30J. Un affichage simultané des différents stades de vie est possible, comme sur la figure <a href="valorisation.html#fig:vueipreferendumsthermiquestousstades">3.7</a>.
+La température observée sur une station de suivi doit pouvoir être rapportée aux enjeux biologiques présents sur ce site. La fonction <code>chronique.figure.preferendums</code> permet de générer des représentations des plages de température de confort et de stress, dont un exemple est visible sur la figure <a href="valorisation.html#fig:vueipreferendumsthermiquesadulte">3.6</a>. On peut ici observer les températures de référence admises pour le stade adulte. D’autres valeurs sont accessibles pour les stades embryon, larve, et juvénile et pour la période de reproduction (jeu de données inclus dans <code>data(poissons_thermie_preferendums)</code> - <span class="citation">Tissot and Souchon (<a href="#ref-Tissot_Synthesetolerancesthermiques_2010" role="doc-biblioref">2010</a>)</span>, <span class="citation">J. M. Elliott (<a href="#ref-Elliott_aspectsthermalstress_1981" role="doc-biblioref">1981</a>)</span>, <span class="citation">J. m. Elliott, Elliott, and Allonby (<a href="#ref-Elliott_criticalthermallimits_1994" role="doc-biblioref">1994</a>)</span>, <span class="citation">J. m. Elliott and Elliott (<a href="#ref-Elliott_criticalthermallimits_1995" role="doc-biblioref">1995</a>)</span> &amp; <span class="citation">Andreasson (<a href="#ref-Andreasson_Feedinghabitssculpin_1971" role="doc-biblioref">1971</a>)</span> IN <span class="citation">Dorts et al. (<a href="#ref-Dorts_Evidencethatelevated_2012" role="doc-biblioref">2012</a>)</span>). Il est également possible d’y afficher ou non une valeur de VMaxMoy30J. Un affichage simultané des différents stades de vie est possible, comme sur la figure <a href="valorisation.html#fig:vueipreferendumsthermiquestousstades">3.7</a>.
 </p>
-<div class="figure"><span id="fig:vueipreferendumsthermiquestousstades"></span>
+<div class="figure"><span style="display:block;" id="fig:vueipreferendumsthermiquestousstades"></span>
 <img src="Figures/Vues/Vue_Preferendums_thermiques_tous_stades.png" alt="Exemple de représentation de préférendums thermiques d'espèces piscicoles pour tous les stades de vie avec une Tmm30j de 24°C" width="80%" />
 <p class="caption">
 Figure 3.7: Exemple de représentation de préférendums thermiques d’espèces piscicoles pour tous les stades de vie avec une Tmm30j de 24°C
@@ -596,10 +595,10 @@ Figure 3.7: Exemple de représentation de préférendums thermiques d’espèces
 </div>
 </div>
 </div>
-<div id="résultats" class="section level2" number="3.6">
-<h2><span class="header-section-number">3.6</span> Résultats</h2>
-<div id="fichesresultats" class="section level3" number="3.6.1">
-<h3><span class="header-section-number">3.6.1</span> Fiches résultats</h3>
+<div id="résultats" class="section level2 hasAnchor" number="3.6">
+<h2><span class="header-section-number">3.6</span> Résultats<a href="valorisation.html#résultats" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="fichesresultats" class="section level3 hasAnchor" number="3.6.1">
+<h3><span class="header-section-number">3.6.1</span> Fiches résultats<a href="valorisation.html#fichesresultats" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>La production semi-automatisée de fiches mises en forme des principaux résultats annuels par station est possible à partir des différentes sorties précédemment présentées (figures, indicateurs statistiques, etc.). Un exemple de fiche (recto-verso) est visible sur la figure <a href="valorisation.html#fig:vueficheatlasresultats">3.8</a>.</p>
 <p>Cet atlas s’appuie sur un <a href="https://github.com/jbfagotfede39/notice-thermie/raw/master/data/Atlas/modele_atlas_resultats_chronique.qpt">modèle QGIS</a> et sur la table de résultats contenue dans le fichier
 <code>/Sorties/Résultats/Atlas_Resultats.geojson</code>
@@ -613,7 +612,8 @@ Figure 3.7: Exemple de représentation de préférendums thermiques d’espèces
 <li>et modification de la mise en page en fonction des goûts de chacun.</li>
 </ul>
 <p>Par défaut, les représentations graphiques (<a href="valorisation.html#vues">vues annuelles et interannuelles</a>) doivent être placées dans le répertoire <code>/Desktop/Calculs_R/Atlas/Sorties/Vues/</code>. Il faudra modifier le modèle d’atlas QGIS si une localisation différente est utilisée.</p>
-<div class="figure"><span id="fig:vueficheatlasresultats"></span>
+<p>Les commentaires affichés ne doivent pas dépasser les 600 caractères.</p>
+<div class="figure"><span style="display:block;" id="fig:vueficheatlasresultats"></span>
 <img src="Figures/Atlas/Exemple_fiche_atlas_resultats_recto.png" alt="Exemple de fiche synthétique de résultats annuels" width="50%" /><img src="Figures/Atlas/Exemple_fiche_atlas_resultats_verso.png" alt="Exemple de fiche synthétique de résultats annuels" width="50%" />
 <p class="caption">
 Figure 3.8: Exemple de fiche synthétique de résultats annuels
@@ -623,7 +623,7 @@ Figure 3.8: Exemple de fiche synthétique de résultats annuels
 </div>
 </div>
 </div>
-<h3> Conclusion</h3>
+<h3> Conclusion<a href="conclusion.html#conclusion" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <div id="refs" class="references csl-bib-body hanging-indent">
 <div id="ref-Allan_Streamecologystructure_1995" class="csl-entry">
 Allan, J. David. 1995. <em>Stream Ecology: Structure and Function of Running Waters</em>. <span>London</span>: <span>Chapman &amp; Hall</span>.
@@ -657,7 +657,6 @@ Tissot, L., and Y. Souchon. 2010. <span>“Synthèse Des Tolérances Thermiques 
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
-<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
 <script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
@@ -697,6 +696,10 @@ gitbook.start({
 "text": null
 },
 "download": ["Notice_outils_thermie.pdf", "Notice_outils_thermie.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
 "toc": {
 "collapse": "subsection"
 }

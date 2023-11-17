@@ -25,10 +25,6 @@ library(tidyverse)
 Ce chapitre contient les informations utiles à l'utilisation des différentes valorisations générées par l'outil de traitement. Un exemple de jeu de données généré par la fonction `chronique.traitement()` est téléchargeable à l'[adresse suivante](https://github.com/jbfagotfede39/notice-thermie/raw/master/data/Sortie/Exemple_sorties_outils_thermie.zip).
 </p>
 
-<p style="text-align: justify;">
-Par ailleurs, afin de faciliter l'appropriation des outils, un jeu de données de test a été inclus dans `data(chronique_exemple)`. La structure des tables utilisées à proprement parler est également disponible dans `data(chronique_structure_hors_bdd)`.
-</p>
-
 ## Arborescence
 Un dossier `Sorties` est généré à partir du traitement des données par la fonction `chronique.traitement()`, contenant :
 

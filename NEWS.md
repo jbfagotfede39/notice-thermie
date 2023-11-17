@@ -1,4 +1,10 @@
-# NEWS - afd39
+# NEWS - Notice thermie
+
+## 2023-11-17
+### Ajouts
+- Création d'un chapitre traitement
+  * Jeu de données d'exemple
+  * Importation des données
 
 ## 2022-12-22
 ### Ajouts

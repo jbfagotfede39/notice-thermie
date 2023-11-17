@@ -1,0 +1,114 @@
+---
+output:
+  html_document: default
+  pdf_document: default
+---
+
+```{r packages, echo=FALSE}
+library(knitr)
+library(pander)
+library(sf)
+library(tidyverse)
+```
+
+# Traitement des données
+
+<p style="text-align: justify;">
+Afin de faciliter l'appropriation des outils de traitement, un jeu de données de test a été inclus dans `data(chronique_exemple)`. La structure des tables utilisées à proprement parler est également disponible dans `data(chronique_structure_hors_bdd)`.
+</p>
+
+<p style="text-align: justify;">
+C'est à partir du jeu de données `data(chronique_exemple)` que les exemples suivants de traitement seront présentés.
+</p>
+
+## Structure des données
+<p style="text-align: justify;">
+Le jeu de données d'exemple est mis en mémoire. La structure des six principales tables est détaillé ci-dessous.
+</p>
+
+```{r, warning=FALSE, message=FALSE}
+library(aquatools)
+data(chronique_exemple)
+```
+
+### Format au sein de la base de données du RSTMAJ {#chronique_structure}
+<p style="text-align: justify;">
+Les formats présentés ci-dessous sont tels que présents au sein de la base de données PostGIS du RSTMAJ.
+</p>
+
+<p style="text-align: justify;">
+La structure des tables est visible via le jeu de données `chronique_structure`.
+</p>
+
+#### Stations {#chronique_structure_stations}
+<p style="text-align: justify;">
+Cette table contient la description des stations, notamment leur nommage homogène au sein du RSTMAJ.
+</p>
+```{r}
+stations_exemple %>% str()
+```
+
+#### Suivi {#chronique_structure_suivi}
+<p style="text-align: justify;">
+Cette table contient le suivi de terrain relatif à chaque intervention sur un point de suivi (pose, relève, dépose, etc.).
+</p>
+```{r}
+suivi_exemple %>% str()
+```
+
+#### Mesures {#chronique_structure_mesures}
+<p style="text-align: justify;">
+Cette table contient les mesures/chroniques/séries à proprement parler.
+</p>
+```{r}
+mesures_exemple %>% str()
+```
+
+#### Capteurs {#chronique_structure_capteurs}
+<p style="text-align: justify;">
+Cette table contient un descriptif rapide relatif à chaque capteur utilisé (marque, modèle, propriétaire, etc.).
+</p>
+```{r}
+capteurs_exemple %>% str()
+```
+
+#### Commentaires {#chronique_structure_commentaires}
+<p style="text-align: justify;">
+Cette table contient les commentaires rédigés de chaque chronique pour chaque couple station-année biologique-paramètre.
+</p>
+```{r}
+commentaires_exemple %>% str()
+```
+
+#### Résultats {#chronique_structure_resultats}
+<p style="text-align: justify;">
+Cette table contient les résultats/métriques calculés pour chaque couple station-année biologique-paramètre.
+</p>
+```{r}
+resultats_exemple %>% str()
+```
+
+### Données hors de la base de données du RSTMAJ {#chronique_structure_hors_bdd}
+<p style="text-align: justify;">
+La structure des tables sans les champs propres au RSTMAJ (dates de modifications, etc.) est visible au sein du jeu de données `chronique_structure_hors_bdd`.
+</p>
+
+## Ouverture des données {#chronique_ouverture}
+
+<p style="text-align: justify;">
+Les données peuvent être importées à partir de la fonction `chronique.ouverture()`.
+</p>
+
+```{r}
+mes_donnees <- chronique.ouverture(Type = "Mesures", typemesure = "Thermie", Localisation = "./data/Mesures/20347223.txt", skipvalue = 1, nbcolonnes = 6, typefichier = ".csv", typedate = "ymd")
+```
+
+<p style="text-align: justify;">
+Il est également possible de les importer par un traitement en lots.
+</p>
+
+```{.r}
+mes_donnees <-
+  fs::dir_ls("./Travail/", regexp = "\\.txt$") %>%
+  map_dfr(~ chronique.ouverture(Localisation = ., skipvalue = 1, nbcolonnes = 6, typefichier = ".csv", typedate = "ymd"))
+```

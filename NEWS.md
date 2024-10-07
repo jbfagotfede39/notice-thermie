@@ -1,5 +1,9 @@
 # NEWS - Notice thermie
 
+## 2024-10-07
+### Ajouts
+- Changement de pile
+
 ## 2023-11-17
 ### Ajouts
 - Création d'un chapitre traitement

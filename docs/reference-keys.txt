@@ -72,3 +72,5 @@ chronique_structure_capteurs
 chronique_structure_commentaires
 chronique_structure_resultats
 chronique_ouverture
+changementpile
+onset-hobo-ua-001-64

@@ -407,6 +407,41 @@ Le poids du manchon permet dans la grande majorité des cas une résistance suff
 
 </p>
 
+### Changement de pile {#changementpile}
+
+#### Onset Hobo UA-001-64
+- Matériel nécessaire
+  * Navette/interface USB permettant la récupération des données
+  * Ordinateur
+  * Graisse silicone
+  * Tournevis cruciforme fin
+  * Tournevis plat fin
+  * Étiquettes
+  
+- Organisation
+  * Disposer d'un plan de travail assez grand
+  * Faire des étiquettes et différents emplacements sur le plan de travail :
+    - Piles usagées (1)
+    - Piles neuves (2)
+    - Sondes HS, changer pile et récupérer les données
+    - Sondes avec pile déjà changée, données à vérifier
+    - Sondes fonctionnelles, avec pile à changer
+    - Sondes fonctionnelles et entretenues
+  * Arrêter la sonde et récupérer les données
+  * (Relancer la sonde si nécessaire)
+
+- Ouverture/fermeture des sondes
+  * Dévisser le boîtier et enlever le bouchon noir en plastique dur
+  * Nettoyer le bouchon noir en plastique dur
+  * Enlever la plaquette électronique, laisser l'étiquette bleue à l’intérieur
+  * Enlever la pile à l'aide du tournevis plat. Point de vigilance : faire attention à ne pas endommager l'antenne
+  * Ranger la pile usagée dans le groupe « piles usagées »
+  * Installer une pile neuve
+  * Remettre la plaquette électronique dans le boîtier (LED côté étroit de la goulotte dans le boîtier plastique)
+  * Appliquer une fine couche de graisse silicone sur le joint en caoutchouc du bouchon
+  * Fermer le boîtier en veillant à ne pas pincer le joint, et revisser sans excès
+
+
 ```{=html}
 <!--- Description ----
 ### Notices fabricants {#notices}

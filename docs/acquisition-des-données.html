@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapitre 2 Acquisition des données | Chroniques de température de milieux aquatiques</title>
   <meta name="description" content="Ce document présente l’utilisation d’outils d’acquisition et de traitement de chroniques de température de milieux aquatiques développés dans le cadre du RSTMAJ." />
-  <meta name="generator" content="bookdown 0.39 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.43 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapitre 2 Acquisition des données | Chroniques de température de milieux aquatiques" />
   <meta property="og:type" content="book" />
@@ -22,7 +22,7 @@
 
 
 
-<meta name="date" content="2024-10-07" />
+<meta name="date" content="2025-05-12" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -239,40 +239,44 @@
 <li><p>Saisie des informations de terrain concernant les stations dans le <a href="https://github.com/jbfagotfede39/notice-thermie/raw/master/data/Stations/Saisie_stations_chroniques.xlsx">fichier excel</a> (ou <a href="https://github.com/jbfagotfede39/notice-thermie/raw/master/data/Stations/Saisie_stations_chroniques_avec_champs_complementaires.xlsx">cette version plus large</a> pour les collectivités extérieures au département et souhaitant générer les fiches atlas de résultats, avec complément des champs adéquats : chsta_distancesource, chsta_typetheorique, chsta_altitude, chsta_codecontextepdpg et chsta_sprep - séparer les codes espèces par des virgules : TRF,CHA,OBR).</p></li>
 <li><p>Complément des différents champs :</p>
 <ul>
-<li>chsta_coderhj : code d’identification de la station propre au RSTMAJ. <strong>Laisser vide</strong></li>
-<li>chsta_codemo : code d’identification de la station propre à chaque maître d’ouvrage</li>
-<li>chsta_codesie : si la station possède un code dans le SIE de l’AERMC</li>
-<li>chsta_mo : Nom du maître d’ouvrage : “OFB”, “CD39_CR_Ain”, “CD39_RDM”, “DREAL”, “FJPPMA”, “PNRHJ”, “SMDL”, “SR3A”</li>
-<li>chsta_milieu : Nom de l’écosystème (cours d’eau ou plan d’eau)</li>
-<li>chsta_coord_x et chsta_coord_y : Coordonnées précises de la sonde en <strong>Lambert 93</strong></li>
-<li>chsta_fonctionnement : “En cours” ou “Arrêté”</li>
-<li>chsta_transmission : “Oui” si télétransmission, sinon “Non”</li>
-<li>chsta_suivithermie : “Oui”</li>
-<li>chsta_reseauthermietype : “Patrimonial” ou “Opérationnel”</li>
-<li>chsta_suivipiezo : “Non”</li>
-<li>chsta_suivihydro : “Non”</li>
-<li>chsta_suivio2 : “Non”</li>
-<li>chsta_suivipluvio : “Non”</li>
-<li>chsta_largeurlitmineur : largeur du lit mineur, en mètres</li>
-<li>chsta_largeurlitetiage : largeur du lit d’étiage, en mètres</li>
-<li>chsta_rive : rive d’ancrage de la sonde (RD, RG)</li>
-<li>chsta_ancrage : support d’ancrage de la sonde</li>
-<li>chsta_acces : modalités d’accès au secteur</li>
-<li>chsta_detailsloc : détails de localisation</li>
-<li>chsta_description : description du dispositif, si nécessaire</li>
-<li>chsta_ordretournee : position dans l’ordre de la tournée de relève du maître d’ouvrage, si nécessaire</li>
-<li>chsta_impacts : présence d’impacts potentiels sur la thermie (étang/seuil à l’amont, etc.)</li>
-<li>chsta_profsonde : profondeur d’eau sous la sonde à l’étiage, en mètres</li>
-<li>chsta_substrats : substrat en présence sous la sonde (FIN, GAL, GRA, etc.)</li>
-<li>chsta_distberge : distance à la berge, en mètres</li>
-<li>chsta_ombrage : importance relative de l’ombrage à l’endroit où la sonde a été placée : TF = Très Faible ; F = Faible ; M = Moyen ; I = Important ; TI = Très Important</li>
-<li>chsta_facies : faciès d’’écoulement dans lequel la sonde a été placée : RAD = radier/rapide ; PLC= plat courant ; PLT = plat lent ; CHELOT = chenal lotique ; CHELENT = chenal lentique ; MOU = mouille/fosse</li>
-<li>chsta_numphoto : Nom du fichier de la photographie de l’emplacement de la sonde, annoté si besoin</li>
-<li>chsta_zcapteur : <strong>Laisser vide</strong></li>
-<li>chsta_zbouchon : <strong>Laisser vide</strong></li>
-<li>chsta_typez : <strong>Laisser vide</strong></li>
-<li>chsta_hcapteurbouchon : <strong>Laisser vide</strong></li>
-<li>chsta_remarques : éventuelles remarques sur la station</li>
+<li><code>chsta_coderhj</code> : code d’identification de la station propre au RSTMAJ. <strong>Laisser vide</strong></li>
+<li><code>chsta_codemo</code> : code d’identification de la station propre à chaque maître d’ouvrage</li>
+<li><code>chsta_codesie</code> : si la station possède un code dans le SIE de l’AERMC</li>
+<li><code>chsta_mo</code> : Nom du maître d’ouvrage : “OFB”, “CD39_CR_Ain”, “CD39_RDM”, “DREAL”, “FJPPMA”, “PNRHJ”, “SMDL”, “SR3A”</li>
+<li><code>chsta_milieu</code> : Nom de l’écosystème (cours d’eau ou plan d’eau)</li>
+<li><code>chsta_coord_x</code> et chsta_coord_y : Coordonnées précises de la sonde en <strong>Lambert 93</strong></li>
+<li><code>chsta_fonctionnement</code> : “En cours” ou “Arrêté”</li>
+<li><code>chsta_transmission</code> : “Oui” si télétransmission, sinon “Non”</li>
+<li><code>chsta_suivithermie</code> : “Oui”</li>
+<li><code>chsta_reseauthermietype</code> : “Patrimonial” ou “Opérationnel”</li>
+<li><code>chsta_suivipiezo</code> : “Non”</li>
+<li><code>chsta_suivihydro</code> : “Non”</li>
+<li>`chsta_suivio2`` : “Non”</li>
+<li><code>chsta_suivipluvio</code> : “Non”</li>
+<li><code>chsta_largeurlitmineur</code> : largeur du lit mineur, en mètres</li>
+<li><code>chsta_largeurlitetiage</code> : largeur du lit d’étiage, en mètres</li>
+<li><code>chsta_rive</code> : rive d’ancrage de la sonde (RD, RG)</li>
+<li><code>chsta_ancrage</code> : support d’ancrage de la sonde</li>
+<li><code>chsta_acces</code> : modalités d’accès au secteur</li>
+<li><code>chsta_detailsloc</code> : détails de localisation</li>
+<li><code>chsta_description</code> : description du dispositif, si nécessaire</li>
+<li><code>chsta_ordretournee</code> : position dans l’ordre de la tournée de relève du maître d’ouvrage, si nécessaire</li>
+<li><code>chsta_impacts</code> : présence d’impacts potentiels sur la thermie (étang/seuil à l’amont, etc.)</li>
+<li><code>chsta_profsonde</code> : profondeur d’eau sous la sonde à l’étiage, en mètres</li>
+<li><code>chsta_substrats</code> : substrat en présence sous la sonde (FIN, GAL, GRA, etc.)</li>
+<li><code>chsta_distberge</code> : distance à la berge, en mètres</li>
+<li><code>chsta_ombrage</code> : importance relative de l’ombrage à l’endroit où la sonde a été placée : TF = Très Faible ; F = Faible ; M = Moyen ; I = Important ; TI = Très Important</li>
+<li><code>chsta_facies</code> : faciès d’’écoulement dans lequel la sonde a été placée : RAD = radier/rapide ; PLC= plat courant ; PLT = plat lent ; CHELOT = chenal lotique ; CHELENT = chenal lentique ; MOU = mouille/fosse</li>
+<li><code>chsta_numphoto</code> : Nom du fichier de la photographie de l’emplacement de la sonde, annoté si besoin</li>
+<li><code>chsta_zcapteur</code> : <strong>Laisser vide</strong></li>
+<li><code>chsta_zbouchon</code> : <strong>Laisser vide</strong></li>
+<li><code>chsta_typez</code> : <strong>Laisser vide</strong></li>
+<li><code>chsta_hcapteurbouchon</code> : <strong>Laisser vide</strong></li>
+<li><code>chsta_remarques</code> : éventuelles remarques sur la station</li>
+<li><code>chsta_codehydro</code> : code de la station hydrométrique associée (si pertinent)</li>
+<li><code>chsta_codemeteofrance</code> : code de la station Météo-France associée</li>
+<li><code>chsta_infl_ant_type</code> : Type d’impacts/influence anthropiques potentiels sur la thermie (étang/seuil à l’amont, rejets, chenalisation, etc.), en lien avec le champ <code>chsta_impacts</code> ci-dessus</li>
+<li><code>chsta_infl_nappe</code> : éventuelles remarques sur la station (<code>Oui</code>/<code>Non</code>)</li>
 </ul></li>
 </ul>
 </div>
@@ -730,42 +734,42 @@ Figure 2.3: Exemple de lest
 <script>
 gitbook.require(["gitbook"], function(gitbook) {
 gitbook.start({
-"sharing": {
-"github": false,
-"facebook": true,
-"twitter": true,
-"linkedin": false,
-"weibo": false,
-"instapaper": false,
-"vk": false,
-"whatsapp": false,
-"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
-},
-"fontsettings": {
-"theme": "white",
-"family": "sans",
-"size": 2
-},
-"edit": {
-"link": null,
-"text": null
-},
-"history": {
-"link": null,
-"text": null
-},
-"view": {
-"link": null,
-"text": null
-},
-"download": ["Notice_outils_thermie.pdf", "Notice_outils_thermie.epub"],
-"search": {
-"engine": "fuse",
-"options": null
-},
-"toc": {
-"collapse": "subsection"
-}
+  "sharing": {
+    "github": false,
+    "facebook": true,
+    "twitter": true,
+    "linkedin": false,
+    "weibo": false,
+    "instapaper": false,
+    "vk": false,
+    "whatsapp": false,
+    "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+  },
+  "fontsettings": {
+    "theme": "white",
+    "family": "sans",
+    "size": 2
+  },
+  "edit": {
+    "link": null,
+    "text": null
+  },
+  "history": {
+    "link": null,
+    "text": null
+  },
+  "view": {
+    "link": null,
+    "text": null
+  },
+  "download": ["Notice_outils_thermie.pdf", "Notice_outils_thermie.epub"],
+  "search": {
+    "engine": "fuse",
+    "options": null
+  },
+  "toc": {
+    "collapse": "subsection"
+  }
 });
 });
 </script>

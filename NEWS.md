@@ -1,5 +1,9 @@
 # NEWS - Notice thermie
 
+## 2025-05-12
+### Ajouts
+- Ajout des champs `chsta_codehydro`, `chsta_codemeteofrance`, `chsta_infl_ant_type`, `chsta_infl_nappe` dans le fichier excel des stations
+
 ## 2024-10-07
 ### Ajouts
 - Changement de pile

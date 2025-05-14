@@ -22,7 +22,7 @@
 
 
 
-<meta name="date" content="2025-05-12" />
+<meta name="date" content="2025-05-14" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -236,23 +236,30 @@
 <h3><span class="header-section-number">2.3.1</span> Saisie des caractéristiques des stations<a href="acquisition-des-données.html#saisiestations" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <ul>
 <li><p>Complément sur le terrain des informations de la station sur la fiche <a href="https://github.com/jbfagotfede39/notice-thermie/raw/master/data/Stations/Fiche_pose_sonde_thermique_simple.pdf">recto</a> ou <a href="https://github.com/jbfagotfede39/notice-thermie/raw/master/data/Stations/Fiche_pose_sonde_thermique_double.pdf">recto-verso</a></p></li>
-<li><p>Saisie des informations de terrain concernant les stations dans le <a href="https://github.com/jbfagotfede39/notice-thermie/raw/master/data/Stations/Saisie_stations_chroniques.xlsx">fichier excel</a> (ou <a href="https://github.com/jbfagotfede39/notice-thermie/raw/master/data/Stations/Saisie_stations_chroniques_avec_champs_complementaires.xlsx">cette version plus large</a> pour les collectivités extérieures au département et souhaitant générer les fiches atlas de résultats, avec complément des champs adéquats : chsta_distancesource, chsta_typetheorique, chsta_altitude, chsta_codecontextepdpg et chsta_sprep - séparer les codes espèces par des virgules : TRF,CHA,OBR).</p></li>
+<li><p>Saisie des informations de terrain concernant les stations dans le <a href="https://github.com/jbfagotfede39/notice-thermie/raw/master/data/Stations/Saisie_stations_chroniques.xlsx">fichier excel</a> (ou <a href="https://github.com/jbfagotfede39/notice-thermie/raw/master/data/Stations/Saisie_stations_chroniques_avec_champs_complementaires.xlsx">cette version plus large</a> pour les collectivités extérieures au département et souhaitant générer les fiches atlas de résultats, avec complément des champs adéquats : <code>chsta_distancesource</code>, <code>chsta_typetheorique</code>, <code>chsta_altitude</code>, <code>chsta_codecontextepdpg</code> et <code>chsta_sprep</code> - séparer les codes espèces par des virgules : <code>TRF,CHA,OBR</code>).</p></li>
 <li><p>Complément des différents champs :</p>
 <ul>
 <li><code>chsta_coderhj</code> : code d’identification de la station propre au RSTMAJ. <strong>Laisser vide</strong></li>
 <li><code>chsta_codemo</code> : code d’identification de la station propre à chaque maître d’ouvrage</li>
 <li><code>chsta_codesie</code> : si la station possède un code dans le SIE de l’AERMC</li>
-<li><code>chsta_mo</code> : Nom du maître d’ouvrage : “OFB”, “CD39_CR_Ain”, “CD39_RDM”, “DREAL”, “FJPPMA”, “PNRHJ”, “SMDL”, “SR3A”</li>
+<li><code>chsta_mo</code> : Nom du maître d’ouvrage : <code>OFB</code>, <code>CD39_CR_Ain</code>, <code>CD39_RDM</code>, <code>DREAL</code>, <code>FJPPMA</code>, <code>PNRHJ</code>, <code>SMDL</code>, <code>SR3A</code></li>
 <li><code>chsta_milieu</code> : Nom de l’écosystème (cours d’eau ou plan d’eau)</li>
 <li><code>chsta_coord_x</code> et chsta_coord_y : Coordonnées précises de la sonde en <strong>Lambert 93</strong></li>
-<li><code>chsta_fonctionnement</code> : “En cours” ou “Arrêté”</li>
-<li><code>chsta_transmission</code> : “Oui” si télétransmission, sinon “Non”</li>
-<li><code>chsta_suivithermie</code> : “Oui”</li>
-<li><code>chsta_reseauthermietype</code> : “Patrimonial” ou “Opérationnel”</li>
-<li><code>chsta_suivipiezo</code> : “Non”</li>
-<li><code>chsta_suivihydro</code> : “Non”</li>
-<li>`chsta_suivio2`` : “Non”</li>
-<li><code>chsta_suivipluvio</code> : “Non”</li>
+<li><code>chsta_fonctionnement</code> : <code>En cours</code> ou <code>Arrêté</code></li>
+<li><code>chsta_transmission</code> : <code>Oui</code> si télétransmission, sinon <code>Non</code></li>
+<li><code>chsta_suivithermie</code> : <code>Oui</code></li>
+<li><code>chsta_reseauthermietype</code> : <code>Patrimonial</code> ou <code>Opérationnel</code></li>
+<li><code>chsta_suivipiezo</code> : <code>Non</code></li>
+<li><code>chsta_suivihydro</code> : <code>Non</code></li>
+<li><code>chsta_suivio2</code> : <code>Non</code></li>
+<li><code>chsta_suivipluvio</code> : <code>Non</code></li>
+<li><code>chsta_codehydro</code> : code de la station hydrométrique associée (si pertinent)</li>
+<li><code>chsta_codemeteofrance</code> : code de la station Météo-France associée</li>
+<li><code>chsta_distancesource</code> : distance à la source, en km</li>
+<li><code>chsta_typetheorique</code> : type théorique selon la typologie de Verneaux : <code>1.5</code>, <code>3</code>, etc.</li>
+<li><code>chsta_altitude</code> : altitude, en mètres</li>
+<li><code>chsta_codecontextepdpg</code> : Identifiant du contexte PDPG local</li>
+<li><code>chsta_sprep</code> : Espèce(s) piscicole(s) repère(s), à séparer par des virgules : <code>TRF,CHA,OBR</code></li>
 <li><code>chsta_largeurlitmineur</code> : largeur du lit mineur, en mètres</li>
 <li><code>chsta_largeurlitetiage</code> : largeur du lit d’étiage, en mètres</li>
 <li><code>chsta_rive</code> : rive d’ancrage de la sonde (RD, RG)</li>
@@ -262,6 +269,8 @@
 <li><code>chsta_description</code> : description du dispositif, si nécessaire</li>
 <li><code>chsta_ordretournee</code> : position dans l’ordre de la tournée de relève du maître d’ouvrage, si nécessaire</li>
 <li><code>chsta_impacts</code> : présence d’impacts potentiels sur la thermie (étang/seuil à l’amont, etc.)</li>
+<li><code>chsta_infl_ant_type</code> : Type d’impacts/influence anthropiques potentiels sur la thermie (étang/seuil à l’amont, rejets, chenalisation, etc.), en lien avec le champ <code>chsta_impacts</code> ci-dessus</li>
+<li><code>chsta_infl_nappe</code> : éventuelles remarques sur la station (<code>Oui</code>/<code>Non</code>)</li>
 <li><code>chsta_profsonde</code> : profondeur d’eau sous la sonde à l’étiage, en mètres</li>
 <li><code>chsta_substrats</code> : substrat en présence sous la sonde (FIN, GAL, GRA, etc.)</li>
 <li><code>chsta_distberge</code> : distance à la berge, en mètres</li>
@@ -273,10 +282,6 @@
 <li><code>chsta_typez</code> : <strong>Laisser vide</strong></li>
 <li><code>chsta_hcapteurbouchon</code> : <strong>Laisser vide</strong></li>
 <li><code>chsta_remarques</code> : éventuelles remarques sur la station</li>
-<li><code>chsta_codehydro</code> : code de la station hydrométrique associée (si pertinent)</li>
-<li><code>chsta_codemeteofrance</code> : code de la station Météo-France associée</li>
-<li><code>chsta_infl_ant_type</code> : Type d’impacts/influence anthropiques potentiels sur la thermie (étang/seuil à l’amont, rejets, chenalisation, etc.), en lien avec le champ <code>chsta_impacts</code> ci-dessus</li>
-<li><code>chsta_infl_nappe</code> : éventuelles remarques sur la station (<code>Oui</code>/<code>Non</code>)</li>
 </ul></li>
 </ul>
 </div>

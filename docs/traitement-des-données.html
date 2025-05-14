@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapitre 3 Traitement des données | Chroniques de température de milieux aquatiques</title>
   <meta name="description" content="Ce document présente l’utilisation d’outils d’acquisition et de traitement de chroniques de température de milieux aquatiques développés dans le cadre du RSTMAJ." />
-  <meta name="generator" content="bookdown 0.36 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.43 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapitre 3 Traitement des données | Chroniques de température de milieux aquatiques" />
   <meta property="og:type" content="book" />
@@ -22,7 +22,7 @@
 
 
 
-<meta name="date" content="2023-11-17" />
+<meta name="date" content="2025-05-14" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -55,7 +55,7 @@
 
 <style type="text/css">
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span { line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -65,7 +65,7 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -166,6 +166,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="2.5" data-path="acquisition-des-données.html"><a href="acquisition-des-données.html#fonctionnementmateriel"><i class="fa fa-check"></i><b>2.5</b> Fonctionnement du matériel</a>
 <ul>
 <li class="chapter" data-level="2.5.1" data-path="acquisition-des-données.html"><a href="acquisition-des-données.html#montageancrage"><i class="fa fa-check"></i><b>2.5.1</b> Montage d’ancrage</a></li>
+<li class="chapter" data-level="2.5.2" data-path="acquisition-des-données.html"><a href="acquisition-des-données.html#changementpile"><i class="fa fa-check"></i><b>2.5.2</b> Changement de pile</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="traitement-des-données.html"><a href="traitement-des-données.html"><i class="fa fa-check"></i><b>3</b> Traitement des données</a>
@@ -235,272 +236,266 @@ C’est à partir du jeu de données <code>data(chronique_exemple)</code> que le
 <p style="text-align: justify;">
 Le jeu de données d’exemple est mis en mémoire. La structure des six principales tables est détaillé ci-dessous.
 </p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="traitement-des-données.html#cb3-1" tabindex="-1"></a><span class="fu">library</span>(aquatools)</span>
-<span id="cb3-2"><a href="traitement-des-données.html#cb3-2" tabindex="-1"></a><span class="fu">data</span>(chronique_exemple)</span></code></pre></div>
+<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="traitement-des-données.html#cb25-1" tabindex="-1"></a><span class="fu">library</span>(aquatools)</span>
+<span id="cb25-2"><a href="traitement-des-données.html#cb25-2" tabindex="-1"></a><span class="fu">data</span>(chronique_structure)</span></code></pre></div>
 <div id="chronique_structure" class="section level3 hasAnchor" number="3.1.1">
 <h3><span class="header-section-number">3.1.1</span> Format au sein de la base de données du RSTMAJ<a href="traitement-des-données.html#chronique_structure" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p style="text-align: justify;">
 Les formats présentés ci-dessous sont tels que présents au sein de la base de données PostGIS du RSTMAJ.
 </p>
 <p style="text-align: justify;">
-La structure des tables est visible via le jeu de données <code>chronique_structure</code>.
+La structure des tables est visible via le jeu de données <code>chronique_structure_hors_bdd</code>.
 </p>
 <div id="chronique_structure_stations" class="section level4 hasAnchor" number="3.1.1.1">
 <h4><span class="header-section-number">3.1.1.1</span> Stations<a href="traitement-des-données.html#chronique_structure_stations" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p style="text-align: justify;">
 Cette table contient la description des stations, notamment leur nommage homogène au sein du RSTMAJ.
 </p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="traitement-des-données.html#cb4-1" tabindex="-1"></a>stations_exemple <span class="sc">%&gt;%</span> <span class="fu">str</span>()</span></code></pre></div>
-<pre><code>## Classes &#39;sf&#39; and &#39;data.frame&#39;:   8 obs. of  70 variables:
-##  $ id                                           : int  7 6 10 28 59 52 51 58
-##  $ chsta_coderhj                                : chr  &quot;DRO11-6&quot; &quot;DRO14-2&quot; &quot;DRO6-8&quot; &quot;HER0-6&quot; ...
-##  $ chsta_codemo                                 : chr  &quot;Amont confluence Raillette&quot; &quot;Aval STEP - Clouterie&quot; &quot;Amont pont route de la Frasne&quot; &quot;Aval lac Bonlieu&quot; ...
-##  $ chsta_codesie                                : chr  &quot;06084285&quot; &quot;06084185&quot; &quot;06084255&quot; &quot;06084080&quot; ...
-##  $ chsta_mo                                     : chr  &quot;FJPPMA&quot; &quot;FJPPMA&quot; &quot;FJPPMA&quot; &quot;FJPPMA&quot; ...
-##  $ chsta_milieu                                 : chr  &quot;Drouvenant&quot; &quot;Drouvenant&quot; &quot;Drouvenant&quot; &quot;Hérisson&quot; ...
-##  $ chsta_milieucodehydro                        : logi  NA NA NA NA NA NA ...
-##  $ chsta_bassin                                 : chr  NA NA NA NA ...
-##  $ chsta_sousbassin                             : chr  NA NA NA NA ...
-##  $ chsta_commune                                : chr  &quot;39154&quot; &quot;39061&quot; &quot;39239&quot; &quot;39063&quot; ...
-##  $ chsta_departement                            : chr  &quot;39&quot; &quot;39&quot; &quot;39&quot; &quot;39&quot; ...
-##  $ chsta_codecontextepdpg                       : chr  NA NA NA NA ...
-##  $ chsta_pays                                   : chr  &quot;France&quot; &quot;France&quot; &quot;France&quot; &quot;France&quot; ...
-##  $ chsta_coord_x                                : num  910618 909328 914154 919984 912243 ...
-##  $ chsta_coord_y                                : num  6612524 6614205 6611534 6614446 6620181 ...
-##  $ chsta_coord_type                             : chr  &quot;L93&quot; &quot;L93&quot; &quot;L93&quot; &quot;L93&quot; ...
-##  $ chsta_fonctionnement                         : chr  &quot;En cours&quot; &quot;En cours&quot; &quot;En cours&quot; &quot;En cours&quot; ...
-##  $ chsta_transmission                           : chr  &quot;Non&quot; &quot;Non&quot; &quot;Non&quot; &quot;Non&quot; ...
-##  $ chsta_suivithermie                           : chr  &quot;Oui&quot; &quot;Oui&quot; &quot;Oui&quot; &quot;Oui&quot; ...
-##  $ chsta_reseauthermietype                      : chr  &quot;Patrimonial&quot; &quot;Patrimonial&quot; &quot;Patrimonial&quot; &quot;Patrimonial&quot; ...
-##  $ chsta_suivipiezo                             : chr  &quot;Non&quot; &quot;Non&quot; &quot;Non&quot; &quot;Non&quot; ...
-##  $ chsta_suivihydro                             : chr  &quot;f&quot; &quot;f&quot; &quot;f&quot; &quot;f&quot; ...
-##  $ chsta_suivio2                                : chr  NA NA NA NA ...
-##  $ chsta_suivipluvio                            : chr  NA NA NA NA ...
-##  $ chsta_altitude                               : num  507 471 558 790 495 465 541 521
-##  $ chsta_distancesource                         : num  11.6 14.2 6.8 0.6 14.8 18.7 5.6 6.1
-##  $ chsta_distancesource_confluencedrainprincipal: num  54.4 54.4 54.4 45.7 45.7 45.7 45.7 45.7
-##  $ chsta_temperaturemax                         : int  NA NA NA NA NA 19 16 NA
-##  $ chsta_sectionmouillee                        : int  2 1 4 NA 5 1 1 1
-##  $ chsta_durete                                 : int  NA NA NA NA NA 79 61 NA
-##  $ chsta_largeurlitmineur                       : num  9 16 10 4 10 5 4 6
-##  $ chsta_largeurlitetiage                       : num  7 8 7 2 9 NA NA 5
-##  $ chsta_pente                                  : int  29 7 4 NA NA 8 41 NA
-##  $ chsta_typetheorique                          : chr  &quot;2.5&quot; &quot;3.5&quot; &quot;2.5&quot; &quot;3&quot; ...
-##  $ chsta_surfacebassinversant                   : num  NA NA NA NA 49 NA NA NA
-##  $ chsta_carteign                               : chr  &quot;3327OT&quot; &quot;3327OT&quot; &quot;3327OT&quot; &quot;3326ET&quot; ...
-##  $ chsta_rive                                   : chr  &quot;RD&quot; &quot;RG&quot; &quot;RD&quot; &quot;RD&quot; ...
-##  $ chsta_ancrage                                : chr  &quot;Racine + cable&quot; &quot;Racine + cable&quot; &quot;Racine + cable&quot; &quot;Racine + cable&quot; ...
-##  $ chsta_acces                                  : chr  NA NA NA NA ...
-##  $ chsta_detailsloc                             : chr  &quot;30m amont passerelle - 10m à l&#39;aval du radier amont - 1m à l&#39;aval d&#39;un bloc - après une racine en sous-berge - &quot;| __truncated__ &quot;Prendre à dte depuis point de stationnement - Dans veine de courant aval gros BRA - Fin de station de pêche - P&quot;| __truncated__ &quot;10m amont pont après racine à l&#39;abri des embâcles - Aplomb verne surplombant la rivière&quot; &quot;20m amont pont - 2ème arbre en racine - Point ORANGE sur arbre&quot; ...
-##  $ chsta_description                            : chr  NA NA NA NA ...
-##  $ chsta_url                                    : chr  NA NA NA NA ...
-##  $ chsta_remarques                              : chr  NA NA NA NA ...
-##  $ chsta_ordretournee                           : int  5 4 6 9 2 NA NA 1
-##  $ chsta_impacts                                : chr  NA NA &quot;Pont aval non impactant&quot; &quot;Lac de Bonlieu&quot; ...
-##  $ chsta_profsonde                              : num  0 0 0 0 0 NA NA 0
-##  $ chsta_substrats                              : chr  &quot;BLO/GAL&quot; &quot;BLO/GAL fort courant&quot; &quot;GAL/GRA dans FOS&quot; &quot;GAL&quot; ...
-##  $ chsta_distberge                              : num  0 0 0 0 0 NA NA 0
-##  $ chsta_numphoto                               : chr  &quot;DRO11-6.png&quot; &quot;DRO14-2.png&quot; &quot;DRO6-8.png&quot; &quot;HER0-6.jpg&quot; ...
-##  $ chsta_zcapteur                               : num  NA NA NA NA NA NA NA NA
-##  $ chsta_zbouchon                               : num  NA NA NA NA NA NA NA NA
-##  $ chsta_typez                                  : num  NA NA NA NA NA NA NA NA
-##  $ chsta_hcapteurbouchon                        : chr  NA NA NA NA ...
-##  $ chsta_module                                 : num  NA NA NA NA 1.64 NA NA NA
-##  $ chsta_qmna5                                  : num  NA NA NA NA 0.16 NA NA NA
-##  $ chsta_q2                                     : num  NA NA NA NA 14 NA NA NA
-##  $ chsta_q5                                     : num  NA NA NA NA 18 NA NA NA
-##  $ chsta_q10                                    : num  NA NA NA NA 20 NA NA NA
-##  $ chsta_q20                                    : num  NA NA NA NA 23 NA NA NA
-##  $ chsta_q30                                    : num  NA NA NA NA NA NA NA NA
-##  $ chsta_q50                                    : num  NA NA NA NA 26 NA NA NA
-##  $ chsta_q100                                   : num  NA NA NA NA NA NA NA NA
-##  $ chsta_q300                                   : num  NA NA NA NA NA NA NA NA
-##  $ _modif_utilisateur                           : chr  &quot;jb&quot; &quot;jb&quot; &quot;jb&quot; &quot;jb&quot; ...
-##  $ _modif_type                                  : chr  &quot;U&quot; &quot;U&quot; &quot;U&quot; &quot;U&quot; ...
-##  $ _modif_date                                  : POSIXct, format: &quot;2020-12-22 13:29:45&quot; &quot;2020-12-22 13:29:45&quot; ...
-##  $ chsta_ombrage                                : chr  NA NA NA NA ...
-##  $ chsta_facies                                 : chr  NA NA NA NA ...
-##  $ chsta_sprep                                  : chr  NA NA &quot;TRF, CHA, VAI, LOF&quot; &quot;TRF, PER, BRO&quot; ...
-##  $ geom                                         :sfc_POINT of length 8; first list element:  &#39;XY&#39; num  910618 6612524
-##  - attr(*, &quot;sf_column&quot;)= chr &quot;geom&quot;
+<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="traitement-des-données.html#cb26-1" tabindex="-1"></a>stations_structure_hors_bdd <span class="sc">%&gt;%</span> <span class="fu">str</span>()</span></code></pre></div>
+<pre><code>## Classes &#39;sf&#39; and &#39;data.frame&#39;:   0 obs. of  71 variables:
+##  $ id                                           : int 
+##  $ chsta_coderhj                                : chr 
+##  $ chsta_codemo                                 : chr 
+##  $ chsta_codesie                                : chr 
+##  $ chsta_mo                                     : chr 
+##  $ chsta_milieu                                 : chr 
+##  $ chsta_milieucodehydro                        : logi 
+##  $ chsta_bassin                                 : chr 
+##  $ chsta_sousbassin                             : chr 
+##  $ chsta_commune                                : chr 
+##  $ chsta_departement                            : chr 
+##  $ chsta_codecontextepdpg                       : chr 
+##  $ chsta_pays                                   : chr 
+##  $ chsta_coord_x                                : num 
+##  $ chsta_coord_y                                : num 
+##  $ chsta_coord_type                             : chr 
+##  $ chsta_fonctionnement                         : chr 
+##  $ chsta_transmission                           : chr 
+##  $ chsta_suivithermie                           : chr 
+##  $ chsta_reseauthermietype                      : chr 
+##  $ chsta_suivipiezo                             : chr 
+##  $ chsta_suivihydro                             : chr 
+##  $ chsta_suivio2                                : chr 
+##  $ chsta_suivipluvio                            : chr 
+##  $ chsta_altitude                               : num 
+##  $ chsta_distancesource                         : num 
+##  $ chsta_distancesource_confluencedrainprincipal: num 
+##  $ chsta_temperaturemax                         : int 
+##  $ chsta_sectionmouillee                        : int 
+##  $ chsta_durete                                 : int 
+##  $ chsta_largeurlitmineur                       : num 
+##  $ chsta_largeurlitetiage                       : num 
+##  $ chsta_pente                                  : int 
+##  $ chsta_typetheorique                          : chr 
+##  $ chsta_surfacebassinversant                   : num 
+##  $ chsta_carteign                               : chr 
+##  $ chsta_rive                                   : chr 
+##  $ chsta_ancrage                                : chr 
+##  $ chsta_acces                                  : chr 
+##  $ chsta_detailsloc                             : chr 
+##  $ chsta_description                            : chr 
+##  $ chsta_url                                    : chr 
+##  $ chsta_remarques                              : chr 
+##  $ chsta_ordretournee                           : int 
+##  $ chsta_impacts                                : chr 
+##  $ chsta_profsonde                              : num 
+##  $ chsta_substrats                              : chr 
+##  $ chsta_distberge                              : num 
+##  $ chsta_numphoto                               : chr 
+##  $ chsta_zcapteur                               : num 
+##  $ chsta_zbouchon                               : num 
+##  $ chsta_typez                                  : num 
+##  $ chsta_hcapteurbouchon                        : chr 
+##  $ chsta_module                                 : num 
+##  $ chsta_qmna5                                  : num 
+##  $ chsta_q2                                     : num 
+##  $ chsta_q5                                     : num 
+##  $ chsta_q10                                    : num 
+##  $ chsta_q20                                    : num 
+##  $ chsta_q30                                    : num 
+##  $ chsta_q50                                    : num 
+##  $ chsta_q100                                   : num 
+##  $ chsta_q300                                   : num 
+##  $ chsta_ombrage                                : chr 
+##  $ chsta_facies                                 : chr 
+##  $ chsta_sprep                                  : chr 
+##  $ chsta_codehydro                              : chr 
+##  $ chsta_codemeteofrance                        : chr 
+##  $ chsta_infl_ant_type                          : chr 
+##  $ chsta_infl_nappe                             : chr 
+##  $ geom                                         :sfc_GEOMETRY of length 0 - attr(*, &quot;sf_column&quot;)= chr &quot;geom&quot;
 ##  - attr(*, &quot;agr&quot;)= Factor w/ 3 levels &quot;constant&quot;,&quot;aggregate&quot;,..: NA NA NA NA NA NA NA NA NA NA ...
-##   ..- attr(*, &quot;names&quot;)= chr [1:69] &quot;id&quot; &quot;chsta_coderhj&quot; &quot;chsta_codemo&quot; &quot;chsta_codesie&quot; ...</code></pre>
+##   ..- attr(*, &quot;names&quot;)= chr [1:70] &quot;id&quot; &quot;chsta_coderhj&quot; &quot;chsta_codemo&quot; &quot;chsta_codesie&quot; ...</code></pre>
 </div>
 <div id="chronique_structure_suivi" class="section level4 hasAnchor" number="3.1.1.2">
 <h4><span class="header-section-number">3.1.1.2</span> Suivi<a href="traitement-des-données.html#chronique_structure_suivi" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p style="text-align: justify;">
 Cette table contient le suivi de terrain relatif à chaque intervention sur un point de suivi (pose, relève, dépose, etc.).
 </p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="traitement-des-données.html#cb6-1" tabindex="-1"></a>suivi_exemple <span class="sc">%&gt;%</span> <span class="fu">str</span>()</span></code></pre></div>
-<pre><code>## tibble [118 × 19] (S3: tbl_df/tbl/data.frame)
-##  $ id                  : int [1:118] 3125 3126 3169 2927 1983 1451 1348 1349 761 748 ...
-##  $ chsvi_mo            : chr [1:118] &quot;FJPPMA&quot; &quot;FJPPMA&quot; &quot;FJPPMA&quot; &quot;FJPPMA&quot; ...
-##  $ chsvi_coderhj       : chr [1:118] &quot;DRO11-6&quot; &quot;DRO11-6&quot; &quot;DRO11-6&quot; &quot;DRO11-6&quot; ...
-##  $ chsvi_typesuivi     : chr [1:118] &quot;Thermie&quot; &quot;Thermie&quot; &quot;Thermie&quot; &quot;Thermie&quot; ...
-##  $ chsvi_operateurs    : chr [1:118] &quot;Val&quot; &quot;Val&quot; &quot;Val&quot; &quot;Val&quot; ...
-##  $ chsvi_date          : Date[1:118], format: &quot;2021-03-25&quot; &quot;2021-03-25&quot; ...
-##  $ chsvi_heure         : chr [1:118] &quot;13:30:00&quot; &quot;13:30:00&quot; &quot;10:55:00&quot; &quot;10:15:00&quot; ...
-##  $ chsvi_capteur       : chr [1:118] &quot;20187204&quot; &quot;20858140&quot; &quot;20187204&quot; &quot;20187204&quot; ...
-##  $ chsvi_valeur        : num [1:118] 8.1 8.1 8.6 9.8 10.6 4.8 17.5 17.5 10.9 6.9 ...
-##  $ chsvi_unite         : chr [1:118] &quot;°C&quot; &quot;°C&quot; &quot;°C&quot; &quot;°C&quot; ...
-##  $ chsvi_profondeur    : num [1:118] NA NA NA NA NA NA NA NA NA NA ...
-##  $ chsvi_action        : chr [1:118] &quot;Disparue&quot; &quot;Pose&quot; &quot;Relève&quot; &quot;Relève&quot; ...
-##  $ chsvi_fonctionnement: chr [1:118] &quot;Disparue&quot; &quot;OK&quot; &quot;OK&quot; &quot;OK&quot; ...
-##  $ chsvi_qualite       : chr [1:118] NA NA NA &quot;Coupure des données (sans doute à cause de la pile) fin décembre 2019&quot; ...
-##  $ chsvi_actionafaire  : chr [1:118] NA NA NA NA ...
-##  $ chsvi_remarques     : chr [1:118] NA NA NA &quot;Pile changée&quot; ...
-##  $ _modif_utilisateur  : chr [1:118] &quot;jb&quot; &quot;jb&quot; &quot;jb&quot; &quot;jb&quot; ...
-##  $ _modif_type         : chr [1:118] &quot;I&quot; &quot;I&quot; &quot;I&quot; &quot;U&quot; ...
-##  $ _modif_date         : POSIXct[1:118], format: &quot;2021-05-18 16:02:12&quot; &quot;2021-05-18 16:02:12&quot; ...</code></pre>
+<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="traitement-des-données.html#cb28-1" tabindex="-1"></a>suivis_structure_hors_bdd <span class="sc">%&gt;%</span> <span class="fu">str</span>()</span></code></pre></div>
+<pre><code>## tibble [0 × 16] (S3: tbl_df/tbl/data.frame)
+##  $ id                  : int(0) 
+##  $ chsvi_mo            : chr(0) 
+##  $ chsvi_coderhj       : chr(0) 
+##  $ chsvi_typesuivi     : chr(0) 
+##  $ chsvi_operateurs    : chr(0) 
+##  $ chsvi_date          : &#39;Date&#39; num(0) 
+##  $ chsvi_heure         : chr(0) 
+##  $ chsvi_capteur       : chr(0) 
+##  $ chsvi_valeur        : num(0) 
+##  $ chsvi_unite         : chr(0) 
+##  $ chsvi_profondeur    : num(0) 
+##  $ chsvi_action        : chr(0) 
+##  $ chsvi_fonctionnement: chr(0) 
+##  $ chsvi_qualite       : chr(0) 
+##  $ chsvi_actionafaire  : chr(0) 
+##  $ chsvi_remarques     : chr(0)</code></pre>
 </div>
 <div id="chronique_structure_mesures" class="section level4 hasAnchor" number="3.1.1.3">
 <h4><span class="header-section-number">3.1.1.3</span> Mesures<a href="traitement-des-données.html#chronique_structure_mesures" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p style="text-align: justify;">
 Cette table contient les mesures/chroniques/séries à proprement parler.
 </p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="traitement-des-données.html#cb8-1" tabindex="-1"></a>mesures_exemple <span class="sc">%&gt;%</span> <span class="fu">str</span>()</span></code></pre></div>
-<pre><code>## tibble [323,734 × 14] (S3: tbl_df/tbl/data.frame)
-##  $ id                    : int [1:323734] 88350 88335 88400 88423 88382 88394 88410 88348 88405 88364 ...
-##  $ chmes_coderhj         : chr [1:323734] &quot;DRO11-6&quot; &quot;DRO11-6&quot; &quot;DRO11-6&quot; &quot;DRO11-6&quot; ...
-##  $ chmes_capteur         : chr [1:323734] &quot;9759813&quot; &quot;9759813&quot; &quot;9759813&quot; &quot;9759813&quot; ...
-##  $ chmes_date            : Date[1:323734], format: &quot;2013-06-07&quot; &quot;2013-06-07&quot; ...
-##  $ chmes_heure           : chr [1:323734] &quot;13:00:00&quot; &quot;14:00:00&quot; &quot;15:00:00&quot; &quot;16:00:00&quot; ...
-##  $ chmes_valeur          : num [1:323734] 11.4 11.9 12.4 12.7 13 ...
-##  $ chmes_unite           : chr [1:323734] &quot;°C&quot; &quot;°C&quot; &quot;°C&quot; &quot;°C&quot; ...
-##  $ chmes_typemesure      : chr [1:323734] &quot;Thermie&quot; &quot;Thermie&quot; &quot;Thermie&quot; &quot;Thermie&quot; ...
-##  $ chmes_validation      : chr [1:323734] &quot;Validé&quot; &quot;Validé&quot; &quot;Validé&quot; &quot;Validé&quot; ...
-##  $ chmes_mode_acquisition: chr [1:323734] &quot;Mesuré&quot; &quot;Mesuré&quot; &quot;Mesuré&quot; &quot;Mesuré&quot; ...
-##  $ chmes_mode_integration: chr [1:323734] &quot;Ajout manuel&quot; &quot;Ajout manuel&quot; &quot;Ajout manuel&quot; &quot;Ajout manuel&quot; ...
-##  $ _modif_utilisateur    : chr [1:323734] &quot;JB&quot; &quot;JB&quot; &quot;JB&quot; &quot;JB&quot; ...
-##  $ _modif_type           : chr [1:323734] &quot;I&quot; &quot;I&quot; &quot;I&quot; &quot;I&quot; ...
-##  $ _modif_date           : POSIXct[1:323734], format: &quot;2018-11-08 08:00:41&quot; &quot;2018-11-08 08:00:41&quot; ...</code></pre>
+<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb30-1"><a href="traitement-des-données.html#cb30-1" tabindex="-1"></a>mesures_structure_hors_bdd <span class="sc">%&gt;%</span> <span class="fu">str</span>()</span></code></pre></div>
+<pre><code>## tibble [0 × 12] (S3: tbl_df/tbl/data.frame)
+##  $ id                        : int(0) 
+##  $ chmes_coderhj             : chr(0) 
+##  $ chmes_capteur             : chr(0) 
+##  $ chmes_date                : &#39;Date&#39; num(0) 
+##  $ chmes_heure               : chr(0) 
+##  $ chmes_valeur              : num(0) 
+##  $ chmes_unite               : chr(0) 
+##  $ chmes_typemesure          : chr(0) 
+##  $ chmes_validation          : chr(0) 
+##  $ chmes_mode_acquisition    : chr(0) 
+##  $ chmes_mode_integration    : chr(0) 
+##  $ chmes_referentiel_temporel: chr(0)</code></pre>
 </div>
 <div id="chronique_structure_capteurs" class="section level4 hasAnchor" number="3.1.1.4">
 <h4><span class="header-section-number">3.1.1.4</span> Capteurs<a href="traitement-des-données.html#chronique_structure_capteurs" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p style="text-align: justify;">
 Cette table contient un descriptif rapide relatif à chaque capteur utilisé (marque, modèle, propriétaire, etc.).
 </p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="traitement-des-données.html#cb10-1" tabindex="-1"></a>capteurs_exemple <span class="sc">%&gt;%</span> <span class="fu">str</span>()</span></code></pre></div>
-<pre><code>## tibble [22 × 14] (S3: tbl_df/tbl/data.frame)
-##  $ id                  : int [1:22] 7 195 1 197 2 6 3 196 250 255 ...
-##  $ chcap_proprietaire  : chr [1:22] &quot;FJPPMA&quot; &quot;FJPPMA&quot; &quot;FJPPMA&quot; &quot;FJPPMA&quot; ...
-##  $ chcap_typecapteur   : chr [1:22] &quot;Thermie&quot; &quot;Thermie&quot; &quot;Thermie&quot; &quot;Thermie&quot; ...
-##  $ chcap_modelecapteur : chr [1:22] &quot;Hobo UA-001-64&quot; &quot;Hobo UA-001-64&quot; &quot;Hobo UA-001-64&quot; &quot;Hobo UA-001-64&quot; ...
-##  $ chcap_numerocapteur : chr [1:22] &quot;10165877&quot; &quot;10165878&quot; &quot;10165885&quot; &quot;10165887&quot; ...
-##  $ chcap_etat          : chr [1:22] &quot;HS&quot; &quot;HS&quot; NA &quot;OK&quot; ...
-##  $ chcap_projet        : chr [1:22] &quot;Doubs aval&quot; &quot;Doubs aval&quot; &quot;Doubs aval&quot; &quot;Doubs aval&quot; ...
-##  $ chcap_originecapteur: chr [1:22] &quot;Achat&quot; &quot;Achat&quot; &quot;Achat&quot; &quot;Achat&quot; ...
-##  $ chcap_datedebut     : chr [1:22] NA NA NA NA ...
-##  $ chcap_datefin       : chr [1:22] &quot;2016-12-13&quot; &quot;2016-12-06&quot; NA NA ...
-##  $ chcap_remarques     : chr [1:22] &quot;Disparu&quot; &quot;Disparu&quot; NA NA ...
-##  $ _modif_utilisateur  : chr [1:22] &quot;jb&quot; &quot;jb&quot; &quot;jb&quot; &quot;jb&quot; ...
-##  $ _modif_type         : chr [1:22] &quot;U&quot; &quot;U&quot; &quot;U&quot; &quot;U&quot; ...
-##  $ _modif_date         : POSIXct[1:22], format: &quot;2021-05-12 09:34:37&quot; &quot;2021-05-12 09:34:37&quot; ...</code></pre>
+<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb32-1"><a href="traitement-des-données.html#cb32-1" tabindex="-1"></a>capteurs_structure_hors_bdd <span class="sc">%&gt;%</span> <span class="fu">str</span>()</span></code></pre></div>
+<pre><code>## tibble [0 × 11] (S3: tbl_df/tbl/data.frame)
+##  $ id                  : int(0) 
+##  $ chcap_proprietaire  : chr(0) 
+##  $ chcap_typecapteur   : chr(0) 
+##  $ chcap_modelecapteur : chr(0) 
+##  $ chcap_numerocapteur : chr(0) 
+##  $ chcap_etat          : chr(0) 
+##  $ chcap_projet        : chr(0) 
+##  $ chcap_originecapteur: chr(0) 
+##  $ chcap_datedebut     : chr(0) 
+##  $ chcap_datefin       : chr(0) 
+##  $ chcap_remarques     : chr(0)</code></pre>
 </div>
 <div id="chronique_structure_commentaires" class="section level4 hasAnchor" number="3.1.1.5">
 <h4><span class="header-section-number">3.1.1.5</span> Commentaires<a href="traitement-des-données.html#chronique_structure_commentaires" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p style="text-align: justify;">
 Cette table contient les commentaires rédigés de chaque chronique pour chaque couple station-année biologique-paramètre.
 </p>
-<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="traitement-des-données.html#cb12-1" tabindex="-1"></a>commentaires_exemple <span class="sc">%&gt;%</span> <span class="fu">str</span>()</span></code></pre></div>
-<pre><code>## tibble [25 × 8] (S3: tbl_df/tbl/data.frame)
-##  $ id                : int [1:25] 288 289 290 405 291 292 293 406 287 284 ...
-##  $ chres_coderhj     : chr [1:25] &quot;DRO11-6&quot; &quot;DRO11-6&quot; &quot;DRO11-6&quot; &quot;DRO11-6&quot; ...
-##  $ chres_typemesure  : chr [1:25] &quot;Thermie&quot; &quot;Thermie&quot; &quot;Thermie&quot; &quot;Thermie&quot; ...
-##  $ chres_anneebiol   : int [1:25] 2017 2018 2019 2020 2017 2018 2019 2020 2014 2017 ...
-##  $ chres_commentaire : chr [1:25] &quot;Les résultats incomplets disponibles pour l&#39;année 2017 ne permettent pas d&#39;interpréter correctement la chronique.&quot; &quot;Les résultats incomplets disponibles pour l&#39;année 2018 permettent néanmoins d&#39;observer que le pic de chaleur es&quot;| __truncated__ &quot;Comme plus en amont (station DRO6-8), un unique pic de chaleur estival est observé entre la fin du mois de juin&quot;| __truncated__ &quot;La zone intermédiaire du Drouvenant ici considérée présente une variabilité importante de sa température au cou&quot;| __truncated__ ...
-##  $ _modif_utilisateur: chr [1:25] &quot;jb&quot; &quot;jb&quot; &quot;jb&quot; &quot;jb&quot; ...
-##  $ _modif_type       : chr [1:25] &quot;I&quot; &quot;I&quot; &quot;I&quot; &quot;I&quot; ...
-##  $ _modif_date       : POSIXct[1:25], format: &quot;2020-05-11 11:24:23&quot; &quot;2020-05-11 11:24:23&quot; ...</code></pre>
+<div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb34-1"><a href="traitement-des-données.html#cb34-1" tabindex="-1"></a>commentaires_structure_hors_bdd <span class="sc">%&gt;%</span> <span class="fu">str</span>()</span></code></pre></div>
+<pre><code>## tibble [0 × 5] (S3: tbl_df/tbl/data.frame)
+##  $ id               : int(0) 
+##  $ chres_coderhj    : chr(0) 
+##  $ chres_typemesure : chr(0) 
+##  $ chres_anneebiol  : int(0) 
+##  $ chres_commentaire: chr(0)</code></pre>
 </div>
 <div id="chronique_structure_resultats" class="section level4 hasAnchor" number="3.1.1.6">
 <h4><span class="header-section-number">3.1.1.6</span> Résultats<a href="traitement-des-données.html#chronique_structure_resultats" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p style="text-align: justify;">
 Cette table contient les résultats/métriques calculés pour chaque couple station-année biologique-paramètre.
 </p>
-<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="traitement-des-données.html#cb14-1" tabindex="-1"></a>resultats_exemple <span class="sc">%&gt;%</span> <span class="fu">str</span>()</span></code></pre></div>
-<pre><code>## tibble [44 × 81] (S3: tbl_df/tbl/data.frame)
-##  $ id                         : int [1:44] 1128 1129 1130 1131 1132 1133 3200 1135 1136 1137 ...
-##  $ chres_coderhj              : chr [1:44] &quot;DRO11-6&quot; &quot;DRO11-6&quot; &quot;DRO11-6&quot; &quot;DRO11-6&quot; ...
-##  $ chres_typemesure           : chr [1:44] &quot;Thermie&quot; &quot;Thermie&quot; &quot;Thermie&quot; &quot;Thermie&quot; ...
-##  $ chres_periodetotale        : chr [1:44] &quot;2013-2015;2017-2020&quot; &quot;2013-2015;2017-2020&quot; &quot;2013-2015;2017-2020&quot; &quot;2013-2015;2017-2020&quot; ...
-##  $ chres_annee                : num [1:44] 2013 2014 2015 2017 2018 ...
-##  $ chres_anneevmm             : num [1:44] 2013 2014 2015 2017 2018 ...
-##  $ chres_datedperiode         : Date[1:44], format: &quot;2013-06-07&quot; &quot;2013-10-01&quot; ...
-##  $ chres_datefperiode         : Date[1:44], format: &quot;2013-09-30&quot; &quot;2014-09-30&quot; ...
-##  $ chres_nbj                  : int [1:44] 116 107 365 171 89 365 261 116 106 95 ...
-##  $ chres_intervallemax        : chr [1:44] &quot;115.416666666667&quot; &quot;364.958333333333&quot; &quot;364.958333333333&quot; &quot;169.708333333333&quot; ...
-##  $ chres_dureetotale          : chr [1:44] &quot;Nb tot jours cohérent&quot; &quot;Nb tot jours incohérent&quot; &quot;Nb tot jours cohérent&quot; &quot;Nb tot jours cohérent&quot; ...
-##  $ chres_nbjpasok             : int [1:44] 1 2 0 2 1 0 2 1 2 1 ...
-##  $ chres_nbjok                : int [1:44] 115 105 365 169 88 365 259 115 104 94 ...
-##  $ chres_vmini                : num [1:44] 9 2.5 2.4 0.1 9.6 2.9 5.6 8.7 2.3 0 ...
-##  $ chres_vmedi                : num [1:44] 12.9 9.8 9.7 7.3 16.5 9 11.5 13.8 10.4 8.7 ...
-##  $ chres_vmoyi                : num [1:44] 12.9 9.4 10.5 6.8 16.7 10 12.2 13.8 9.6 8.3 ...
-##  $ chres_vmaxi                : num [1:44] 18.6 16.9 22.9 17.5 23 23.1 22.4 22.4 16.4 15.4 ...
-##  $ chres_vamplii              : num [1:44] 9.6 14.4 20.5 17.4 13.4 20.2 16.8 13.7 14.1 15.4 ...
-##  $ chres_vari                 : num [1:44] 4.57 12.48 18.27 15.66 6.69 ...
-##  $ chres_nmesuresi            : int [1:44] 2771 2548 8760 4074 2124 8760 6232 2772 2523 2279 ...
-##  $ chres_vmoyjminper          : num [1:44] 9.4 2.9 3.2 0.1 11.3 3.4 6 10.1 2.8 0.7 ...
-##  $ chres_datevmoyjminper      : Date[1:44], format: &quot;2013-06-10&quot; &quot;2013-12-11&quot; ...
-##  $ chres_vmoyjmedper          : num [1:44] 13 9.9 9.8 7.4 16.9 8.9 11.9 13.9 10.5 8.6 ...
-##  $ chres_vmoyjmoyper          : num [1:44] 12.9 9.4 10.5 6.8 16.7 10 12.2 13.8 9.6 8.3 ...
-##  $ chres_vmoyjmaxper          : num [1:44] 17.2 15.5 21 15.8 21.4 21.4 21 21 15.4 13.5 ...
-##  $ chres_datevmoyjmaxper      : Date[1:44], format: &quot;2013-07-28&quot; &quot;2014-09-18&quot; ...
-##  $ chres_amplitudevmoyjper    : num [1:44] 7.8 12.6 17.8 15.7 10.1 18 15 10.9 12.6 12.8 ...
-##  $ chres_varvmoyj             : num [1:44] 4 12.39 17.77 15.21 5.54 ...
-##  $ chres_vmaxmoy24h           : num [1:44] 17.5 15.7 21.1 15.9 21.6 21.5 21 21 15.6 14 ...
-##  $ chres_datemoyvmaxmoy24h    : chr [1:44] &quot;2013-07-28&quot; &quot;2014-09-18&quot; &quot;2015-07-07&quot; &quot;2017-05-30&quot; ...
-##  $ chres_vmaxmoy7j            : num [1:44] 17 16 22.1 16.7 22.6 22 21.2 19 15.9 14.2 ...
-##  $ chres_datedebutvmaxmoy7j   : Date[1:44], format: &quot;2013-07-23&quot; &quot;2014-09-15&quot; ...
-##  $ chres_datefinvmaxmoy7j     : Date[1:44], format: &quot;2013-07-29&quot; &quot;2014-09-21&quot; ...
-##  $ chres_vmaxmoy30j           : num [1:44] 16.2 14.2 20.2 12.7 20.7 19.6 19.3 17.3 13.9 12.6 ...
-##  $ chres_datedebutvmaxmoy30j  : Date[1:44], format: &quot;2013-07-25&quot; &quot;2014-09-01&quot; ...
-##  $ chres_datefinvmaxmoy30j    : Date[1:44], format: &quot;2013-08-23&quot; &quot;2014-09-30&quot; ...
-##  $ chres_vmoymoy30j           : num [1:44] 14.9 13.1 18.3 11.4 19.1 ...
-##  $ chres_vminab               : num [1:44] 8.978 2.517 2.41 0.121 9.571 ...
-##  $ chres_datevminab           : chr [1:44] &quot;2013-06-10 05:00:00&quot; &quot;2013-12-11 10:00:00&quot; &quot;2015-02-08 08:00:00&quot; &quot;2017-01-01 01:00:00&quot; ...
-##  $ chres_vmaxab               : num [1:44] 18.6 16.9 22.9 17.5 23 ...
-##  $ chres_datevmaxab           : chr [1:44] &quot;2013-07-27 16:00:00&quot; &quot;2014-09-18 17:00:00&quot; &quot;2015-07-07 16:00:00&quot; &quot;2017-05-28 15:00:00&quot; ...
-##  $ chres_percentile10ab       : num [1:44] 10.063 4.207 5.962 0.343 13.365 ...
-##  $ chres_percentile25ab       : num [1:44] 11.14 6.47 7.18 3.26 15.09 ...
-##  $ chres_percentile50ab       : num [1:44] 12.88 9.77 9.67 7.28 16.52 ...
-##  $ chres_percentile75ab       : num [1:44] 14.61 11.82 13.08 9.08 18.52 ...
-##  $ chres_percentile90ab       : num [1:44] 15.8 14.2 17.3 11.2 20.1 ...
-##  $ chres_percentile90diurneab : num [1:44] 16 14.4 17.3 11.6 20.1 ...
-##  $ chres_dureemaxepisodessup25: int [1:44] 0 0 0 0 0 0 0 0 0 0 ...
-##  $ chres_nbjepisodessup25     : int [1:44] 0 0 0 0 0 0 0 0 0 0 ...
-##  $ chres_nbepisodessup25      : int [1:44] 0 0 0 0 0 0 0 0 0 0 ...
-##  $ chres_datedepisodessup25   : chr [1:44] NA NA NA NA ...
-##  $ chres_datefepisodessup25   : chr [1:44] NA NA NA NA ...
-##  $ chres_dureeepisodessup25   : chr [1:44] NA NA NA NA ...
-##  $ chres_dureemaxepisodessup22: int [1:44] 0 0 36 0 54 26 11 4 0 0 ...
-##  $ chres_nbjepisodessup22     : int [1:44] 0 0 7 0 8 4 2 1 0 0 ...
-##  $ chres_nbepisodessup22      : int [1:44] 0 0 7 0 8 4 2 1 0 0 ...
-##  $ chres_datedepisodessup22   : POSIXct[1:44], format: NA NA ...
-##  $ chres_datefepisodessup22   : POSIXct[1:44], format: NA NA ...
-##  $ chres_dureeepisodessup22   : chr [1:44] NA NA &quot;0.333333333333333&quot; NA ...
-##  $ chres_dureemaxepisodessup19: int [1:44] 0 0 407 0 413 194 252 49 0 0 ...
-##  $ chres_nbjepisodessup19     : int [1:44] 0 0 33 0 34 18 24 6 0 0 ...
-##  $ chres_nbepisodessup19      : int [1:44] 0 0 28 0 30 16 22 4 0 0 ...
-##  $ chres_datedepisodessup19   : POSIXct[1:44], format: NA NA ...
-##  $ chres_datefepisodessup19   : POSIXct[1:44], format: NA NA ...
-##  $ chres_dureeepisodessup19   : chr [1:44] NA NA &quot;2.95833333333333&quot; NA ...
-##  $ chres_dureemaxepisodessup15: int [1:44] 526 130 1446 91 1596 965 1547 876 134 5 ...
-##  $ chres_nbjepisodessup15     : int [1:44] 40 15 72 7 82 59 93 66 15 2 ...
-##  $ chres_nbepisodessup15      : int [1:44] 31 15 22 7 33 32 49 50 16 2 ...
-##  $ chres_datedepisodessup15   : POSIXct[1:44], format: &quot;2013-07-25 13:00:00&quot; &quot;2014-09-08 15:00:00&quot; ...
-##  $ chres_datefepisodessup15   : POSIXct[1:44], format: &quot;2013-07-29 04:00:00&quot; &quot;2014-09-09 09:00:00&quot; ...
-##  $ chres_dureeepisodessup15   : chr [1:44] &quot;3.625&quot; &quot;0.75&quot; &quot;12.7916666666667&quot; &quot;0.666666666666667&quot; ...
-##  $ chres_dureemaxepisodesinf4 : int [1:44] 0 236 217 1062 0 127 0 0 273 202 ...
-##  $ chres_nbjepisodesinf4      : int [1:44] 0 12 12 47 0 10 0 0 16 14 ...
-##  $ chres_nbepisodesinf4       : int [1:44] 0 4 6 2 0 6 0 0 8 7 ...
-##  $ chres_datedepisodesinf4    : POSIXct[1:44], format: NA &quot;2013-12-08 04:00:00&quot; ...
-##  $ chres_datefepisodesinf4    : POSIXct[1:44], format: NA &quot;2013-12-14 07:00:00&quot; ...
-##  $ chres_dureeepisodesinf4    : chr [1:44] NA &quot;6.125&quot; &quot;2.70833333333333&quot; &quot;34.25&quot; ...
-##  $ chres_aquatoolsversion     : chr [1:44] &quot;0.0.124&quot; &quot;0.0.124&quot; &quot;0.0.124&quot; &quot;0.0.124&quot; ...
-##  $ _modif_utilisateur         : chr [1:44] &quot;jb&quot; &quot;jb&quot; &quot;jb&quot; &quot;jb&quot; ...
-##  $ _modif_type                : chr [1:44] &quot;U&quot; &quot;U&quot; &quot;U&quot; &quot;U&quot; ...
-##  $ _modif_date                : POSIXct[1:44], format: &quot;2021-05-20 17:12:08&quot; &quot;2021-05-20 17:12:08&quot; ...</code></pre>
+<div class="sourceCode" id="cb36"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb36-1"><a href="traitement-des-données.html#cb36-1" tabindex="-1"></a>resultats_structure_hors_bdd <span class="sc">%&gt;%</span> <span class="fu">str</span>()</span></code></pre></div>
+<pre><code>## tibble [0 × 78] (S3: tbl_df/tbl/data.frame)
+##  $ id                         : int(0) 
+##  $ chres_coderhj              : chr(0) 
+##  $ chres_typemesure           : chr(0) 
+##  $ chres_periodetotale        : chr(0) 
+##  $ chres_annee                : num(0) 
+##  $ chres_anneevmm             : num(0) 
+##  $ chres_datedperiode         : &#39;Date&#39; num(0) 
+##  $ chres_datefperiode         : &#39;Date&#39; num(0) 
+##  $ chres_nbj                  : int(0) 
+##  $ chres_intervallemax        : chr(0) 
+##  $ chres_dureetotale          : chr(0) 
+##  $ chres_nbjpasok             : int(0) 
+##  $ chres_nbjok                : int(0) 
+##  $ chres_vmini                : num(0) 
+##  $ chres_vmedi                : num(0) 
+##  $ chres_vmoyi                : num(0) 
+##  $ chres_vmaxi                : num(0) 
+##  $ chres_vamplii              : num(0) 
+##  $ chres_vari                 : num(0) 
+##  $ chres_nmesuresi            : int(0) 
+##  $ chres_vmoyjminper          : num(0) 
+##  $ chres_datevmoyjminper      : &#39;Date&#39; num(0) 
+##  $ chres_vmoyjmedper          : num(0) 
+##  $ chres_vmoyjmoyper          : num(0) 
+##  $ chres_vmoyjmaxper          : num(0) 
+##  $ chres_datevmoyjmaxper      : &#39;Date&#39; num(0) 
+##  $ chres_amplitudevmoyjper    : num(0) 
+##  $ chres_varvmoyj             : num(0) 
+##  $ chres_vmaxmoy24h           : num(0) 
+##  $ chres_datemoyvmaxmoy24h    : chr(0) 
+##  $ chres_vmaxmoy7j            : num(0) 
+##  $ chres_datedebutvmaxmoy7j   : &#39;Date&#39; num(0) 
+##  $ chres_datefinvmaxmoy7j     : &#39;Date&#39; num(0) 
+##  $ chres_vmaxmoy30j           : num(0) 
+##  $ chres_datedebutvmaxmoy30j  : &#39;Date&#39; num(0) 
+##  $ chres_datefinvmaxmoy30j    : &#39;Date&#39; num(0) 
+##  $ chres_vmoymoy30j           : num(0) 
+##  $ chres_vminab               : num(0) 
+##  $ chres_datevminab           : chr(0) 
+##  $ chres_vmaxab               : num(0) 
+##  $ chres_datevmaxab           : chr(0) 
+##  $ chres_percentile10ab       : num(0) 
+##  $ chres_percentile25ab       : num(0) 
+##  $ chres_percentile50ab       : num(0) 
+##  $ chres_percentile75ab       : num(0) 
+##  $ chres_percentile90ab       : num(0) 
+##  $ chres_percentile90diurneab : num(0) 
+##  $ chres_dureemaxepisodessup25: int(0) 
+##  $ chres_nbjepisodessup25     : int(0) 
+##  $ chres_nbepisodessup25      : int(0) 
+##  $ chres_datedepisodessup25   : chr(0) 
+##  $ chres_datefepisodessup25   : chr(0) 
+##  $ chres_dureeepisodessup25   : chr(0) 
+##  $ chres_dureemaxepisodessup22: int(0) 
+##  $ chres_nbjepisodessup22     : int(0) 
+##  $ chres_nbepisodessup22      : int(0) 
+##  $ chres_datedepisodessup22   : &#39;POSIXct&#39; num(0) 
+##  - attr(*, &quot;tzone&quot;)= chr &quot;&quot;
+##  $ chres_datefepisodessup22   : &#39;POSIXct&#39; num(0) 
+##  - attr(*, &quot;tzone&quot;)= chr &quot;&quot;
+##  $ chres_dureeepisodessup22   : chr(0) 
+##  $ chres_dureemaxepisodessup19: int(0) 
+##  $ chres_nbjepisodessup19     : int(0) 
+##  $ chres_nbepisodessup19      : int(0) 
+##  $ chres_datedepisodessup19   : &#39;POSIXct&#39; num(0) 
+##  - attr(*, &quot;tzone&quot;)= chr &quot;&quot;
+##  $ chres_datefepisodessup19   : &#39;POSIXct&#39; num(0) 
+##  - attr(*, &quot;tzone&quot;)= chr &quot;&quot;
+##  $ chres_dureeepisodessup19   : chr(0) 
+##  $ chres_dureemaxepisodessup15: int(0) 
+##  $ chres_nbjepisodessup15     : int(0) 
+##  $ chres_nbepisodessup15      : int(0) 
+##  $ chres_datedepisodessup15   : &#39;POSIXct&#39; num(0) 
+##  - attr(*, &quot;tzone&quot;)= chr &quot;&quot;
+##  $ chres_datefepisodessup15   : &#39;POSIXct&#39; num(0) 
+##  - attr(*, &quot;tzone&quot;)= chr &quot;&quot;
+##  $ chres_dureeepisodessup15   : chr(0) 
+##  $ chres_dureemaxepisodesinf4 : int(0) 
+##  $ chres_nbjepisodesinf4      : int(0) 
+##  $ chres_nbepisodesinf4       : int(0) 
+##  $ chres_datedepisodesinf4    : &#39;POSIXct&#39; num(0) 
+##  - attr(*, &quot;tzone&quot;)= chr &quot;&quot;
+##  $ chres_datefepisodesinf4    : &#39;POSIXct&#39; num(0) 
+##  - attr(*, &quot;tzone&quot;)= chr &quot;&quot;
+##  $ chres_dureeepisodesinf4    : chr(0) 
+##  $ chres_aquatoolsversion     : chr(0)</code></pre>
 </div>
 </div>
 <div id="chronique_structure_hors_bdd" class="section level3 hasAnchor" number="3.1.2">
@@ -515,7 +510,7 @@ La structure des tables sans les champs propres au RSTMAJ (dates de modification
 <p style="text-align: justify;">
 Les données peuvent être importées à partir de la fonction <code>chronique.ouverture()</code>.
 </p>
-<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="traitement-des-données.html#cb16-1" tabindex="-1"></a>mes_donnees <span class="ot">&lt;-</span> <span class="fu">chronique.ouverture</span>(<span class="at">Type =</span> <span class="st">&quot;Mesures&quot;</span>, <span class="at">typemesure =</span> <span class="st">&quot;Thermie&quot;</span>, <span class="at">Localisation =</span> <span class="st">&quot;./data/Mesures/20347223.txt&quot;</span>, <span class="at">skipvalue =</span> <span class="dv">1</span>, <span class="at">nbcolonnes =</span> <span class="dv">6</span>, <span class="at">typefichier =</span> <span class="st">&quot;.csv&quot;</span>, <span class="at">typedate =</span> <span class="st">&quot;ymd&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb38"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb38-1"><a href="traitement-des-données.html#cb38-1" tabindex="-1"></a>mes_donnees <span class="ot">&lt;-</span> <span class="fu">chronique.ouverture</span>(<span class="at">Type =</span> <span class="st">&quot;Mesures&quot;</span>, <span class="at">typemesure =</span> <span class="st">&quot;Thermie&quot;</span>, <span class="at">Localisation =</span> <span class="st">&quot;./data/Mesures/20347223.txt&quot;</span>, <span class="at">skipvalue =</span> <span class="dv">1</span>, <span class="at">nbcolonnes =</span> <span class="dv">6</span>, <span class="at">typefichier =</span> <span class="st">&quot;.csv&quot;</span>, <span class="at">typedate =</span> <span class="st">&quot;ymd&quot;</span>)</span></code></pre></div>
 <pre><code>## Warning: One or more parsing issues, call `problems()` on your data frame for details,
 ## e.g.:
 ##   dat &lt;- vroom(...)
@@ -531,9 +526,9 @@ Les données peuvent être importées à partir de la fonction <code>chronique.o
 <p style="text-align: justify;">
 Il est également possible de les importer par un traitement en lots.
 </p>
-<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="traitement-des-données.html#cb20-1" tabindex="-1"></a>mes_donnees <span class="ot">&lt;-</span></span>
-<span id="cb20-2"><a href="traitement-des-données.html#cb20-2" tabindex="-1"></a>  fs<span class="sc">::</span><span class="fu">dir_ls</span>(<span class="st">&quot;./Travail/&quot;</span>, <span class="at">regexp =</span> <span class="st">&quot;</span><span class="sc">\\</span><span class="st">.txt$&quot;</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb20-3"><a href="traitement-des-données.html#cb20-3" tabindex="-1"></a>  <span class="fu">map_dfr</span>(<span class="sc">~</span> <span class="fu">chronique.ouverture</span>(<span class="at">Localisation =</span> ., <span class="at">skipvalue =</span> <span class="dv">1</span>, <span class="at">nbcolonnes =</span> <span class="dv">6</span>, <span class="at">typefichier =</span> <span class="st">&quot;.csv&quot;</span>, <span class="at">typedate =</span> <span class="st">&quot;ymd&quot;</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb42"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb42-1"><a href="traitement-des-données.html#cb42-1" tabindex="-1"></a>mes_donnees <span class="ot">&lt;-</span></span>
+<span id="cb42-2"><a href="traitement-des-données.html#cb42-2" tabindex="-1"></a>  fs<span class="sc">::</span><span class="fu">dir_ls</span>(<span class="st">&quot;./Travail/&quot;</span>, <span class="at">regexp =</span> <span class="st">&quot;</span><span class="sc">\\</span><span class="st">.txt$&quot;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb42-3"><a href="traitement-des-données.html#cb42-3" tabindex="-1"></a>  <span class="fu">map_dfr</span>(<span class="sc">~</span> <span class="fu">chronique.ouverture</span>(<span class="at">Localisation =</span> ., <span class="at">skipvalue =</span> <span class="dv">1</span>, <span class="at">nbcolonnes =</span> <span class="dv">6</span>, <span class="at">typefichier =</span> <span class="st">&quot;.csv&quot;</span>, <span class="at">typedate =</span> <span class="st">&quot;ymd&quot;</span>))</span></code></pre></div>
 
 </div>
 </div>
@@ -557,42 +552,42 @@ Il est également possible de les importer par un traitement en lots.
 <script>
 gitbook.require(["gitbook"], function(gitbook) {
 gitbook.start({
-"sharing": {
-"github": false,
-"facebook": true,
-"twitter": true,
-"linkedin": false,
-"weibo": false,
-"instapaper": false,
-"vk": false,
-"whatsapp": false,
-"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
-},
-"fontsettings": {
-"theme": "white",
-"family": "sans",
-"size": 2
-},
-"edit": {
-"link": null,
-"text": null
-},
-"history": {
-"link": null,
-"text": null
-},
-"view": {
-"link": null,
-"text": null
-},
-"download": ["Notice_outils_thermie.pdf", "Notice_outils_thermie.epub"],
-"search": {
-"engine": "fuse",
-"options": null
-},
-"toc": {
-"collapse": "subsection"
-}
+  "sharing": {
+    "github": false,
+    "facebook": true,
+    "twitter": true,
+    "linkedin": false,
+    "weibo": false,
+    "instapaper": false,
+    "vk": false,
+    "whatsapp": false,
+    "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+  },
+  "fontsettings": {
+    "theme": "white",
+    "family": "sans",
+    "size": 2
+  },
+  "edit": {
+    "link": null,
+    "text": null
+  },
+  "history": {
+    "link": null,
+    "text": null
+  },
+  "view": {
+    "link": null,
+    "text": null
+  },
+  "download": ["Notice_outils_thermie.pdf", "Notice_outils_thermie.epub"],
+  "search": {
+    "engine": "fuse",
+    "options": null
+  },
+  "toc": {
+    "collapse": "subsection"
+  }
 });
 });
 </script>

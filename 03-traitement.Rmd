@@ -5,6 +5,7 @@ output:
 ---
 
 ```{r packages, echo=FALSE}
+library(afd39)
 library(knitr)
 library(pander)
 library(sf)
@@ -28,7 +29,7 @@ Le jeu de données d'exemple est mis en mémoire. La structure des six principal
 
 ```{r, warning=FALSE, message=FALSE}
 library(aquatools)
-data(chronique_exemple)
+data(chronique_structure)
 ```
 
 ### Format au sein de la base de données du RSTMAJ {#chronique_structure}
@@ -37,7 +38,7 @@ Les formats présentés ci-dessous sont tels que présents au sein de la base de
 </p>
 
 <p style="text-align: justify;">
-La structure des tables est visible via le jeu de données `chronique_structure`.
+La structure des tables est visible via le jeu de données `chronique_structure_hors_bdd`.
 </p>
 
 #### Stations {#chronique_structure_stations}
@@ -45,7 +46,7 @@ La structure des tables est visible via le jeu de données `chronique_structure`
 Cette table contient la description des stations, notamment leur nommage homogène au sein du RSTMAJ.
 </p>
 ```{r}
-stations_exemple %>% str()
+stations_structure_hors_bdd %>% str()
 ```
 
 #### Suivi {#chronique_structure_suivi}
@@ -53,7 +54,7 @@ stations_exemple %>% str()
 Cette table contient le suivi de terrain relatif à chaque intervention sur un point de suivi (pose, relève, dépose, etc.).
 </p>
 ```{r}
-suivi_exemple %>% str()
+suivis_structure_hors_bdd %>% str()
 ```
 
 #### Mesures {#chronique_structure_mesures}
@@ -61,7 +62,7 @@ suivi_exemple %>% str()
 Cette table contient les mesures/chroniques/séries à proprement parler.
 </p>
 ```{r}
-mesures_exemple %>% str()
+mesures_structure_hors_bdd %>% str()
 ```
 
 #### Capteurs {#chronique_structure_capteurs}
@@ -69,7 +70,7 @@ mesures_exemple %>% str()
 Cette table contient un descriptif rapide relatif à chaque capteur utilisé (marque, modèle, propriétaire, etc.).
 </p>
 ```{r}
-capteurs_exemple %>% str()
+capteurs_structure_hors_bdd %>% str()
 ```
 
 #### Commentaires {#chronique_structure_commentaires}
@@ -77,7 +78,7 @@ capteurs_exemple %>% str()
 Cette table contient les commentaires rédigés de chaque chronique pour chaque couple station-année biologique-paramètre.
 </p>
 ```{r}
-commentaires_exemple %>% str()
+commentaires_structure_hors_bdd %>% str()
 ```
 
 #### Résultats {#chronique_structure_resultats}
@@ -85,7 +86,7 @@ commentaires_exemple %>% str()
 Cette table contient les résultats/métriques calculés pour chaque couple station-année biologique-paramètre.
 </p>
 ```{r}
-resultats_exemple %>% str()
+resultats_structure_hors_bdd %>% str()
 ```
 
 ### Données hors de la base de données du RSTMAJ {#chronique_structure_hors_bdd}

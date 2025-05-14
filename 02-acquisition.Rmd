@@ -91,24 +91,31 @@ Une première partie traite des données relatives aux **stations**, puis celles
 
 - Complément sur le terrain des informations de la station sur la fiche [recto](https://github.com/jbfagotfede39/notice-thermie/raw/master/data/Stations/Fiche_pose_sonde_thermique_simple.pdf) ou [recto-verso](https://github.com/jbfagotfede39/notice-thermie/raw/master/data/Stations/Fiche_pose_sonde_thermique_double.pdf)
 
-- Saisie des informations de terrain concernant les stations dans le [fichier excel](https://github.com/jbfagotfede39/notice-thermie/raw/master/data/Stations/Saisie_stations_chroniques.xlsx) (ou [cette version plus large](https://github.com/jbfagotfede39/notice-thermie/raw/master/data/Stations/Saisie_stations_chroniques_avec_champs_complementaires.xlsx) pour les collectivités extérieures au département et souhaitant générer les fiches atlas de résultats, avec complément des champs adéquats : chsta_distancesource, chsta_typetheorique, chsta_altitude, chsta_codecontextepdpg et chsta_sprep - séparer les codes espèces par des virgules : TRF,CHA,OBR).
+- Saisie des informations de terrain concernant les stations dans le [fichier excel](https://github.com/jbfagotfede39/notice-thermie/raw/master/data/Stations/Saisie_stations_chroniques.xlsx) (ou [cette version plus large](https://github.com/jbfagotfede39/notice-thermie/raw/master/data/Stations/Saisie_stations_chroniques_avec_champs_complementaires.xlsx) pour les collectivités extérieures au département et souhaitant générer les fiches atlas de résultats, avec complément des champs adéquats : `chsta_distancesource`, `chsta_typetheorique`, `chsta_altitude`, `chsta_codecontextepdpg` et `chsta_sprep` - séparer les codes espèces par des virgules : `TRF,CHA,OBR`).
 
 - Complément des différents champs :
 
     - `chsta_coderhj` : code d'identification de la station propre au RSTMAJ. **Laisser vide**
     - `chsta_codemo` : code d'identification de la station propre à chaque maître d'ouvrage
     - `chsta_codesie` : si la station possède un code dans le SIE de l'AERMC
-    - `chsta_mo` : Nom du maître d'ouvrage : "OFB", "CD39_CR_Ain", "CD39_RDM", "DREAL", "FJPPMA", "PNRHJ", "SMDL", "SR3A"
+    - `chsta_mo` : Nom du maître d'ouvrage : `OFB`, `CD39_CR_Ain`, `CD39_RDM`, `DREAL`, `FJPPMA`, `PNRHJ`, `SMDL`, `SR3A`
     - `chsta_milieu` : Nom de l'écosystème (cours d'eau ou plan d'eau)
     - `chsta_coord_x` et chsta_coord_y : Coordonnées précises de la sonde en **Lambert 93**
-    - `chsta_fonctionnement` : "En cours" ou "Arrêté"
-    - `chsta_transmission` : "Oui" si télétransmission, sinon "Non"
-    - `chsta_suivithermie` : "Oui"
-    - `chsta_reseauthermietype` : "Patrimonial" ou "Opérationnel"
-    - `chsta_suivipiezo` : "Non"
-    - `chsta_suivihydro` : "Non"
-    - `chsta_suivio2`` : "Non"
-    - `chsta_suivipluvio` : "Non"
+    - `chsta_fonctionnement` : `En cours` ou `Arrêté`
+    - `chsta_transmission` : `Oui` si télétransmission, sinon `Non`
+    - `chsta_suivithermie` : `Oui`
+    - `chsta_reseauthermietype` : `Patrimonial` ou `Opérationnel`
+    - `chsta_suivipiezo` : `Non`
+    - `chsta_suivihydro` : `Non`
+    - `chsta_suivio2` : `Non`
+    - `chsta_suivipluvio` : `Non`
+    - `chsta_codehydro` : code de la station hydrométrique associée (si pertinent)
+    - `chsta_codemeteofrance` : code de la station Météo-France associée
+    - `chsta_distancesource` : distance à la source, en km
+    - `chsta_typetheorique` : type théorique selon la typologie de Verneaux : `1.5`, `3`, etc.
+    - `chsta_altitude` : altitude, en mètres
+    - `chsta_codecontextepdpg` : Identifiant du contexte PDPG local
+    - `chsta_sprep` : Espèce(s) piscicole(s) repère(s), à séparer par des virgules : `TRF,CHA,OBR`
     - `chsta_largeurlitmineur` : largeur du lit mineur, en mètres
     - `chsta_largeurlitetiage` : largeur du lit d'étiage, en mètres
     - `chsta_rive` : rive d'ancrage de la sonde (RD, RG)
@@ -118,6 +125,8 @@ Une première partie traite des données relatives aux **stations**, puis celles
     - `chsta_description` : description du dispositif, si nécessaire
     - `chsta_ordretournee` : position dans l'ordre de la tournée de relève du maître d'ouvrage, si nécessaire
     - `chsta_impacts` : présence d'impacts potentiels sur la thermie (étang/seuil à l'amont, etc.)
+    - `chsta_infl_ant_type` : type d'impacts/influence anthropiques potentiels sur la thermie (étang/seuil à l'amont, rejets, chenalisation, etc.), en lien avec le champ `chsta_impacts` ci-dessus
+    - `chsta_infl_nappe` : éventuelle influence de la nappe sur la station (`Oui`/`Non`)
     - `chsta_profsonde` : profondeur d'eau sous la sonde à l'étiage, en mètres
     - `chsta_substrats` : substrat en présence sous la sonde (FIN, GAL, GRA, etc.)
     - `chsta_distberge` : distance à la berge, en mètres
@@ -129,10 +138,7 @@ Une première partie traite des données relatives aux **stations**, puis celles
     - `chsta_typez` : **Laisser vide**
     - `chsta_hcapteurbouchon` : **Laisser vide**
     - `chsta_remarques` : éventuelles remarques sur la station
-    - `chsta_codehydro` : code de la station hydrométrique associée (si pertinent)
-    - `chsta_codemeteofrance` : code de la station Météo-France associée
-    - `chsta_infl_ant_type` : Type d'impacts/influence anthropiques potentiels sur la thermie (étang/seuil à l'amont, rejets, chenalisation, etc.), en lien avec le champ `chsta_impacts` ci-dessus
-    - `chsta_infl_nappe` : éventuelles remarques sur la station (`Oui`/`Non`)
+
 
 ### Saisie des suivis de relève {#saisiesuivi}
 

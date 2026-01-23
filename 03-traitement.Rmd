@@ -5,7 +5,6 @@ output:
 ---
 
 ```{r packages, echo=FALSE}
-library(afd39)
 library(knitr)
 library(pander)
 library(sf)

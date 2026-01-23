@@ -153,7 +153,7 @@ Différentes figures peuvent être générées à partir des chroniques disponib
 ### Figures annuelles {#vueannuelle}
 
 ```{r vueannuelle, echo=FALSE, fig.cap="Exemple de représentation annuelle de la Sirène à Uxelles (39) - Données FDPPMA39", out.width="80%"}
-knitr::include_graphics('Figures/Vues/absolu-fixe-vmm30j_thermie_SIR7-6_-_2018.png')
+knitr::include_graphics('docs/Figures/Vues/absolu-fixe-vmm30j_thermie_SIR7-6_-_2018.png')
 ```
 <p style="text-align: justify;">
 Une vue synthétique d'une chronique annuelle est produite grâce à la fonction `chronique.figure`, dont un exemple est visible sur la figure \@ref(fig:vueannuelle). Cet outil permet de configurer légèrement le modèle de représentation de base, qui s'appuie sur l'enveloppe journalière observée (minimas et maximas) :
@@ -170,7 +170,7 @@ L'intégralité de ces différentes modalités sont automatiquement générées 
 ### Figures interannuelles {#vueinterannuelle}
 #### Courbes {#vueinterannuellecourbes}
 ```{r vueinterannuellecourbe, echo=FALSE, fig.cap="Exemple de représentation interannuelle du niveau piézométrique de BRT4 - Données Natura 2000 CCPM", out.width="80%"}
-knitr::include_graphics('Figures/Vues/Interannuelle_courbes_piezometrie_BRT4.png')
+knitr::include_graphics('docs/Figures/Vues/Interannuelle_courbes_piezometrie_BRT4.png')
 ```
 <p style="text-align: justify;">
 La fonction `chronique.figure.interannuelle` permet de générer, avec l'option `style = "courbes"` une vue comparative interannuelle des courbes des valeurs moyennes journalières. Un exemple est présenté sur la figure \@ref(fig:vueinterannuellecourbe).
@@ -179,7 +179,7 @@ La fonction `chronique.figure.interannuelle` permet de générer, avec l'option 
 
 #### Boxplots  {#vueinterannuelleboxplot}
 ```{r vueinterannuelleboxplot, echo=FALSE, fig.cap="Exemple de représentation interannuelle de l'Ain à Bourg-de-Sirod (39) - Données DREAL BFC", out.width="80%"}
-knitr::include_graphics('Figures/Vues/Interannuelle_thermie_AIN9-1.png')
+knitr::include_graphics('docs/Figures/Vues/Interannuelle_thermie_AIN9-1.png')
 ```
 <p style="text-align: justify;">
 Une vue synthétique de la **tendance des températures des dix dernières années** sur une même station semble pertinente. La fonction `chronique.figure.interannuelle` permet de générer ce type de figure, dont un exemple est visible sur la figure \@ref(fig:vueinterannuelleboxplot). Différents niveaux d'informations sont contenus dans celle-ci :
@@ -202,9 +202,35 @@ Une vue synthétique de la **tendance des températures des dix dernières anné
 
 [//]: # ### Boxplot violon
 
+#### Classes calendaires {#vueinterannuelleclasse}
+```{r vueinterannuelleclasse, echo = FALSE, fig.cap="Exemple de représentation interannuelle des classes de température du Drouvenant (39) - Données FDPPMA39", out.width="80%"}
+knitr::include_graphics('docs/Figures/Vues/Vue_chronologique_classes_thermie_2019_pluristationnel_VMedJ.png')
+```
+<p style="text-align: justify;">
+La figure \@ref(fig:vueinterannuelleclasse) permet de représenter une valeur journalière de référence (médiane, moyenne, etc.) sous la forme de « **codes à barres** » **annuels**, grâce à la fonction `chronique.figure.classescalendaires`, à partir des [données agrégées](#agregation). On peut ainsi évaluer la variabilité d'une métrique journalière lissée au cours du temps. La même approche peut être envisagée :
+
+- de manière pour un unique site une unique année,
+- de manière intersites et/ou interannuelles,
+- pour d'autres paramètres que la thermie (oxygène dissous par exemple),
+- et/ou à partir d'une date initiale différente au 01/10 (début d'une année biologique).
+</p>
+
+#### Classes de densité {#vueinterannuelledensite}
+```{r vueinterannuelledensite, echo = FALSE, fig.cap="Exemple de représentation annuelle cumulée du Hérisson à Menétrux-en-Joux (39) - Données FDPPMA39", out.width="80%"}
+knitr::include_graphics('docs/Figures/Vues/Vue_chronologique_densite_classes_thermie_DRO11-6_2022.png')
+```
+<p style="text-align: justify;">
+La figure \@ref(fig:vueinterannuelledensite) permet de représenter les valeurs instantannées sous la forme de **diagrammes de densité**, grâce à la fonction `chronique.figure.classesdensite`.  On peut ainsi évaluer la variabilité brute au cours du temps. La même approche peut être envisagée :
+
+- de manière pour un unique site une unique année,
+- de manière intersites et/ou interannuelles,
+- pour d'autres paramètres que la thermie (oxygène dissous par exemple),
+- et/ou à partir d'une date initiale différente au 01/10 (début d'une année biologique).
+</p>
+
 #### Cumul {#vueinterannuellecumul}
 ```{r vueinterannuellecumul, echo=FALSE, fig.cap="Exemple de représentation annuelle cumulée du Hérisson à Menétrux-en-Joux (39) - Données FDPPMA39", out.width="80%"}
-knitr::include_graphics('Figures/Vues/Interannuelle_cumul_thermie_HER6-1.png')
+knitr::include_graphics('docs/Figures/Vues/Interannuelle_cumul_thermie_HER6-1.png')
 ```
 <p style="text-align: justify;">
 La figure \@ref(fig:vueinterannuellecumul) permet de représenter les **courbes annuelles de cumul des degrés-jours**, grâce à la fonction `chronique.figure.cumul`, à partir des [données agrégées](#agregation). Il est ainsi possible d'observer les éventuelles différences de développement pouvant survenir au cours des différentes années. La même approche peut être envisagée de manière intersites, et/ou à partir d'une date initiale différente au 01/10 (début d'une année biologique).
@@ -216,20 +242,20 @@ Une représentation des **VMaxMoy30J** en fonction de la **distance à la source
 </p>
 
 ```{r vueintersitesd0, echo=FALSE, fig.cap="Exemple de représentation des VMaxMoy30J le long du Hérisson (39) - Données FDPPMA39", out.width="80%"}
-knitr::include_graphics('Figures/Vues/Intersites_thermie_Herisson.png')
+knitr::include_graphics('docs/Figures/Vues/Intersites_thermie_Herisson.png')
 ```
 
 ### Figures de préférendums thermiques
 
 ```{r vueipreferendumsthermiquesadulte, echo=FALSE, fig.cap="Exemple de représentation de préférendums thermiques d'espèces piscicoles pour le stade de vie adulte avec une Tmm30j de 24°C", out.width="80%"}
-knitr::include_graphics('Figures/Vues/Vue_Preferendums_thermiques_adulte.png')
+knitr::include_graphics('docs/Figures/Vues/Vue_Preferendums_thermiques_adulte.png')
 ```
 <p style="text-align: justify;">
 La température observée sur une station de suivi doit pouvoir être rapportée aux enjeux biologiques présents sur ce site. La fonction `chronique.figure.preferendums` permet de générer des représentations des plages de température de confort et de stress, dont un exemple est visible sur la figure \@ref(fig:vueipreferendumsthermiquesadulte). On peut ici observer les températures de référence admises pour le stade adulte. D'autres valeurs sont accessibles pour les stades embryon, larve, et juvénile et pour la période de reproduction (jeu de données inclus dans `data(poissons_thermie_preferendums)` - @Tissot_Synthesetolerancesthermiques_2010, @Elliott_aspectsthermalstress_1981, @Elliott_criticalthermallimits_1994, @Elliott_criticalthermallimits_1995 & @Andreasson_Feedinghabitssculpin_1971 IN @Dorts_Evidencethatelevated_2012). Il est également possible d'y afficher ou non une valeur de VMaxMoy30J. Un affichage simultané des différents stades de vie est possible, comme sur la figure \@ref(fig:vueipreferendumsthermiquestousstades).
 </p>
 
 ```{r vueipreferendumsthermiquestousstades, echo=FALSE, fig.cap="Exemple de représentation de préférendums thermiques d'espèces piscicoles pour tous les stades de vie avec une Tmm30j de 24°C", out.width="80%"}
-knitr::include_graphics('Figures/Vues/Vue_Preferendums_thermiques_tous_stades.png')
+knitr::include_graphics('docs/Figures/Vues/Vue_Preferendums_thermiques_tous_stades.png')
 ```
 
 ## Résultats
@@ -254,6 +280,6 @@ Par défaut, les représentations graphiques ([vues annuelles et interannuelles]
 Les commentaires affichés ne doivent pas dépasser les 600 caractères.
 
 ```{r vueficheatlasresultats, echo=FALSE, fig.show="hold", fig.cap="Exemple de fiche synthétique de résultats annuels", out.width="50%"}
-knitr::include_graphics('Figures/Atlas/Exemple_fiche_atlas_resultats_recto.png')
-knitr::include_graphics('Figures/Atlas/Exemple_fiche_atlas_resultats_verso.png')
+knitr::include_graphics('docs/Figures/Atlas/Exemple_fiche_atlas_resultats_recto.png')
+knitr::include_graphics('docs/Figures/Atlas/Exemple_fiche_atlas_resultats_verso.png')
 ```

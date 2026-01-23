@@ -100,7 +100,7 @@ Une première partie traite des données relatives aux **stations**, puis celles
     - `chsta_codesie` : si la station possède un code dans le SIE de l'AERMC
     - `chsta_mo` : Nom du maître d'ouvrage : `OFB`, `CD39_CR_Ain`, `CD39_RDM`, `DREAL`, `FJPPMA`, `PNRHJ`, `SMDL`, `SR3A`
     - `chsta_milieu` : Nom de l'écosystème (cours d'eau ou plan d'eau)
-    - `chsta_coord_x` et chsta_coord_y : Coordonnées précises de la sonde en **Lambert 93**
+    - `chsta_coord_x` et `chsta_coord_y` : Coordonnées précises de la sonde en **Lambert 93**
     - `chsta_fonctionnement` : `En cours` ou `Arrêté`
     - `chsta_transmission` : `Oui` si télétransmission, sinon `Non`
     - `chsta_suivithermie` : `Oui`

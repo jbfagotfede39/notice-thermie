@@ -74,3 +74,7 @@ chronique_structure_resultats
 chronique_ouverture
 changementpile
 onset-hobo-ua-001-64
+vueinterannuelleclasse
+vueinterannuelledensite
+fig:vueinterannuelleclasse
+fig:vueinterannuelledensite

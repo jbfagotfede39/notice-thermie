@@ -1,5 +1,10 @@
 # NEWS - Notice thermie
 
+## 2026-01-23
+### Ajouts
+- Ajout de la citation de la fonction `chronique.figure.classescalendaires` avec un exemple de figure
+- Ajout de la citation de la fonction `chronique.figure.classesdensite` avec un exemple de figure
+
 ## 2025-05-14
 ### Ajouts
 - Ajout d'explications manquantes de champs dans le fichier excel des stations

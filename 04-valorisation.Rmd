@@ -216,7 +216,7 @@ La figure \@ref(fig:vueinterannuelleclasse) permet de représenter une valeur jo
 </p>
 
 #### Classes de densité {#vueinterannuelledensite}
-```{r vueinterannuelledensite, echo = FALSE, fig.cap="Exemple de représentation annuelle cumulée du Hérisson à Menétrux-en-Joux (39) - Données FDPPMA39", out.width="80%"}
+```{r vueinterannuelledensite, echo = FALSE, fig.cap="Exemple de représentation des classes de densité de mesures sur le Drouvenant en 2022 (39) - Données FDPPMA39", out.width="80%"}
 knitr::include_graphics('docs/Figures/Vues/Vue_chronologique_densite_classes_thermie_DRO11-6_2022.png')
 ```
 <p style="text-align: justify;">

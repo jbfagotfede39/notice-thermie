@@ -225,7 +225,8 @@ La figure \@ref(fig:vueinterannuelledensite) permet de représenter les valeurs 
 - de manière pour un unique site une unique année,
 - de manière intersites et/ou interannuelles,
 - pour d'autres paramètres que la thermie (oxygène dissous par exemple),
-- et/ou à partir d'une date initiale différente au 01/10 (début d'une année biologique).
+- et/ou à partir d'une date initiale différente au 01/10 (début d'une année biologique),
+- et/ou uniquement sur une période donnée (période estivale par exemple - juin à septembre inclus).
 </p>
 
 #### Cumul {#vueinterannuellecumul}

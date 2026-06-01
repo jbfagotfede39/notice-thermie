@@ -1,5 +1,10 @@
 # NEWS - Notice thermie
 
+## 2026-06-01
+### Ajouts
+- Ajout de la référence à la période estivale uniquement dans l'utilisation de `chronique.figure.classesdensite`
+- Ajout de la section `Référentiel temporel`
+
 ## 2026-01-23
 ### Ajouts
 - Ajout de la citation de la fonction `chronique.figure.classescalendaires` avec un exemple de figure

@@ -397,6 +397,9 @@ Tout un panel de matériel permettant la télétransmission des données mesuré
 
 ## Fonctionnement du matériel {#fonctionnementmateriel}
 
+### Référentiel temporel
+La consigne générale est, lorsque cela est possible, de configurer les capteurs en **UTC+2**.
+
 ### Montage d'ancrage {#montageancrage}
 
 <p style="text-align: justify;">

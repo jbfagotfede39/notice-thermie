@@ -1,5 +1,13 @@
 # NEWS - Notice thermie
 
+## 2026-06-03
+### Ajouts
+- Ajout de `horizon plot`
+- Ajout de `violon plot`
+
+### Corrections
+- Correction de la figure des boxplot
+
 ## 2026-06-01
 ### Ajouts
 - Ajout de la référence à la période estivale uniquement dans l'utilisation de `chronique.figure.classesdensite`

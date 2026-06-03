@@ -79,3 +79,7 @@ vueinterannuelledensite
 fig:vueinterannuelleclasse
 fig:vueinterannuelledensite
 référentiel-temporel
+fig:vueinterannuelleviolon
+fig:vueinterannuellehorizons
+vueinterannuellediagviolon
+vueinterannuellehorizon

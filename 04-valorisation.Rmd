@@ -240,7 +240,9 @@ La figure \@ref(fig:vueinterannuelledensite) permet de représenter les valeurs 
 knitr::include_graphics('docs/Figures/Vues/Vue_chronologique_horizons_thermie_BIE56-1_pluriannuel.png')
 ```
 <p style="text-align: justify;">
-La figure \@ref(fig:vueinterannuellehorizons) permet de représenter les valeurs instantanées sous la forme d'un **horizon plot**, grâce à la fonction `chronique.figure.horizonplot`.  On peut ainsi évaluer la variabilité brute au cours du temps, avec une lecture par classes de valeurs. La même approche peut être envisagée :
+La figure \@ref(fig:vueinterannuellehorizons) permet de représenter les valeurs instantanées sous la forme d'un **horizon plot**, grâce à la fonction `chronique.figure.horizonplot`.  On peut ainsi évaluer la variabilité brute au cours du temps, avec une lecture par classes de valeurs. Au sein de chaque bande annuelle, l'axe des ordonnées correspond à la température repliée : les classes de 5 °C y sont superposées à une même faible hauteur plutôt qu'empilées. Ainsi, la hauteur remplie traduit la position de la température à l'intérieur de sa classe, tandis que la classe elle-même (et donc l'ampleur de l'écart) est signalée par l'intensité de la couleur. Par exemple, concernant le printemps 2017 (mars à mai) : la bande se remplit d'un bleu clair correspondant à la classe [5, 10) °C. Plus la surface colorée monte haut dans la bande, plus la température se rapproche de 10 °C ; à l'inverse, une surface basse indique une valeur proche de 5 °C. Si la température descendait sous 5 °C, la couleur basculerait vers un bleu plus soutenu (classe [0, 5)) et la hauteur « repartirait du bas » pour traduire cette nouvelle classe — comme on peut le voir sur les pics bleu foncé de l'hiver 2017 (décembre à février), qui signalent les journées les plus froides.
+
+La même approche peut être envisagée :
 
 - de manière pour un unique site une unique année (intérêt faible),
 - de manière intersites et/ou interannuelles,

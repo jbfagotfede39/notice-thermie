@@ -1,5 +1,9 @@
 # NEWS - Notice thermie
 
+## 2026-07-03
+### Ajouts
+- Ajout d'une explication de lecture sur le `horizon plot`
+
 ## 2026-06-03
 ### Ajouts
 - Ajout de `horizon plot`

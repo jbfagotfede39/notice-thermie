@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapitre 4 Valorisation | Chroniques de température de milieux aquatiques</title>
   <meta name="description" content="Ce document présente l’utilisation d’outils d’acquisition et de traitement de chroniques de température de milieux aquatiques développés dans le cadre du RSTMAJ." />
-  <meta name="generator" content="bookdown 0.46 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.47 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapitre 4 Valorisation | Chroniques de température de milieux aquatiques" />
   <meta property="og:type" content="book" />
@@ -22,7 +22,7 @@
 
 
 
-<meta name="date" content="2026-06-03" />
+<meta name="date" content="2026-07-03" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -621,7 +621,8 @@ Figure 4.7: Exemple de représentation des classes de densité de mesures sur la
 </p>
 </div>
 <p style="text-align: justify;">
-<p>La figure <a href="valorisation.html#fig:vueinterannuellehorizons">4.7</a> permet de représenter les valeurs instantanées sous la forme d’un <strong>horizon plot</strong>, grâce à la fonction <code>chronique.figure.horizonplot</code>. On peut ainsi évaluer la variabilité brute au cours du temps, avec une lecture par classes de valeurs. La même approche peut être envisagée :</p>
+<p>La figure <a href="valorisation.html#fig:vueinterannuellehorizons">4.7</a> permet de représenter les valeurs instantanées sous la forme d’un <strong>horizon plot</strong>, grâce à la fonction <code>chronique.figure.horizonplot</code>. On peut ainsi évaluer la variabilité brute au cours du temps, avec une lecture par classes de valeurs. Au sein de chaque bande annuelle, l’axe des ordonnées correspond à la température repliée : les classes de 5 °C y sont superposées à une même faible hauteur plutôt qu’empilées. Ainsi, la hauteur remplie traduit la position de la température à l’intérieur de sa classe, tandis que la classe elle-même (et donc l’ampleur de l’écart) est signalée par l’intensité de la couleur. Par exemple, concernant le printemps 2017 (mars à mai) : la bande se remplit d’un bleu clair correspondant à la classe [5, 10) °C. Plus la surface colorée monte haut dans la bande, plus la température se rapproche de 10 °C ; à l’inverse, une surface basse indique une valeur proche de 5 °C. Si la température descendait sous 5 °C, la couleur basculerait vers un bleu plus soutenu (classe [0, 5)) et la hauteur « repartirait du bas » pour traduire cette nouvelle classe — comme on peut le voir sur les pics bleu foncé de l’hiver 2017 (décembre à février), qui signalent les journées les plus froides.</p>
+<p>La même approche peut être envisagée :</p>
 <ul>
 <li>de manière pour un unique site une unique année (intérêt faible),</li>
 <li>de manière intersites et/ou interannuelles,</li>
